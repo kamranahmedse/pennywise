@@ -1,6 +1,7 @@
 const { app, BrowserWindow } = require('electron');
 const url = require('url');
 const path = require('path');
+const { setMainMenu } = require('./menu');
 
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -9,15 +10,18 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({ width: 800, height: 600 });
-
-  console.log(process.env.APP_URL);
   const appUrl = process.env.APP_URL || url.format({
     protocol: 'file',
     slashes: true,
     pathname: path.join(__dirname, 'index.html')
   });
 
-  mainWindow.loadURL('http://localhost:3000');
+  mainWindow.loadURL(appUrl);
+
+  // Emitted when the file has been loaded
+  mainWindow.on('ready-to-show', () => {
+    mainWindow.show();
+  });
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
@@ -26,6 +30,8 @@ function createWindow() {
     // when you should delete the corresponding element.
     mainWindow = null;
   });
+
+  setMainMenu();
 }
 
 // This method will be called when Electron has finished
