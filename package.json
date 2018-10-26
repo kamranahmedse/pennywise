@@ -2,13 +2,17 @@
   "name": "pennywise",
   "version": "0.1.0",
   "private": true,
+  "main": "src/electron/index.js",
+  "homepage": "./",
   "dependencies": {
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-scripts": "2.0.5"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "react": "cross-env BROWSER=none react-scripts start",
+    "electron": "cross-env APP_URL=http://localhost:3000 electron .",
+    "start": "concurrently \"yarn react\" \"wait-on http://localhost:3000 && yarn electron\" ",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -21,5 +25,11 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "cross-env": "^5.2.0",
+    "electron": "^3.0.6",
+    "wait-on": "^3.1.0"
+  }
 }
