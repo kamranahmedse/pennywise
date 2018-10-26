@@ -4,7 +4,7 @@
   height: 100vh;
 
   webview {
-    display: flex;
+    display: inline-flex !important;
     width: 100vw;
     height: 100vh;
     overflow: scroll;

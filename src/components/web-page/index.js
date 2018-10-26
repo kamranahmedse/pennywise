@@ -8,7 +8,7 @@ class WebPage extends React.Component {
     return (
       <div className='webpage'>
         <NavBar/>
-        <webview id="view" className="page" src="http://github.com/kamranahmedse/" autosize="on"/>
+        <webview id="view" className="page" src="http://kamranahmed.info/" autosize="on"/>
       </div>
     );
   }
