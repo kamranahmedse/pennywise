@@ -5,6 +5,12 @@
   flex-direction: row;
   position: relative;
 
+  .search-field {
+    display: block;
+    flex: 1;
+    position: relative;
+  }
+
   .fa-search {
     position: absolute;
     left: 18px;
@@ -26,15 +32,14 @@
     outline: none;
     width: 100%;
     color: #eaeaea;
-    padding: 15px 0 15px 45px;
+    padding: 15px 20px;
+    line-height: 24px;
   }
 
   .btn {
     line-height: 40px;
     border-radius: 0;
-  }
-
-  .btn-go {
-    min-width: 80px;
+    min-width: 55px;
+    display: inline-block;
   }
 }
