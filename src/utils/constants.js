@@ -1,0 +1,5 @@
+module.exports = {
+  BACKGROUND_COLOR: '#014c6f',
+  WINDOW_WIDTH: 800,
+  WINDOW_HEIGHT: 600
+};

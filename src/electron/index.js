@@ -1,15 +1,22 @@
 const { app, BrowserWindow } = require('electron');
 const url = require('url');
 const path = require('path');
-const { setMainMenu } = require('./menu');
 
+const Constants = require('../utils/constants');
+const { setMainMenu } = require('./menu');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({ width: 800, height: 600 });
+  mainWindow = new BrowserWindow({
+    width: Constants.WINDOW_WIDTH,
+    height: Constants.WINDOW_HEIGHT,
+    backgroundColor: Constants.BACKGROUND_COLOR,
+    show: false,
+  });
+
   const appUrl = process.env.APP_URL || url.format({
     protocol: 'file',
     slashes: true,
@@ -17,19 +24,21 @@ function createWindow() {
   });
 
   mainWindow.loadURL(appUrl);
-
-  // Emitted when the file has been loaded
   mainWindow.on('ready-to-show', () => {
     mainWindow.show();
   });
 
-  // Emitted when the window is closed.
   mainWindow.on('closed', function () {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
     mainWindow = null;
   });
+
+  // Set the window to be always on top
+  mainWindow.setAlwaysOnTop(true, 'floating');
+  mainWindow.setVisibleOnAllWorkspaces(true);
+  mainWindow.setFullScreenable(false);
+
+  // Open the dev-tools
+  mainWindow.webContents.openDevTools();
 
   setMainMenu();
 }

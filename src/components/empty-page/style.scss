@@ -1,0 +1,44 @@
+.empty-page {
+  padding-top: 1px;
+  max-width: 650px;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-weight: 700;
+    font-size: 55px;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  input {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 15px;
+    padding: 15px 20px;
+    box-shadow: none;
+    border-radius: 80px;
+    border: none;
+    background: #eaeaea;
+    outline: none;
+    width: 100%;
+    color: #222222;
+  }
+
+  svg {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+  }
+}
+
+
