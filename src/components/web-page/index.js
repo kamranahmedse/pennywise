@@ -1,17 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './style.scss';
-import NavBar from '../nav-bar';
 
 class WebPage extends React.Component {
   render() {
     return (
       <div className='webpage'>
-        <NavBar/>
-        <webview id="view" className="page" src="http://kamranahmed.info/" autosize="on"/>
+        <webview id="view" className="page" src={ this.props.url } autosize="on"/>
       </div>
     );
   }
 }
+
+WebPage.propTypes = {
+  url: PropTypes.string.isRequired
+};
 
 export default WebPage;
