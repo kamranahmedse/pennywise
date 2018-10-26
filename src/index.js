@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './global.css';
 import './electron/renderer';
 import * as serviceWorker from './worker';
-import Browser from './components/browser';
+import Browser from './browser';
 
 ReactDOM.render(<Browser/>, document.getElementById('root'));
 

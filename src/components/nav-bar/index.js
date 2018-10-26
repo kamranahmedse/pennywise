@@ -5,15 +5,15 @@ class NavBar extends Component {
   render() {
     return (
       <div className='top-nav'>
-        <a href="#" className="btn btn-dark"><i className="fa fa-arrow-left"></i></a>
-        <a href="#" className="btn btn-dark"><i className="fa fa-arrow-right"></i></a>
-        <a href="#" className="btn btn-dark"><i className="fa fa-refresh"></i></a>
+        <button className="btn btn-dark"><i className="fa fa-arrow-left"/></button>
+        <button className="btn btn-dark"><i className="fa fa-arrow-right"/></button>
+        <button className="btn btn-dark"><i className="fa fa-refresh"/></button>
         <div className="search-field">
           <input type="text" placeholder='Enter the URL to load'/>
         </div>
-        <a href="#" className="btn btn-danger btn-go">
+        <button className="btn btn-danger btn-go">
           Load URL
-        </a>
+        </button>
       </div>
     );
   }
