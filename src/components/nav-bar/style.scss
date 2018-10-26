@@ -1,0 +1,40 @@
+.top-nav {
+  background: #2d2d2d;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+
+  .fa-search {
+    position: absolute;
+    left: 18px;
+    top: 19px;
+    color: #808080;
+  }
+
+  svg {
+    width: 100px;
+  }
+
+  input {
+    font-size: 17px;
+    font-weight: 500;
+    box-shadow: none;
+    border-radius: 80px;
+    border: none;
+    background: #2d2d2d;
+    outline: none;
+    width: 100%;
+    color: #eaeaea;
+    padding: 15px 0 15px 45px;
+  }
+
+  .btn {
+    line-height: 40px;
+    border-radius: 0;
+  }
+
+  .btn-go {
+    min-width: 80px;
+  }
+}

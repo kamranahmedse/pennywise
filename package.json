@@ -6,6 +6,7 @@
   "homepage": "./",
   "dependencies": {
     "bootstrap": "^4.1.3",
+    "font-awesome": "^4.7.0",
     "node-sass": "^4.9.4",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
