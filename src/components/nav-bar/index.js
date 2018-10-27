@@ -24,8 +24,8 @@ class NavBar extends Component {
   render() {
     return (
       <div className='top-nav'>
-        <button className="btn btn-dark"><i className="fa fa-arrow-left"/></button>
-        <button className="btn btn-dark"><i className="fa fa-arrow-right"/></button>
+        <button className="btn btn-dark" onClick={ this.props.onBack }><i className="fa fa-arrow-left"/></button>
+        <button className="btn btn-dark" onClick={ this.props.onForward }><i className="fa fa-arrow-right"/></button>
         <button className="btn btn-dark" onClick={ this.props.onReload }><i className="fa fa-refresh"/></button>
         <div className="search-field">
           <input type="text"
@@ -44,6 +44,8 @@ NavBar.propTypes = {
   url: PropTypes.string.isRequired,
   onUrl: PropTypes.func.isRequired,
   onReload: PropTypes.func.isRequired,
+  onBack: PropTypes.func.isRequired,
+  onForward: PropTypes.func.isRequired,
 };
 
 export default NavBar;

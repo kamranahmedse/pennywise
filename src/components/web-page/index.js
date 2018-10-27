@@ -30,8 +30,23 @@ class WebPage extends React.Component {
   }
 
   onReload = () => {
-    console.log('reloading');
     this.webView.current.reloadIgnoringCache();
+  };
+
+  onBack = () => {
+    if (!this.webView.current.canGoBack()) {
+      return;
+    }
+
+    this.webView.current.goBack();
+  };
+
+  onForward = () => {
+    if (!this.webView.current.canGoForward()) {
+      return;
+    }
+
+    this.webView.current.goForward();
   };
 
   componentDidMount() {
@@ -41,7 +56,7 @@ class WebPage extends React.Component {
   render() {
     return (
       <div className='webpage'>
-        <NavBar url={ this.state.url } onUrl={ this.props.onUrl } onReload={ this.onReload }/>
+        <NavBar url={ this.state.url } onUrl={ this.props.onUrl } onReload={ this.onReload } onBack={ this.onBack } onForward={ this.onForward }/>
         <webview ref={ this.webView } id="view" className="page" src={ this.props.url } autosize="on"/>
       </div>
     );
