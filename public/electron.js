@@ -1,8 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-const url = require('url');
 const path = require('path');
 
-const Constants = require('../utils/constants');
 const { setMainMenu } = require('./menu');
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -12,20 +10,18 @@ let mainWindow;
 function createWindow() {
   mainWindow = new BrowserWindow({
     title: 'Pennywise',
-    width: Constants.WINDOW_WIDTH,
-    height: Constants.WINDOW_HEIGHT,
-    backgroundColor: Constants.BACKGROUND_COLOR,
+    width: 800,
+    height: 600,
+    backgroundColor: '#16171a',
     show: false,
   });
 
   const isDev = !!process.env.APP_URL;
-  const appUrl = process.env.APP_URL || url.format({
-    protocol: 'file',
-    slashes: true,
-    pathname: path.join(__dirname, '/../../build/index.html')
-  });
-
-  mainWindow.loadURL(appUrl);
+  if (process.env.APP_URL) {
+    mainWindow.loadURL(process.env.APP_URL);
+  } else {
+    mainWindow.loadFile(path.join(__dirname, '../build/index.html'));
+  }
 
   // Show the window once the content has been loaded
   mainWindow.on('ready-to-show', () => {
@@ -42,7 +38,6 @@ function createWindow() {
   mainWindow.setVisibleOnAllWorkspaces(true);
   mainWindow.setFullScreenable(false);
 
-  // Open the dev-tools
   if (isDev) {
     mainWindow.webContents.openDevTools();
   }

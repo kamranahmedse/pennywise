@@ -1,18 +1,19 @@
 const { app, Menu, shell } = require('electron');
-const platform = require('../utils/platform');
 
 module.exports = {
   setMainMenu
 };
 
+const isWindows = process.platform === 'win32';
+
 function setMainMenu() {
   const template = [
     {
-      label: platform.isWindows ? 'File' : app.getName(),
+      label: isWindows ? 'File' : app.getName(),
       submenu: [
         {
-          label: platform.isWindows ? 'Exit' : `Quit ${app.getName()}`,
-          accelerator: platform.isWindows ? null : 'CmdOrCtrl+Q',
+          label: isWindows ? 'Exit' : `Quit ${app.getName()}`,
+          accelerator: isWindows ? null : 'CmdOrCtrl+Q',
           click() {
             app.quit();
           }

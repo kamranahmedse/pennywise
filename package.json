@@ -5,7 +5,7 @@
   "author": "Kamran Ahmed",
   "version": "0.1.0",
   "private": false,
-  "main": "src/electron/index.js",
+  "main": "public/electron.js",
   "homepage": "./",
   "license": "MIT",
   "dependencies": {
@@ -25,7 +25,7 @@
     "_electron": "cross-env APP_URL=http://localhost:3000 electron .",
     "_build": "react-scripts build",
     "start": "concurrently \"yarn _react\" \"wait-on http://localhost:3000 && yarn _electron\" ",
-    "build": "yarn _build && build",
+    "build": "yarn _build && build --dir",
     "icons": "electron-icon-maker -i public/pennywise.png -o public"
   },
   "eslintConfig": {
@@ -41,6 +41,12 @@
     "extends": null,
     "appId": "info.kamranahmed.pennywise",
     "copyright": "Copyright © 2018 Kamran Ahmed",
+    "files": [
+      "public/**/*",
+      "build/**/*",
+      "dist/**/*",
+      "package.json"
+    ],
     "mac": {
       "category": "public.app-category.productivity",
       "target": "dmg",
@@ -53,8 +59,6 @@
     "electron": "^3.0.6",
     "electron-builder": "^20.28.4",
     "electron-icon-maker": "^0.0.4",
-    "jquery": "^3.3.1",
-    "popper.js": "^1.14.4",
     "wait-on": "^3.1.0"
   }
 }
