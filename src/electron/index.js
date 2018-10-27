@@ -40,9 +40,17 @@ function createWindow() {
   // Open the dev-tools
   mainWindow.webContents.openDevTools();
 
-  ipcMain.on('synchronous-message', (event, arg) => {
-    console.log(arg); // prints "ping"
-    event.returnValue = 'pong';
+  // Handler to set or get window opacity
+  ipcMain.on('opacity', (event, opacity) => {
+    // If no arguments given, return the current opacity
+    if (!opacity) {
+      // Multiplying by 100 – browser range is 0 to 100
+      event.returnValue = mainWindow.getOpacity() * 100;
+    } else {
+      // Divide by 100 – window range is 0.1 to 1.0
+      mainWindow.setOpacity(opacity / 100);
+      event.returnValue = opacity;
+    }
   });
 
   setMainMenu();
