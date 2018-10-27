@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'nprogress/nprogress.css';
 
 import './global.css';
-import './electron/renderer';
 import * as serviceWorker from './worker';
 import Browser from './browser';
 
