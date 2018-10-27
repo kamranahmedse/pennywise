@@ -35,7 +35,7 @@ function createWindow() {
   });
 
   // Set the window to be always on top
-  mainWindow.setAlwaysOnTop(true, 'floating');
+  mainWindow.setAlwaysOnTop(true);
   mainWindow.setVisibleOnAllWorkspaces(true);
   mainWindow.setFullScreenable(false);
 
