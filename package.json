@@ -25,7 +25,7 @@
     "_electron": "cross-env APP_URL=http://localhost:3000 electron .",
     "_build": "react-scripts build",
     "start": "concurrently \"yarn _react\" \"wait-on http://localhost:3000 && yarn _electron\" ",
-    "build": "yarn _build && build --dir",
+    "build": "yarn _build && build",
     "icons": "electron-icon-maker -i public/pennywise.png -o public"
   },
   "eslintConfig": {
@@ -44,7 +44,7 @@
     "files": [
       "public/**/*",
       "build/**/*",
-      "dist/**/*",
+      "!public/pennywise.png",
       "package.json"
     ],
     "mac": {
@@ -59,6 +59,8 @@
     "electron": "^3.0.6",
     "electron-builder": "^20.28.4",
     "electron-icon-maker": "^0.0.4",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.4",
     "wait-on": "^3.1.0"
   }
 }
