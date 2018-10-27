@@ -35,6 +35,7 @@ class NavBar extends Component {
                  onKeyPress={ this.onKeyPress }/>
         </div>
         <button className="btn btn-danger btn-go" onClick={ () => this.props.onUrl('') }><i className='fa fa-times'/></button>
+        <button className="btn btn-dark"><i className="fa fa-cog"></i></button>
       </div>
     );
   }

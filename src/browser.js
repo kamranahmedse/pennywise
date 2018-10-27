@@ -2,7 +2,6 @@ import React from 'react';
 import isUrl from 'is-url';
 
 import EmptyPage from './components/empty-page';
-import NavBar from './components/nav-bar';
 import WebPage from './components/web-page';
 
 class Browser extends React.Component {

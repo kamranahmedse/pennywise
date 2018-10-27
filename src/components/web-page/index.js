@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as NProgress from 'nprogress';
-
 import './style.scss';
 import NavBar from '../nav-bar';
+const { ipcRenderer } = window.require('electron');
 
 class WebPage extends React.Component {
   webView = React.createRef();
@@ -50,6 +50,8 @@ class WebPage extends React.Component {
   };
 
   componentDidMount() {
+    console.log(ipcRenderer.sendSync('synchronous-message', 'ping')); // prints "pong"
+
     this.configureLoader();
   }
 
@@ -57,7 +59,13 @@ class WebPage extends React.Component {
     return (
       <div className='webpage'>
         <NavBar url={ this.state.url } onUrl={ this.props.onUrl } onReload={ this.onReload } onBack={ this.onBack } onForward={ this.onForward }/>
-        <webview ref={ this.webView } id="view" className="page" src={ this.props.url } autosize="on"/>
+        <webview
+          ref={ this.webView }
+          id="view"
+          className="page"
+          src={ this.props.url }
+          autosize="on"
+        />
       </div>
     );
   }

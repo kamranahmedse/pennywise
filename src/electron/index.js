@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const url = require('url');
 const path = require('path');
 
@@ -39,6 +39,11 @@ function createWindow() {
 
   // Open the dev-tools
   mainWindow.webContents.openDevTools();
+
+  ipcMain.on('synchronous-message', (event, arg) => {
+    console.log(arg); // prints "ping"
+    event.returnValue = 'pong';
+  });
 
   setMainMenu();
 }
