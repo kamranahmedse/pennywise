@@ -4,3 +4,7 @@ body {
   background: #16171a;
   color: white;
 }
+
+#nprogress .bar {
+  height: 5px;
+}

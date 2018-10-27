@@ -21,7 +21,7 @@ class Browser extends React.Component {
   renderWebPage() {
     return (
       <React.Fragment>
-        <NavBar url={ this.state.url }/>
+        <NavBar url={ this.state.url } onUrl={ this.onUrl }/>
         <WebPage url={ this.state.url }/>
       </React.Fragment>
     );

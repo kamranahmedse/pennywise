@@ -16,7 +16,9 @@ class NavBar extends Component {
         <button className="btn btn-dark"><i className="fa fa-arrow-right"/></button>
         <button className="btn btn-dark"><i className="fa fa-refresh"/></button>
         <div className="search-field">
-          <input type="text" placeholder='Enter the URL to load' value={ this.state.url }/>
+          <input type="text"
+                 placeholder='Enter the URL to load'
+                 value={ this.state.url }/>
         </div>
         <button className="btn btn-danger btn-go">
           { !this.state.isDirty ? <i className='fa fa-times'/> : 'Load Page' }
@@ -27,7 +29,8 @@ class NavBar extends Component {
 }
 
 NavBar.propTypes = {
-  url: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
+  onUrl: PropTypes.func.isRequired
 };
 
 export default NavBar;
