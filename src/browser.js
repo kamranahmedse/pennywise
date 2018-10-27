@@ -1,4 +1,6 @@
 import React from 'react';
+import isUrl from 'is-url';
+
 import EmptyPage from './components/empty-page';
 import NavBar from './components/nav-bar';
 import WebPage from './components/web-page';
@@ -8,8 +10,22 @@ class Browser extends React.Component {
     url: ''
   };
 
+  static prepareUrl(url) {
+    url = url.trim();
+
+    if (isUrl(url)) {
+      return url;
+    } else if (isUrl(`http://${url}`)) {
+      return `http://${url}`;
+    } else {
+      return `https://www.google.com/search?q=${url}`;
+    }
+  }
+
   onUrl = (url) => {
-    this.setState({ url });
+    this.setState({
+      url: Browser.prepareUrl(url)
+    });
   };
 
   // noinspection JSMethodCanBeStatic
