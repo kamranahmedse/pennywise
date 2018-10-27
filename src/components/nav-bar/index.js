@@ -26,7 +26,7 @@ class NavBar extends Component {
       <div className='top-nav'>
         <button className="btn btn-dark"><i className="fa fa-arrow-left"/></button>
         <button className="btn btn-dark"><i className="fa fa-arrow-right"/></button>
-        <button className="btn btn-dark"><i className="fa fa-refresh"/></button>
+        <button className="btn btn-dark" onClick={ this.props.onReload }><i className="fa fa-refresh"/></button>
         <div className="search-field">
           <input type="text"
                  placeholder='Enter the URL to load'
@@ -34,9 +34,7 @@ class NavBar extends Component {
                  onChange={ this.onChange }
                  onKeyPress={ this.onKeyPress }/>
         </div>
-        <button className="btn btn-danger btn-go">
-          { !this.state.isDirty ? <i className='fa fa-times'/> : 'Load Page' }
-        </button>
+        <button className="btn btn-danger btn-go" onClick={ () => this.props.onUrl('') }><i className='fa fa-times'/></button>
       </div>
     );
   }
@@ -44,7 +42,8 @@ class NavBar extends Component {
 
 NavBar.propTypes = {
   url: PropTypes.string.isRequired,
-  onUrl: PropTypes.func.isRequired
+  onUrl: PropTypes.func.isRequired,
+  onReload: PropTypes.func.isRequired,
 };
 
 export default NavBar;

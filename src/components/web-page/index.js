@@ -29,6 +29,11 @@ class WebPage extends React.Component {
     });
   }
 
+  onReload = () => {
+    console.log('reloading');
+    this.webView.current.reloadIgnoringCache();
+  };
+
   componentDidMount() {
     this.configureLoader();
   }
@@ -36,7 +41,7 @@ class WebPage extends React.Component {
   render() {
     return (
       <div className='webpage'>
-        <NavBar url={ this.state.url } onUrl={ this.props.onUrl }/>
+        <NavBar url={ this.state.url } onUrl={ this.props.onUrl } onReload={ this.onReload }/>
         <webview ref={ this.webView } id="view" className="page" src={ this.props.url } autosize="on"/>
       </div>
     );
