@@ -28,6 +28,7 @@ Pennywise was built specifically to help me in some of my Workflows. However, it
 * [ ] Shortcut to change opacity
 * [ ] Persist options for the next session
 * [ ] Bookmarking links for later use
+* [ ] Let the clicks pass through
 
 ## Contributions
 Feel free to implement anything from the roadmap, submit pull requests, create issues, discuss ideas or spread the word.
