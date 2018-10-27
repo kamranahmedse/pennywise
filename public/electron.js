@@ -10,7 +10,7 @@ let mainWindow;
 function createWindow() {
   mainWindow = new BrowserWindow({
     title: 'Pennywise',
-    width: 800,
+    width: 700,
     height: 600,
     backgroundColor: '#16171a',
     show: false,
