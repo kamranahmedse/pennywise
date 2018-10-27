@@ -22,7 +22,7 @@ function createWindow() {
   const appUrl = process.env.APP_URL || url.format({
     protocol: 'file',
     slashes: true,
-    pathname: path.join(__dirname, 'index.html')
+    pathname: path.join(__dirname, '/../../build/index.html')
   });
 
   mainWindow.loadURL(appUrl);

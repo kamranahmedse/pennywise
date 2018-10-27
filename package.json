@@ -1,9 +1,13 @@
 {
   "name": "pennywise",
+  "description": "Pennywise – MacOS application that allows you to open URLs in a floating window that always stays on top.",
+  "productName": "Pennywise",
+  "author": "Kamran Ahmed",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "main": "src/electron/index.js",
   "homepage": "./",
+  "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.1.3",
     "font-awesome": "^4.7.0",
@@ -17,12 +21,12 @@
     "react-scripts": "2.0.5"
   },
   "scripts": {
-    "react": "cross-env BROWSER=none react-scripts start",
-    "electron": "cross-env APP_URL=http://localhost:3000 electron .",
-    "start": "concurrently \"yarn react\" \"wait-on http://localhost:3000 && yarn electron\" ",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "_react": "cross-env BROWSER=none react-scripts start",
+    "_electron": "cross-env APP_URL=http://localhost:3000 electron .",
+    "_build": "react-scripts build",
+    "start": "concurrently \"yarn _react\" \"wait-on http://localhost:3000 && yarn _electron\" ",
+    "build": "yarn _build && build",
+    "icons": "electron-icon-maker -i public/pennywise.png -o public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,10 +37,24 @@
     "not ie <= 11",
     "not op_mini all"
   ],
+  "build": {
+    "extends": null,
+    "appId": "info.kamranahmed.pennywise",
+    "copyright": "Copyright © 2018 Kamran Ahmed",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg",
+      "icon": "public/mac/icon.icns"
+    }
+  },
   "devDependencies": {
     "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
     "electron": "^3.0.6",
+    "electron-builder": "^20.28.4",
+    "electron-icon-maker": "^0.0.4",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.4",
     "wait-on": "^3.1.0"
   }
 }
