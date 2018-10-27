@@ -11,12 +11,14 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
+    title: 'Pennywise',
     width: Constants.WINDOW_WIDTH,
     height: Constants.WINDOW_HEIGHT,
     backgroundColor: Constants.BACKGROUND_COLOR,
     show: false,
   });
 
+  const isDev = !!process.env.APP_URL;
   const appUrl = process.env.APP_URL || url.format({
     protocol: 'file',
     slashes: true,
@@ -41,7 +43,9 @@ function createWindow() {
   mainWindow.setFullScreenable(false);
 
   // Open the dev-tools
-  mainWindow.webContents.openDevTools();
+  if (isDev) {
+    mainWindow.webContents.openDevTools();
+  }
 
   setMainMenu();
 }
