@@ -7,11 +7,11 @@ const { ipcRenderer } = window.require('electron');
 
 class Settings extends React.Component {
   state = {
-    opacity: ipcRenderer.sendSync('opacity')
+    opacity: ipcRenderer.sendSync('opacity.get')
   };
 
   setOpacity = debounce((opacity) => {
-    ipcRenderer.sendSync('opacity', opacity);
+    ipcRenderer.send('opacity.set', opacity);
   }, 500);
 
   onOpacityChange = (e) => {
@@ -27,7 +27,7 @@ class Settings extends React.Component {
       <div className='settings-wrap'>
         <div className="setting-controls">
           <div className="setting-control opacity-picker">
-            <label htmlFor="opacity-picker"><i className="fa fa-lightbulb-o"></i></label>
+            <label htmlFor="opacity-picker"><i className="fa fa-lightbulb-o"/></label>
             <input type="range" onChange={ this.onOpacityChange } value={ this.state.opacity } min="20" max="100" className="slider" id="opacity-picker"/>
           </div>
         </div>

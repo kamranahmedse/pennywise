@@ -24,6 +24,8 @@ function createWindow() {
   });
 
   mainWindow.loadURL(appUrl);
+
+  // Show the window once the content has been loaded
   mainWindow.on('ready-to-show', () => {
     mainWindow.show();
   });
@@ -40,20 +42,23 @@ function createWindow() {
   // Open the dev-tools
   mainWindow.webContents.openDevTools();
 
-  // Handler to set or get window opacity
-  ipcMain.on('opacity', (event, opacity) => {
-    // If no arguments given, return the current opacity
-    if (!opacity) {
-      // Multiplying by 100 – browser range is 0 to 100
-      event.returnValue = mainWindow.getOpacity() * 100;
-    } else {
-      // Divide by 100 – window range is 0.1 to 1.0
-      mainWindow.setOpacity(opacity / 100);
-      event.returnValue = opacity;
-    }
+
+  bindIpc();
+  setMainMenu();
+}
+
+// Binds the methods for renderer/electron communication
+function bindIpc() {
+  // Binds the opacity getter functionality
+  ipcMain.on('opacity.get', (event) => {
+    // Multiplying by 100 – browser range is 0 to 100
+    event.returnValue = mainWindow.getOpacity() * 100;
   });
 
-  setMainMenu();
+  ipcMain.on('opacity.set', (event, opacity) => {
+    // Divide by 100 – window range is 0.1 to 1.0
+    mainWindow.setOpacity(opacity / 100);
+  });
 }
 
 // This method will be called when Electron has finished
