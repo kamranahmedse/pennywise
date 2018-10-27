@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import './style.scss';
+import Settings from '../settings';
 
 class NavBar extends Component {
   state = {
     url: this.props.url,
-    isDirty: false
+    settingsShown: false
+  };
+
+  toggleSettings = () => {
+    this.setState((state) => ({
+      settingsShown: !state.settingsShown
+    }));
   };
 
   onChange = (e) => {
@@ -23,20 +30,23 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div className='top-nav'>
-        <button className="btn btn-dark" onClick={ this.props.onBack }><i className="fa fa-arrow-left"/></button>
-        <button className="btn btn-dark" onClick={ this.props.onForward }><i className="fa fa-arrow-right"/></button>
-        <button className="btn btn-dark" onClick={ this.props.onReload }><i className="fa fa-refresh"/></button>
-        <div className="search-field">
-          <input type="text"
-                 placeholder='Enter the URL to load'
-                 value={ this.state.url }
-                 onChange={ this.onChange }
-                 onKeyPress={ this.onKeyPress }/>
+      <>
+        <div className='top-nav'>
+          <button className="btn btn-dark" onClick={ this.props.onBack }><i className="fa fa-arrow-left"/></button>
+          <button className="btn btn-dark" onClick={ this.props.onForward }><i className="fa fa-arrow-right"/></button>
+          <button className="btn btn-dark" onClick={ this.props.onReload }><i className="fa fa-refresh"/></button>
+          <input type="text" placeholder='Enter the URL to load' value={ this.state.url } onChange={ this.onChange } onKeyPress={ this.onKeyPress }/>
+          <button className="btn btn-danger btn-go" onClick={ () => this.props.onUrl('') }><i className='fa fa-times'/></button>
+          <button className="btn btn-dark" onClick={ this.toggleSettings }>
+            {
+              !this.state.settingsShown
+                ? <i className="fa fa-cog"/>
+                : <i className="fa fa-times-circle"/>
+            }
+          </button>
         </div>
-        <button className="btn btn-danger btn-go" onClick={ () => this.props.onUrl('') }><i className='fa fa-times'/></button>
-        <button className="btn btn-dark"><i className="fa fa-cog"></i></button>
-      </div>
+        { this.state.settingsShown && <Settings/> }
+      </>
     );
   }
 }

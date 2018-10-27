@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import * as NProgress from 'nprogress';
 import './style.scss';
 import NavBar from '../nav-bar';
-const { ipcRenderer } = window.require('electron');
+
+// const { ipcRenderer } = window.require('electron');
 
 class WebPage extends React.Component {
   webView = React.createRef();
   state = {
-    url: this.props.url
+    url: this.props.url,
   };
 
   configureLoader() {
@@ -50,7 +51,7 @@ class WebPage extends React.Component {
   };
 
   componentDidMount() {
-    console.log(ipcRenderer.sendSync('synchronous-message', 'ping')); // prints "pong"
+    // console.log(ipcRenderer.sendSync('synchronous-message', 'ping')); // prints "pong"
 
     this.configureLoader();
   }

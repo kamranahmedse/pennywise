@@ -5,19 +5,6 @@
   flex-direction: row;
   position: relative;
 
-  .search-field {
-    display: block;
-    flex: 1;
-    position: relative;
-  }
-
-  .fa-search {
-    position: absolute;
-    left: 18px;
-    top: 19px;
-    color: #808080;
-  }
-
   svg {
     width: 100px;
   }
@@ -37,6 +24,8 @@
   }
 
   .btn {
+    outline: none;
+    box-shadow: none;
     line-height: 40px;
     border-radius: 0;
     min-width: 55px;

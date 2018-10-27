@@ -1,0 +1,65 @@
+.settings-wrap {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+
+  .setting-controls {
+    background: #212121;
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .setting-control {
+    padding: 15px 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    opacity: 0.5;
+    transition: opacity .2s;
+  }
+
+  .setting-control:hover {
+    opacity: 1;
+  }
+
+  label {
+    margin-bottom: 0;
+    margin-right: 15px;
+    font-size: 25px;
+    color: white;
+  }
+
+  #width-picker {
+    margin-right: 35px;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 4px;
+    background: #d3d3d3;
+    outline: none;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      background: white;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid #2d2d2d;
+    }
+
+    &::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      background: white;
+      cursor: pointer;
+      border: 2px solid #2d2d2d;
+    }
+  }
+
+}
