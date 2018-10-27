@@ -13,7 +13,9 @@ class Browser extends React.Component {
   static prepareUrl(url) {
     url = url.trim();
 
-    if (isUrl(url)) {
+    if (!url) {
+      return '';
+    } else if (isUrl(url)) {
       return url;
     } else if (isUrl(`http://${url}`)) {
       return `http://${url}`;
@@ -28,28 +30,13 @@ class Browser extends React.Component {
     });
   };
 
-  // noinspection JSMethodCanBeStatic
-  renderEmptyPage() {
-    return <EmptyPage onUrl={ this.onUrl }/>;
-  }
-
-  // noinspection JSMethodCanBeStatic
-  renderWebPage() {
-    return (
-      <React.Fragment>
-        <NavBar url={ this.state.url } onUrl={ this.onUrl }/>
-        <WebPage url={ this.state.url }/>
-      </React.Fragment>
-    );
-  }
-
   render() {
     return (
       <div className='browser-wrap'>
         {
           this.state.url
-            ? this.renderWebPage()
-            : this.renderEmptyPage()
+            ? <WebPage url={ this.state.url } onUrl={ this.onUrl }/>
+            : <EmptyPage onUrl={ this.onUrl }/>
         }
       </div>
     );
