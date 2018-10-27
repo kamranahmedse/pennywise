@@ -32,20 +32,22 @@ class NavBar extends Component {
     return (
       <>
         <div className='top-nav'>
-          <button className="btn btn-dark" onClick={ this.props.onBack }><i className="fa fa-arrow-left"/></button>
-          <button className="btn btn-dark" onClick={ this.props.onForward }><i className="fa fa-arrow-right"/></button>
-          <button className="btn btn-dark" onClick={ this.props.onReload }><i className="fa fa-refresh"/></button>
-          <input type="text" placeholder='Enter the URL to load' value={ this.state.url } onChange={ this.onChange } onKeyPress={ this.onKeyPress }/>
-          <button className="btn btn-danger btn-go" onClick={ () => this.props.onUrl('') }><i className='fa fa-times'/></button>
-          <button className="btn btn-dark" onClick={ this.toggleSettings }>
-            {
-              !this.state.settingsShown
-                ? <i className="fa fa-cog"/>
-                : <i className="fa fa-times-circle"/>
-            }
-          </button>
+          <button className="btn-action btn btn-dark" onClick={ this.props.onBack }><i className="fa fa-arrow-left"/></button>
+          <button className="btn-action btn btn-dark" onClick={ this.props.onForward }><i className="fa fa-arrow-right"/></button>
+          <button className="btn-action btn btn-dark" onClick={ this.props.onReload }><i className="fa fa-refresh"/></button>
+          <input className='search-input' type="text" placeholder='Enter the URL to load' value={ this.state.url } onChange={ this.onChange } onKeyPress={ this.onKeyPress }/>
+          <button className="btn-action btn btn-danger btn-go" onClick={ () => this.props.onUrl('') }><i className='fa fa-times'/></button>
+          <div className="settings-btn">
+            <button className="btn-action btn btn-dark" onClick={ this.toggleSettings }>
+              {
+                !this.state.settingsShown
+                  ? <i className="fa fa-cog"/>
+                  : <i className="fa fa-times-circle"/>
+              }
+            </button>
+            { this.state.settingsShown && <Settings/> }
+          </div>
         </div>
-        { this.state.settingsShown && <Settings/> }
       </>
     );
   }

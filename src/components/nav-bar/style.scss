@@ -5,11 +5,7 @@
   flex-direction: row;
   position: relative;
 
-  svg {
-    width: 100px;
-  }
-
-  input {
+  .search-input {
     font-size: 17px;
     font-weight: 500;
     box-shadow: none;
@@ -23,12 +19,22 @@
     line-height: 24px;
   }
 
-  .btn {
+  .btn-action {
     outline: none;
     box-shadow: none;
     line-height: 40px;
     border-radius: 0;
     min-width: 55px;
     display: inline-block;
+  }
+
+  .settings-btn {
+    position: relative;
+
+    .settings-wrap {
+      position: absolute;
+      top: 100%;
+      right: 0
+    }
   }
 }

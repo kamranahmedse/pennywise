@@ -1,10 +1,10 @@
 .settings-wrap {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
+  display: block;
+  width: 400px;
 
   .setting-controls {
     background: #212121;
+    border-radius: 0 0 10px 10px;
     max-width: 500px;
     width: 100%;
   }
