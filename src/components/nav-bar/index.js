@@ -32,8 +32,8 @@ class NavBar extends Component {
     return (
       <>
         <div className='top-nav'>
-          <button className="btn-action btn btn-dark" onClick={ this.props.onBack }><i className="fa fa-arrow-left"/></button>
-          <button className="btn-action btn btn-dark" onClick={ this.props.onForward }><i className="fa fa-arrow-right"/></button>
+          <button className="btn-action btn btn-dark d-none d-sm-block d-md-block d-lg-block d-xl-block" onClick={ this.props.onBack }><i className="fa fa-arrow-left"/></button>
+          <button className="btn-action btn btn-dark d-none d-sm-block d-md-block d-lg-block d-xl-block" onClick={ this.props.onForward }><i className="fa fa-arrow-right"/></button>
           <button className="btn-action btn btn-dark" onClick={ this.props.onReload }><i className="fa fa-refresh"/></button>
           <input className='search-input' type="text" placeholder='Enter the URL to load' value={ this.state.url } onChange={ this.onChange } onKeyPress={ this.onKeyPress }/>
           <button className="btn-action btn btn-danger btn-go" onClick={ () => this.props.onUrl('') }><i className='fa fa-times'/></button>

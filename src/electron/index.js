@@ -28,6 +28,7 @@ function createWindow() {
   // Show the window once the content has been loaded
   mainWindow.on('ready-to-show', () => {
     mainWindow.show();
+    bindIpc();
   });
 
   mainWindow.on('closed', function () {
@@ -42,8 +43,6 @@ function createWindow() {
   // Open the dev-tools
   mainWindow.webContents.openDevTools();
 
-
-  bindIpc();
   setMainMenu();
 }
 
