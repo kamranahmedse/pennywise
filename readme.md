@@ -6,8 +6,8 @@
     <a href="https://github.com/kamranahmedse/pennywise/blob/master/license">
       <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
     </a>
-    <a href="https://github.com/kamranahmedse/pennywise/releases">
-	    <img src="https://img.shields.io/github/release/kamranahmedse/pennywise.svg" alt="github release version">
+    <a href="https://github.com/kamranahmedse/pennywise">
+	    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="prs welcome">
     </a>
     <a href="https://github.com/kamranahmedse/pennywise">
     	<img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue.svg" alt="platforms" />
@@ -54,6 +54,12 @@ yarn start
 
 ## Screenshots
 
+> Homescreen for the application
+
+![](https://i.imgur.com/u7fAT99.png)
+
+![](https://i.imgur.com/CeLYoux.png?1)
+
 > Anything running in pennywise stays on top of everything
 
 ![](https://i.imgur.com/8VDKGYX.png)
@@ -64,11 +70,6 @@ yarn start
 
 ![](https://i.imgur.com/9D3gZwn.png)
 
-> Homescreen for the application
-
-![](https://i.imgur.com/u7fAT99.png)
-
-![](https://i.imgur.com/CeLYoux.png?1)
 
 ## Planned Roadmap
 
