@@ -18,11 +18,6 @@
   </p>
 </h1>
 
-
-
-# Pennywise
-> Desktop application to open any Webpage in a floating window
-
 Pennywise allows you to open anything in a small floating window that always stays on top of the other applications in all cases, allowing you to multitask with ease. Whenever you find yourself hitting <kbd>alt + tab</kbd>, you can use Pennywise so you don't have to.
 
 ## Features
