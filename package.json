@@ -2,7 +2,7 @@
   "name": "pennywise",
   "description": "Pennywise – MacOS application that allows you to open URLs in a floating window that always stays on top.",
   "productName": "Pennywise",
-  "author": "Kamran Ahmed",
+  "author": "Kamran Ahmed <kamranahmed.se@gmail.com>",
   "version": "0.1.0",
   "private": false,
   "main": "public/electron.js",
