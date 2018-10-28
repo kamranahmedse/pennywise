@@ -51,6 +51,16 @@
       "category": "public.app-category.productivity",
       "target": "dmg",
       "icon": "public/img/icon.icns"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "public/img/icon.ico"
     }
   },
   "devDependencies": {
