@@ -73,11 +73,12 @@ yarn start
 
 ## Planned Roadmap
 
-* [ ] Global shortcut to load currently selected URL
+* [ ] Open local files – PDFs, Images, Video, MP3 etc
 * [ ] Shortcut to change opacity
 * [ ] Persist options for the next session
+* [ ] Option to let the clicks pass through
+* [ ] Global shortcut to load currently selected URL
 * [ ] Bookmarking links for later use
-* [ ] Let the clicks pass through
 
 ## Contributions
 Feel free to implement anything from the roadmap, submit pull requests, create issues, discuss ideas or spread the word.
