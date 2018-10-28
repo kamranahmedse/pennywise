@@ -32,8 +32,9 @@ Pennywise allows you to open anything in a small floating window that always sta
 > Here is the list of some of the possible usecases off the top of my head
 
 * Use it as a floating window for your calendar/checklist/assigned-tickets etc
-* Make video courses? Open the demo in Pennywise and show the output in real time
 * Watching tutorial while you code? Open the video in Pennywise and keep it in front of you
+* Making a video course? Open the demo in Pennywise and show the output in real time
+* Working on some web UI? Open it in Pennywise to avoid pressing <kbd>alt + tab</kbd> again and again
 * Play some video, watch some talk or play some TV series while you work
 * Working on something non-familiar? Open the docs in Pennywise
 * Open that live football match that you won't want to miss
