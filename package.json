@@ -40,6 +40,8 @@
   "build": {
     "extends": null,
     "appId": "info.kamranahmed.pennywise",
+    "asar": true,
+    "publish": "github",
     "copyright": "Copyright © 2018 Kamran Ahmed",
     "files": [
       "public/**/*",
@@ -48,20 +50,44 @@
       "package.json"
     ],
     "mac": {
-      "category": "public.app-category.productivity",
+      "category": "public.app-category.navigation",
       "target": "dmg",
       "icon": "public/img/icon.icns"
     },
     "linux": {
+      "category": "Network",
       "target": [
-        "AppImage",
-        "deb"
+        {
+          "target": "deb",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        },
+        {
+          "target": "AppImage",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        }
       ]
     },
     "win": {
-      "target": "squirrel",
+      "target": [
+        "zip",
+        "nsis"
+      ],
       "icon": "public/img/icon.ico"
-    }
+    },
+    "fileAssociations": [
+      {
+        "name": "Document",
+        "description": "Pennywise",
+        "role": "Viewer",
+        "ext": "html"
+      }
+    ]
   },
   "devDependencies": {
     "concurrently": "^4.0.1",
