@@ -9,8 +9,11 @@
     <a href="https://github.com/kamranahmedse/pennywise/releases">
 	    <img src="https://img.shields.io/github/release/kamranahmedse/pennywise.svg" alt="github release version">
     </a>
-    <a href="https://github.com/kamranahmedse/penny">
+    <a href="https://github.com/kamranahmedse/pennywise">
     	<img src="https://david-dm.org/kamranahmedse/pennywise.svg" alt="dependencies" />
+    </a>
+    <a href="https://github.com/kamranahmedse/pennywise">
+    	<img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-lightgrey.svg" alt="platforms" />
     </a>
   </p>
 </h1>
