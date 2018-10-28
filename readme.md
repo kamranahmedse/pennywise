@@ -1,4 +1,4 @@
-<p align="center">
+<h1 align="center">
   <img src="https://raw.github.com/kamranahmedse/pennywise/master/src/icons/pennywise.svg?sanitize=true" height="90">
   <h3 align="center">Pennywise</h3>
   <p align="center">Desktop application to open any webpage in a floating window<p>
@@ -6,8 +6,14 @@
     <a href="https://github.com/kamranahmedse/pennywise">
 		<img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License">
 	</a>
-    </p>
-</p>
+    <a href="https://github.com/kamranahmedse/pennywise/releases">
+	    <img src="https://img.shields.io/github/release/kamranahmedse/pennywise.svg" alt="github release version">
+    </a>
+    <a href="https://github.com/kamranahmedse/penny">
+    	<img src="https://david-dm.org/kamranahmedse/pennywise.svg" alt="dependencies" />
+    </a>
+  </p>
+</h1>
 
 
 
