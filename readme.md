@@ -1,7 +1,7 @@
-<h1 align="center">
-  <img src="https://raw.github.com/kamranahmedse/pennywise/master/src/icons/pennywise.svg?sanitize=true" height="90">
-  <h3 align="center">Pennywise</h3>
-  <p align="center">Desktop application to open any webpage in a floating window<p>
+<p align="center">
+  <img src="https://i.imgur.com/bKsns66.png" height="148">
+  <h2 align="center">Pennywise</h2>
+  <p align="center">Cross-platform desktop application to open anything in a floating window<p>
   <p align="center">
     <a href="https://github.com/kamranahmedse/pennywise/blob/master/license">
       <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
@@ -10,25 +10,26 @@
 	    <img src="https://img.shields.io/github/release/kamranahmedse/pennywise.svg" alt="github release version">
     </a>
     <a href="https://github.com/kamranahmedse/pennywise">
-    	<img src="https://david-dm.org/kamranahmedse/pennywise.svg" alt="dependencies" />
-    </a>
-    <a href="https://github.com/kamranahmedse/pennywise">
     	<img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-lightgrey.svg" alt="platforms" />
     </a>
   </p>
-</h1>
+</p>
 
-Pennywise allows you to open anything in a small floating window that always stays on top of the other applications in all cases, allowing you to multitask with ease. Whenever you find yourself hitting <kbd>alt + tab</kbd>, you can use Pennywise so you don't have to.
+Pennywise allows you to open anything in a small floating window that always stays on top of the other applications in all cases, allowing you to multitask with ease. No need to keep struggling with <kbd>alt + tab</kbd>, use pennywise and have your work in front of you all the time.
 
 ## Features
 * Always **stays on top** of any open applications
 * **Adjustable opacity** – it gets out of your way while you work
 * **Resize and place** it anywhere
 * **Shortcuts** to make you more productive
-* Let's you multitask while you work
+* Let's you **multitask** while you work
+* **Opensource** licensed under MIT
+* **Lean** small resource footprint, minimal User Interface.
+* **Cross-platform** works on MacOS, Windows and Linux
 
 ## Usecases
-> Pennywise was built specifically to help me in some of my Workflows. However, it shouldn't stop you from using it. Here is the list of some of the possible usecases off the top of my head
+
+> Here is the list of some of the possible usecases off the top of my head
 
 * Use it as a floating window for your calendar/checklist/assigned-tickets etc
 * Make video courses? Open the demo in Pennywise and show the output in real time
@@ -38,10 +39,39 @@ Pennywise allows you to open anything in a small floating window that always sta
 * Open that live football match that you won't want to miss
 * Use it as a desktop widget
 
+## Installation
+
+Download and install the relevant distribution from the [releases page](http://github.com/kamranahmedse/pennywise/releases)
+
+## Development
+
+Clone the repository, install the dependencies and start the app
+
+```bash
+yarn install
+yarn start
+```
+
+## Screenshots
+
+> Anything running in pennywise stays on top of everything
+
+![](https://i.imgur.com/8VDKGYX.png)
+
+> You can change the opacity too
+
+![](https://i.imgur.com/Xa7inTY.png)
+
+![](https://i.imgur.com/9D3gZwn.png)
+
+> Homescreen for the application
+
+![](https://i.imgur.com/u7fAT99.png)
+
+![](https://i.imgur.com/CeLYoux.png?1)
+
 ## Planned Roadmap
 
-* [ ] Build for Windows
-* [ ] Prepare build for Linux
 * [ ] Global shortcut to load currently selected URL
 * [ ] Shortcut to change opacity
 * [ ] Persist options for the next session
