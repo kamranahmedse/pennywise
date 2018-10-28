@@ -10,7 +10,7 @@
 	    <img src="https://img.shields.io/github/release/kamranahmedse/pennywise.svg" alt="github release version">
     </a>
     <a href="https://github.com/kamranahmedse/pennywise">
-    	<img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-lightgrey.svg" alt="platforms" />
+    	<img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue.svg" alt="platforms" />
     </a>
   </p>
 </p>
