@@ -3,9 +3,9 @@
   <h3 align="center">Pennywise</h3>
   <p align="center">Desktop application to open any webpage in a floating window<p>
   <p align="center">
-    <a href="https://github.com/kamranahmedse/pennywise">
-		<img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License">
-	</a>
+    <a href="https://github.com/kamranahmedse/pennywise/blob/master/license">
+      <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+    </a>
     <a href="https://github.com/kamranahmedse/pennywise/releases">
 	    <img src="https://img.shields.io/github/release/kamranahmedse/pennywise.svg" alt="github release version">
     </a>
