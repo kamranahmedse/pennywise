@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://i.imgur.com/bKsns66.png" height="148">
   <h2 align="center">Pennywise</h2>
-  <p align="center">Cross-platform desktop application to open anything in a floating window<p>
+  <p align="center">Cross-platform application to open anything in a floating window<p>
   <p align="center">
     <a href="https://github.com/kamranahmedse/pennywise/blob/master/license">
       <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
