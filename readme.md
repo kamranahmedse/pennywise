@@ -1,5 +1,20 @@
+<p align="center">
+  <img src="https://raw.github.com/kamranahmedse/pennywise/master/src/icons/pennywise.svg?sanitize=true" height="90">
+  <h3 align="center">Pennywise</h3>
+  <p align="center">Desktop application to open any webpage in a floating window<p>
+  <p align="center">
+    <a href="https://github.com/kamranahmedse/pennywise">
+		<img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License">
+	</a>
+    </p>
+</p>
+
+
+
 # Pennywise
-> Desktop application to open any webpage in a floating window
+> Desktop application to open any Webpage in a floating window
+
+Pennywise allows you to open anything in a small floating window that always stays on top of the other applications in all cases, allowing you to multitask with ease. Whenever you find yourself hitting <kbd>alt + tab</kbd>, you can use Pennywise so you don't have to.
 
 ## Features
 * Always **stays on top** of any open applications
@@ -9,8 +24,7 @@
 * Let's you multitask while you work
 
 ## Usecases
-> Whenever you find yourself using <kbd>alt</kbd>+<kbd>tab</kbd>, use Pennywise so you don't have to
-Pennywise was built specifically to help me in some of my Workflows. However, it shouldn't stop you from using it. Here is the list of some of the possible usecases off the top of my head
+> Pennywise was built specifically to help me in some of my Workflows. However, it shouldn't stop you from using it. Here is the list of some of the possible usecases off the top of my head
 
 * Use it as a floating window for your calendar/checklist/assigned-tickets etc
 * Make video courses? Open the demo in Pennywise and show the output in real time
@@ -35,4 +49,3 @@ Feel free to implement anything from the roadmap, submit pull requests, create i
 
 ## License
 MIT &copy; [Kamran Ahmed](https://twitter.com/kamranahmedse)
-
