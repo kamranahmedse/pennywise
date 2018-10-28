@@ -7,10 +7,10 @@
       <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
     </a>
     <a href="https://github.com/kamranahmedse/pennywise">
-	    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="prs welcome">
+    	<img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue.svg" alt="platforms" />
     </a>
     <a href="https://github.com/kamranahmedse/pennywise">
-    	<img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue.svg" alt="platforms" />
+	    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="prs welcome">
     </a>
   </p>
 </p>
