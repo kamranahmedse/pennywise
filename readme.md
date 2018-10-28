@@ -77,6 +77,7 @@ yarn start
 * [ ] Persist options for the next session
 * [ ] Bookmarking links for later use
 * [ ] Let the clicks pass through
+* [ ] Add more tests
 
 ## Contributions
 Feel free to implement anything from the roadmap, submit pull requests, create issues, discuss ideas or spread the word.

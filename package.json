@@ -26,7 +26,8 @@
     "_build": "react-scripts build",
     "start": "concurrently \"yarn _react\" \"wait-on http://localhost:3000 && yarn _electron\" ",
     "build": "yarn _build && build --mac --win --linux --x64 --ia32 -p always",
-    "icons": "electron-icon-maker -i public/img/pennywise.png -o public"
+    "icons": "electron-icon-maker -i public/img/pennywise.png -o public",
+    "test": "mocha"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -95,7 +96,9 @@
     "electron-builder": "^20.28.4",
     "electron-icon-maker": "^0.0.4",
     "jquery": "^3.3.1",
+    "mocha": "^5.2.0",
     "popper.js": "^1.14.4",
+    "spectron": "^5.0.0",
     "wait-on": "^3.1.0"
   }
 }
