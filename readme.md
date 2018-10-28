@@ -71,6 +71,11 @@ yarn start
 
 ![](https://i.imgur.com/9D3gZwn.png)
 
+#### Why is it named Pennywise?
+
+Because the application helps in floating and [Pennywise loved to do that](http://www.youtube.com/watch?v=WzjWMLv_ZJI&t=3m15s)
+
+![](https://i.imgur.com/bN2ixL7.gif)
 
 ## Planned Roadmap
 
