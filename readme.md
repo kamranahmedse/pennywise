@@ -27,6 +27,10 @@ Pennywise allows you to open anything in a small floating window that always sta
 * **Lean** small resource footprint, minimal User Interface.
 * **Cross-platform** works on MacOS, Windows and Linux
 
+## Installation
+
+Download and install the relevant distribution from the [releases page](http://github.com/kamranahmedse/pennywise/releases)
+
 ## Usecases
 
 > Here is the list of some of the possible usecases off the top of my head
@@ -39,10 +43,6 @@ Pennywise allows you to open anything in a small floating window that always sta
 * Working on something non-familiar? Open the docs in Pennywise
 * Open that live football match that you won't want to miss
 * Use it as a desktop widget
-
-## Installation
-
-Download and install the relevant distribution from the [releases page](http://github.com/kamranahmedse/pennywise/releases)
 
 ## Development
 
