@@ -15,7 +15,7 @@
   </p>
 </p>
 
-Pennywise allows you to open anything in a small floating window that always stays on top of the other applications in all cases, allowing you to multitask with ease. No need to keep struggling with <kbd>alt + tab</kbd>, use pennywise and have your work in front of you all the time.
+Pennywise allows you to open anything in a **small floating window that always stays on top of the other applications** in all cases, allowing you to **multitask with ease**. No need to keep struggling with <kbd>alt + tab</kbd>, use pennywise and have your work in front of you all the time.
 
 ## Features
 * Always **stays on top** of any open applications
