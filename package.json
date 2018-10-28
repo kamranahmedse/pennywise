@@ -25,7 +25,7 @@
     "_electron": "cross-env APP_URL=http://localhost:3000 electron .",
     "_build": "react-scripts build",
     "start": "concurrently \"yarn _react\" \"wait-on http://localhost:3000 && yarn _electron\" ",
-    "build": "yarn _build && build",
+    "build": "yarn _build && build --mac --win --linux --x64 --ia32 -p always",
     "icons": "electron-icon-maker -i public/img/pennywise.png -o public"
   },
   "eslintConfig": {
@@ -41,7 +41,6 @@
     "extends": null,
     "appId": "info.kamranahmed.pennywise",
     "asar": true,
-    "publish": "github",
     "copyright": "Copyright © 2018 Kamran Ahmed",
     "files": [
       "public/**/*",
