@@ -28,6 +28,8 @@ function createWindow() {
     mainWindow.show();
     bindIpc();
   });
+  
+  
 
   mainWindow.on('closed', function () {
     mainWindow = null;
@@ -42,7 +44,7 @@ function createWindow() {
     mainWindow.webContents.openDevTools();
   }
 
-  setMainMenu();
+  setMainMenu(mainWindow);
 }
 
 // Binds the methods for renderer/electron communication

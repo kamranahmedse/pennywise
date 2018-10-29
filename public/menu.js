@@ -1,4 +1,4 @@
-const { app, Menu, shell } = require('electron');
+const { app, Menu, shell, ipcRenderer } = require('electron');
 
 module.exports = {
   setMainMenu
@@ -6,7 +6,25 @@ module.exports = {
 
 const isWindows = process.platform === 'win32';
 
-function setMainMenu() {
+function minus(mainWindow) {
+  const opacity = (mainWindow.getOpacity() * 100) - 10;
+  if (opacity < 20) {
+   return 20 / 100;
+  } else  {
+    return opacity / 100;
+  }
+}
+
+function plus(mainWindow) {
+  const opacity = (mainWindow.getOpacity() * 100) + 10;
+  if (opacity > 100) {
+    return 100 / 100;
+  } else  {
+    return opacity / 100;
+  }
+}
+
+function setMainMenu(mainWindow) {
   const template = [
     {
       label: isWindows ? 'File' : app.getName(),
@@ -23,6 +41,20 @@ function setMainMenu() {
     {
       label: 'Edit',
       submenu: [
+        {
+          label: 'Lower Opacity',
+          accelerator: 'CmdOrCtrl+-',
+          click() {
+            mainWindow.setOpacity(minus(mainWindow));
+          }
+        },
+        {
+          label: 'Increase Opacity',
+          accelerator: 'CmdOrCtrl+=',
+          click() {
+            mainWindow.setOpacity(plus(mainWindow));
+          }
+        },
         { role: 'undo' },
         { role: 'redo' },
         { type: 'separator' }, //just adds a line visually

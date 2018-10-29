@@ -10,65 +10,6 @@ class Settings extends React.Component {
     opacity: ipcRenderer.sendSync('opacity.get')
   };
 
-  componentWillMount() {
-    window.addEventListener("keypress", this.handleKeyPress, false);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener("keypress", this.handleKeyPress);
-  }
-
-  handleKeyPress = e => {
-    var ctrlDown = false,
-        ctrlKey = 17,
-        cmdKey = 91,
-        minus = 189,
-        plus = 187,
-        opacity = this.state.opacity,
-        evtobj = window.event? event : e;
-    
-    if (e.keyCode === ctrlKey || e.keyCode === cmdKey) ctrlDown = true;
-    
-    if (evtobj.keyCode === minus && ctrlDown) {
-      this.reduceOpacity(opacity - 10);
-    }
-    if (evtobj.keyCode === plus && ctrlDown) {
-      this.increaseOpacity(opacity + 10);
-    }
-  }
-
-  reduceOpacity = value => {
-    if (value < 20) {
-      this.setState({
-        opacity: 20
-      });
-      
-      this.setOpacity(20);
-    } else {
-      this.setState({
-        opacity: value
-      });
-      
-      this.setOpacity(value);
-    }
-  };
-
-  increaseOpacity = value => {
-    if (value > 100) {
-      this.setState({
-        opacity: 100
-      });
-      
-      this.setOpacity(100);
-    } else {
-      this.setState({
-        opacity: value
-      });
-      
-      this.setOpacity(value);
-    }
-  };
-
   setOpacity = debounce((opacity) => {
     ipcRenderer.send('opacity.set', opacity);
   }, 500);
