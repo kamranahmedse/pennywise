@@ -6,7 +6,7 @@
   "version": "0.1.0",
   "private": true,
   "main": "public/electron.js",
-  "homepage": "https://github.com/kamranahmedse/pennywise",
+  "homepage": "./",
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.1.3",
@@ -32,21 +32,11 @@
     "extends": "react-app"
   },
   "browserslist": [
-    "chrome 66"
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
   ],
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "chrome": "66",
-            "node": 10
-          }
-        }
-      ]
-    ]
-  },
   "build": {
     "extends": null,
     "appId": "info.kamranahmed.pennywise",
@@ -99,10 +89,9 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.1.0",
+    "node-sass": "^4.9.4",
     "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
-    "node-sass": "^4.9.4",
     "electron": "^3.0.6",
     "electron-builder": "^20.28.4",
     "electron-icon-maker": "^0.0.4",
