@@ -4,7 +4,7 @@
   "productName": "Pennywise",
   "author": "Kamran Ahmed <kamranahmed.se@gmail.com>",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "main": "public/electron.js",
   "homepage": "./",
   "license": "MIT",
@@ -13,7 +13,6 @@
     "font-awesome": "^4.7.0",
     "is-url": "^1.2.4",
     "lodash.debounce": "^4.0.8",
-    "node-sass": "^4.9.4",
     "nprogress": "^0.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
@@ -90,6 +89,7 @@
     ]
   },
   "devDependencies": {
+    "node-sass": "^4.9.4",
     "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
     "electron": "^3.0.6",
