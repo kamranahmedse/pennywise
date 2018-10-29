@@ -27,6 +27,10 @@ function createWindow() {
   mainWindow.on('ready-to-show', () => {
     mainWindow.show();
     bindIpc();
+    
+    if (isDev) {
+      mainWindow.webContents.openDevTools({ mode: 'detach' });
+    }
   });
 
   mainWindow.on('closed', function () {
@@ -37,10 +41,6 @@ function createWindow() {
   mainWindow.setAlwaysOnTop(true);
   mainWindow.setVisibleOnAllWorkspaces(true);
   mainWindow.setFullScreenable(false);
-
-  if (isDev) {
-    mainWindow.webContents.openDevTools();
-  }
 
   setMainMenu();
 }
