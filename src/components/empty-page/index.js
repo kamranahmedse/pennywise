@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import { ReactComponent as Pennywise } from '../../icons/pennywise.svg';
 import './style.scss';
 
+/*
+Creates an empty page where the application will start from. 
+The empty page will have an image of Pennywise and an area to input the URL the user wants to float.
+*/
 class EmptyPage extends React.Component {
   onKeyPress = (e) => {
     if (e.key === 'Enter') {
