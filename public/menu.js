@@ -113,7 +113,7 @@ function setMainMenu(mainWindow) {
         },
         {
           label: `About Version`,
-          click() w{
+          click() {
             shell.openExternal(`https://github.com/kamranahmedse/pennywise/releases/tag/${appVersion}`);
           }
         },
