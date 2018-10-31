@@ -38,7 +38,7 @@ function createWindow() {
   });
 
 
-  if (isDev) {
+  if (isDev && !process.env.DEV_TOOLS) {
     mainWindow.webContents.openDevTools();
   }
 
