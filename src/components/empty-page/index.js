@@ -17,7 +17,7 @@ class EmptyPage extends React.Component {
         <Pennywise/>
         <h1>Pennywise</h1>
         <p>Enter the URL below to get started – I will float it for you</p>
-        <input type="text" placeholder="Enter a URL you would like to see float" onKeyPress={ this.onKeyPress }/>
+        <input type="text" placeholder="Enter a URL you would like to see float" onKeyPress={ this.onKeyPress } autoFocus/>
       </div>
     );
   }
