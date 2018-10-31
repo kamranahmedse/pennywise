@@ -6,6 +6,12 @@ module.exports = {
 
 const isWindows = process.platform === 'win32';
 
+/**
+ * Gets the updated opacity with the given update factor
+ * @param currentOpacity
+ * @param updateFactor
+ * @return {*}
+ */
 function getUpdatedOpacity(currentOpacity, updateFactor) {
   let newOpacity = currentOpacity + updateFactor;
 
@@ -18,6 +24,10 @@ function getUpdatedOpacity(currentOpacity, updateFactor) {
   }
 }
 
+/**
+ * Sets the main menu
+ * @param mainWindow
+ */
 function setMainMenu(mainWindow) {
   const template = [
     {
@@ -37,7 +47,7 @@ function setMainMenu(mainWindow) {
       submenu: [
         {
           label: 'Lower Opacity',
-          accelerator: 'CmdOrCtrl+Down',
+          accelerator: 'CmdOrCtrl+Shift+Down',
           click() {
             mainWindow.setOpacity(
               getUpdatedOpacity(mainWindow.getOpacity(), -0.1)
@@ -46,16 +56,17 @@ function setMainMenu(mainWindow) {
         },
         {
           label: 'Increase Opacity',
-          accelerator: 'CmdOrCtrl+Up',
+          accelerator: 'CmdOrCtrl+Shift+Up',
           click() {
             mainWindow.setOpacity(
               getUpdatedOpacity(mainWindow.getOpacity(), 0.1)
             );
           }
         },
+        { type: 'separator' },
         { role: 'undo' },
         { role: 'redo' },
-        { type: 'separator' }, //just adds a line visually
+        { type: 'separator' },
         { role: 'cut' },
         { role: 'copy' },
         { role: 'paste' },
@@ -66,7 +77,7 @@ function setMainMenu(mainWindow) {
       label: 'Tools',
       submenu: [
         {
-          label: 'Development Window',
+          label: 'Developer Tools',
           accelerator: 'CmdOrCtrl+Alt+I',
           click() {
             mainWindow.webContents.openDevTools();

@@ -38,6 +38,8 @@ function createWindow() {
   });
 
 
+  // Open the dev tools only for dev
+  // and when the flag is not set
   if (isDev && !process.env.DEV_TOOLS) {
     mainWindow.webContents.openDevTools();
   }

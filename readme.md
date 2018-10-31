@@ -53,6 +53,14 @@ yarn install
 yarn start
 ```
 
+## Shortcuts
+
+| **Shortcut**                    |    **Description**   |
+|---------------------------------|----------------------|
+| <kbd>CmdOrCtrl+Shift+Up</kbd>   | Increase Opacity     |
+| <kbd>CmdOrCtrl+Shift+Down</kbd> | Decrease Opacity     |
+| <kbd>CmdOrCtrl+Alt+I</kbd>      | Show Developer Tools |
+
 ## Screenshots
 
 > Homescreen for the application
