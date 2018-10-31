@@ -5,6 +5,7 @@ module.exports = {
 };
 
 const isWindows = process.platform === 'win32';
+const appVersion = app.getVersion();
 
 /**
  * Gets the updated opacity with the given update factor
@@ -99,11 +100,23 @@ function setMainMenu(mainWindow) {
       label: 'Help',
       submenu: [
         {
+          label: 'Found a Bug',
+          click() {
+            shell.openExternal('https://github.com/kamranahmedse/pennywise/issues/new');
+          }
+        },
+        {
           label: 'Learn More',
           click() {
-            shell.openExternal('https://electronjs.org');
+            shell.openExternal('https://github.com/kamranahmedse');
           }
-        }
+        },
+        {
+          label: `About Version`,
+          click() w{
+            shell.openExternal(`https://github.com/kamranahmedse/pennywise/releases/tag/${appVersion}`);
+          }
+        },
       ]
     }
   ];
