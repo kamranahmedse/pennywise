@@ -14,6 +14,7 @@ function createWindow() {
     height: 600,
     backgroundColor: '#16171a',
     show: false,
+    
   });
 
   const isDev = !!process.env.APP_URL;
@@ -27,6 +28,7 @@ function createWindow() {
   mainWindow.on('ready-to-show', () => {
     mainWindow.show();
     bindIpc();
+    mainWindow.setAlwaysOnTop(true);
   });
 
   mainWindow.on('closed', function () {
@@ -34,7 +36,6 @@ function createWindow() {
   });
 
   // Set the window to be always on top
-  mainWindow.setAlwaysOnTop(true);
   mainWindow.setVisibleOnAllWorkspaces(true);
   mainWindow.setFullScreenable(false);
 
