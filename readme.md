@@ -59,6 +59,7 @@ yarn start
 
 | **Shortcut**                    |    **Description**         |
 |---------------------------------|----------------------------|
+| <kbd>CmdOrCtrl + L</kbd>        | Show Navbar and focus URL input  |
 | <kbd>CmdOrCtrl + Shift + L</kbd>    | Toggle Navbar on WebPages  |
 | <kbd>CmdOrCtrl + Shift + Up</kbd>   | Increase Opacity           |
 | <kbd>CmdOrCtrl + Shift + Down</kbd> | Decrease Opacity           |
