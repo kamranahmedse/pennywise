@@ -46,11 +46,18 @@ Download and install the relevant distribution from the [releases page](http://g
 
 ## Development
 
-Clone the repository, install the dependencies and start the app
+1) For Yarn : Clone the repository, install the dependencies and start the app
 
 ```bash
 yarn install
 yarn start
+```
+
+2) For NPM : Clone the repository, install the dependencies and start the app
+
+```bash
+npm install
+npm run start_npm
 ```
 
 ## Screenshots
