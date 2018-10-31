@@ -10,14 +10,16 @@ class Settings extends React.Component {
     opacity: ipcRenderer.sendSync('opacity.get')
   };
 
+  // Debounce the setter so to avoid bombarding
+  // electron with the opacity change requests
   setOpacity = debounce((opacity) => {
     ipcRenderer.send('opacity.set', opacity);
-  }, 500);
+  }, 400);
 
   onOpacityChange = (e) => {
     this.setState({
       opacity: e.target.value
-  });
+    });
 
     this.setOpacity(e.target.value);
   };

@@ -37,7 +37,6 @@ function createWindow() {
     mainWindow = null;
   });
 
-
   // Open the dev tools only for dev
   // and when the flag is not set
   if (isDev && !process.env.DEV_TOOLS) {

@@ -74,8 +74,18 @@ function setMainMenu(mainWindow) {
       ]
     },
     {
-      label: 'Tools',
+      label: 'View',
       submenu: [
+        {
+          label: 'Toggle Navbar',
+          accelerator: 'CmdOrCtrl+Shift+L',
+          click() {
+            mainWindow.webContents.send('nav.toggle');
+          }
+        },
+        {
+          type: 'separator'
+        },
         {
           label: 'Developer Tools',
           accelerator: 'CmdOrCtrl+Alt+I',

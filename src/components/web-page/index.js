@@ -1,15 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as NProgress from 'nprogress';
+
 import './style.scss';
 import NavBar from '../nav-bar';
+
+const { ipcRenderer } = window.require('electron');
 
 class WebPage extends React.Component {
   webView = React.createRef();
   state = {
     url: this.props.url,
+    showNav: true
   };
 
+  /**
+   * Configures the loader and binds it to
+   * the webview
+   */
   configureLoader() {
     NProgress.configure({
       easing: 'ease',
@@ -48,14 +56,31 @@ class WebPage extends React.Component {
     this.webView.current.goForward();
   };
 
+  bindNavBar() {
+    ipcRenderer.on('nav.toggle', () => {
+      this.setState(state => ({
+        showNav: !state.showNav
+      }));
+    });
+  }
+
   componentDidMount() {
     this.configureLoader();
+    this.bindNavBar();
   }
 
   render() {
     return (
       <div className='webpage'>
-        <NavBar url={ this.state.url } onUrl={ this.props.onUrl } onReload={ this.onReload } onBack={ this.onBack } onForward={ this.onForward }/>
+        {
+          this.state.showNav && <NavBar
+            url={ this.state.url }
+            onUrl={ this.props.onUrl }
+            onReload={ this.onReload }
+            onBack={ this.onBack }
+            onForward={ this.onForward }
+          />
+        }
         <webview
           ref={ this.webView }
           id="view"

@@ -55,11 +55,12 @@ yarn start
 
 ## Shortcuts
 
-| **Shortcut**                    |    **Description**   |
-|---------------------------------|----------------------|
-| <kbd>CmdOrCtrl+Shift+Up</kbd>   | Increase Opacity     |
-| <kbd>CmdOrCtrl+Shift+Down</kbd> | Decrease Opacity     |
-| <kbd>CmdOrCtrl+Alt+I</kbd>      | Show Developer Tools |
+| **Shortcut**                    |    **Description**         |
+|---------------------------------|----------------------------|
+| <kbd>CmdOrCtrl+Shift+L</kbd>    | Toggle Navbar on WebPages  |
+| <kbd>CmdOrCtrl+Shift+Up</kbd>   | Increase Opacity           |
+| <kbd>CmdOrCtrl+Shift+Down</kbd> | Decrease Opacity           |
+| <kbd>CmdOrCtrl+Alt+I</kbd>      | Show Developer Tools       |
 
 ## Screenshots
 
