@@ -28,8 +28,6 @@ function createWindow() {
     mainWindow.show();
     bindIpc();
   });
-  
-  
 
   mainWindow.on('closed', function () {
     mainWindow = null;
