@@ -25,11 +25,19 @@ function createWindow() {
 
   // Show the window once the content has been loaded
   mainWindow.on('ready-to-show', () => {
+    // Hide the dock icon before showing and
+    // show it once the app has been displayed
+    // @link https://github.com/electron/electron/issues/10078
+    // @fixme hack to make it show on full-screen windows
+    app.dock.hide();
     mainWindow.show();
+    app.dock.show();
+
     // Set the window to be always on top
     mainWindow.setAlwaysOnTop(true);
     mainWindow.setVisibleOnAllWorkspaces(true);
     mainWindow.setFullScreenable(false);
+
     bindIpc();
   });
 
