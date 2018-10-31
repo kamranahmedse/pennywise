@@ -26,17 +26,17 @@ function createWindow() {
   // Show the window once the content has been loaded
   mainWindow.on('ready-to-show', () => {
     mainWindow.show();
-    bindIpc();
+    // Set the window to be always on top
     mainWindow.setAlwaysOnTop(true);
+    mainWindow.setVisibleOnAllWorkspaces(true);
+    mainWindow.setFullScreenable(false);
+    bindIpc();
   });
 
   mainWindow.on('closed', function () {
     mainWindow = null;
   });
 
-  // Set the window to be always on top
-  mainWindow.setVisibleOnAllWorkspaces(true);
-  mainWindow.setFullScreenable(false);
 
   if (isDev) {
     mainWindow.webContents.openDevTools();
