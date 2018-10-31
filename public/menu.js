@@ -1,10 +1,10 @@
-const { app, Menu, shell } = require("electron");
+const { app, Menu, shell } = require('electron');
 
 module.exports = {
   setMainMenu
 };
 
-const isWindows = process.platform === "win32";
+const isWindows = process.platform === 'win32';
 
 function getUpdatedOpacity(currentOpacity, updateFactor) {
   let newOpacity = currentOpacity + updateFactor;
@@ -21,11 +21,11 @@ function getUpdatedOpacity(currentOpacity, updateFactor) {
 function setMainMenu(mainWindow) {
   const template = [
     {
-      label: isWindows ? "File" : app.getName(),
+      label: isWindows ? 'File' : app.getName(),
       submenu: [
         {
-          label: isWindows ? "Exit" : `Quit ${app.getName()}`,
-          accelerator: isWindows ? null : "CmdOrCtrl+Q",
+          label: isWindows ? 'Exit' : `Quit ${app.getName()}`,
+          accelerator: isWindows ? null : 'CmdOrCtrl+Q',
           click() {
             app.quit();
           }
@@ -33,11 +33,11 @@ function setMainMenu(mainWindow) {
       ]
     },
     {
-      label: "Edit",
+      label: 'Edit',
       submenu: [
         {
-          label: "Lower Opacity",
-          accelerator: "CmdOrCtrl+Down",
+          label: 'Lower Opacity',
+          accelerator: 'CmdOrCtrl+Down',
           click() {
             mainWindow.setOpacity(
               getUpdatedOpacity(mainWindow.getOpacity(), -0.1)
@@ -45,29 +45,29 @@ function setMainMenu(mainWindow) {
           }
         },
         {
-          label: "Increase Opacity",
-          accelerator: "CmdOrCtrl+Up",
+          label: 'Increase Opacity',
+          accelerator: 'CmdOrCtrl+Up',
           click() {
             mainWindow.setOpacity(
               getUpdatedOpacity(mainWindow.getOpacity(), 0.1)
             );
           }
         },
-        { role: "undo" },
-        { role: "redo" },
-        { type: "separator" }, //just adds a line visually
-        { role: "cut" },
-        { role: "copy" },
-        { role: "paste" },
-        { role: "selectall" }
+        { role: 'undo' },
+        { role: 'redo' },
+        { type: 'separator' }, //just adds a line visually
+        { role: 'cut' },
+        { role: 'copy' },
+        { role: 'paste' },
+        { role: 'selectall' }
       ]
     },
     {
-      label: "Tools",
+      label: 'Tools',
       submenu: [
         {
           label: 'Development Window',
-          accelerator: "CmdOrCtrl+Alt+I",
+          accelerator: 'CmdOrCtrl+Alt+I',
           click() {
             mainWindow.webContents.openDevTools();
           }
@@ -75,12 +75,12 @@ function setMainMenu(mainWindow) {
       ]
     },
     {
-      label: "Help",
+      label: 'Help',
       submenu: [
         {
-          label: "Learn More",
+          label: 'Learn More',
           click() {
-            shell.openExternal("https://electronjs.org");
+            shell.openExternal('https://electronjs.org');
           }
         }
       ]
