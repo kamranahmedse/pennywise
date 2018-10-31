@@ -55,12 +55,14 @@ yarn start
 
 ## Shortcuts
 
+> Here is the list of available shortcuts that you may use
+
 | **Shortcut**                    |    **Description**         |
 |---------------------------------|----------------------------|
-| <kbd>CmdOrCtrl+Shift+L</kbd>    | Toggle Navbar on WebPages  |
-| <kbd>CmdOrCtrl+Shift+Up</kbd>   | Increase Opacity           |
-| <kbd>CmdOrCtrl+Shift+Down</kbd> | Decrease Opacity           |
-| <kbd>CmdOrCtrl+Alt+I</kbd>      | Show Developer Tools       |
+| <kbd>CmdOrCtrl + Shift + L</kbd>    | Toggle Navbar on WebPages  |
+| <kbd>CmdOrCtrl + Shift + Up</kbd>   | Increase Opacity           |
+| <kbd>CmdOrCtrl + Shift + Down</kbd> | Decrease Opacity           |
+| <kbd>CmdOrCtrl + Alt + I</kbd>      | Show Developer Tools       |
 
 ## Screenshots
 
