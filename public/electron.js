@@ -14,7 +14,6 @@ function createWindow() {
     height: 600,
     backgroundColor: '#16171a',
     show: false,
-    
   });
 
   const isDev = !!process.env.APP_URL;
