@@ -62,6 +62,12 @@ class WebPage extends React.Component {
         showNav: !state.showNav
       }));
     });
+
+    ipcRenderer.on('nav.show', () => {
+      this.setState({
+        showNav: true
+      });
+    });
   }
 
   componentDidMount() {

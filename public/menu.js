@@ -85,6 +85,14 @@ function setMainMenu(mainWindow) {
           }
         },
         {
+          label: 'Focus URL',
+          accelerator: 'CmdOrCtrl+L',
+          click() {
+            mainWindow.webContents.send('nav.show');
+            mainWindow.webContents.send('nav.focus');
+          }
+        },
+        {
           type: 'separator'
         },
         {
@@ -101,6 +109,12 @@ function setMainMenu(mainWindow) {
       submenu: [
         {
           label: 'Found a Bug',
+          click() {
+            shell.openExternal('https://github.com/kamranahmedse/pennywise/issues/new');
+          }
+        },
+        {
+          label: 'Suggestions',
           click() {
             shell.openExternal('https://github.com/kamranahmedse/pennywise/issues/new');
           }

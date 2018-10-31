@@ -4,7 +4,10 @@ import PropTypes from 'prop-types';
 import './style.scss';
 import Settings from '../settings';
 
+const { ipcRenderer } = window.require('electron');
+
 class NavBar extends Component {
+  urlInput = React.createRef();
   state = {
     url: this.props.url,
     settingsShown: false
@@ -34,6 +37,14 @@ class NavBar extends Component {
     e.target.select();
   };
 
+  componentDidMount() {
+    ipcRenderer.on('nav.focus', () => {
+      if (this.urlInput && this.urlInput.current) {
+        this.urlInput.current.focus();
+      }
+    });
+  }
+
   render() {
     return (
       <>
@@ -42,6 +53,7 @@ class NavBar extends Component {
           <button className="btn-action btn btn-dark d-none d-sm-block d-md-block d-lg-block d-xl-block" onClick={ this.props.onForward }><i className="fa fa-arrow-right"/></button>
           <button className="btn-action btn btn-dark" onClick={ this.props.onReload }><i className="fa fa-refresh"/></button>
           <input
+            ref={ this.urlInput }
             className='search-input'
             type="text"
             placeholder='Enter the URL to load'
