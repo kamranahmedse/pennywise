@@ -46,7 +46,7 @@ function setMainMenu(mainWindow) {
       label: 'Edit',
       submenu: [
         {
-          label: 'Lower Opacity',
+          label: 'Decrease Opacity',
           accelerator: 'CmdOrCtrl+Shift+Down',
           click() {
             mainWindow.setOpacity(
