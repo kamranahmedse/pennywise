@@ -6,7 +6,19 @@ module.exports = {
 
 const isWindows = process.platform === 'win32';
 
-function setMainMenu() {
+function getUpdatedOpacity(currentOpacity, updateFactor) {
+  let newOpacity = currentOpacity + updateFactor;
+
+  if (newOpacity >= 1) {
+    return 1;
+  } else if (newOpacity <= 0.2) {
+    return 0.2;
+  } else {
+    return newOpacity;
+  }
+}
+
+function setMainMenu(mainWindow) {
   const template = [
     {
       label: isWindows ? 'File' : app.getName(),
@@ -23,6 +35,24 @@ function setMainMenu() {
     {
       label: 'Edit',
       submenu: [
+        {
+          label: 'Lower Opacity',
+          accelerator: 'CmdOrCtrl+Down',
+          click() {
+            mainWindow.setOpacity(
+              getUpdatedOpacity(mainWindow.getOpacity(), -0.1)
+            );
+          }
+        },
+        {
+          label: 'Increase Opacity',
+          accelerator: 'CmdOrCtrl+Up',
+          click() {
+            mainWindow.setOpacity(
+              getUpdatedOpacity(mainWindow.getOpacity(), 0.1)
+            );
+          }
+        },
         { role: 'undo' },
         { role: 'redo' },
         { type: 'separator' }, //just adds a line visually
@@ -30,6 +60,18 @@ function setMainMenu() {
         { role: 'copy' },
         { role: 'paste' },
         { role: 'selectall' }
+      ]
+    },
+    {
+      label: 'Tools',
+      submenu: [
+        {
+          label: 'Development Window',
+          accelerator: 'CmdOrCtrl+Alt+I',
+          click() {
+            mainWindow.webContents.openDevTools();
+          }
+        }
       ]
     },
     {

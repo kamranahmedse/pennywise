@@ -17,7 +17,7 @@ class Settings extends React.Component {
   onOpacityChange = (e) => {
     this.setState({
       opacity: e.target.value
-    });
+  });
 
     this.setOpacity(e.target.value);
   };
