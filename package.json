@@ -24,7 +24,9 @@
     "_electron": "cross-env APP_URL=http://localhost:3000 electron .",
     "_build": "react-scripts build",
     "start": "concurrently \"yarn _react\" \"wait-on http://localhost:3000 && yarn _electron\" ",
+    "start_npm": "concurrently \"npm run _react\" \"wait-on http://localhost:3000 && npm run _electron\" ",
     "build": "yarn _build && build --mac --win --linux --x64 --ia32 -p always",
+    "build_npm": "npm run _build && build --mac --win --linux --x64 --ia32 -p always",
     "icons": "electron-icon-maker -i public/img/pennywise.png -o public",
     "test": "mocha"
   },
