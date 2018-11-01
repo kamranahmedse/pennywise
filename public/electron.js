@@ -29,9 +29,9 @@ function createWindow() {
     // show it once the app has been displayed
     // @link https://github.com/electron/electron/issues/10078
     // @fixme hack to make it show on full-screen windows
-    app.dock.hide();
+    app.dock && app.dock.hide();
     mainWindow.show();
-    app.dock.show();
+    app.dock && app.dock.show();
 
     // Set the window to be always on top
     mainWindow.setAlwaysOnTop(true);
