@@ -15,9 +15,11 @@
     "lodash.debounce": "^4.0.8",
     "nprogress": "^0.2.0",
     "prop-types": "^15.6.2",
+    "query-string": "^6.2.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.0.5"
+    "react-scripts": "2.0.5",
+    "url-parse": "^1.4.3"
   },
   "scripts": {
     "_react": "cross-env BROWSER=none react-scripts start",
@@ -89,7 +91,6 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.9.4",
     "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
     "electron": "^3.0.6",
@@ -97,6 +98,7 @@
     "electron-icon-maker": "^0.0.4",
     "jquery": "^3.3.1",
     "mocha": "^5.2.0",
+    "node-sass": "^4.9.4",
     "popper.js": "^1.14.4",
     "spectron": "^5.0.0",
     "wait-on": "^3.1.0"

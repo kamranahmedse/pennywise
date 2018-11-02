@@ -1,38 +1,17 @@
 import React from 'react';
-import isUrl from 'is-url';
 
 import EmptyPage from './components/empty-page';
 import WebPage from './components/web-page';
+import { prepareUrl } from './utils/helpers';
 
 class Browser extends React.Component {
   state = {
     url: ''
   };
 
-  /**
-   * Gets the URL to redirect the user to
-   * @param url
-   * @return {string}
-   */
-  static prepareUrl(url) {
-    url = url.trim();
-    if (!url) {
-      return '';
-    }
-
-    // Search on google if not a URL
-    if (!isUrl(url) && !isUrl(`http://${url}`)) {
-      return `https://www.google.com/search?q=${url}`;
-    }
-
-    // @todo magic URLs support
-
-    return /^http(s)?:\/\//.test(url) ? url : `http://${url}`;
-  }
-
   onUrl = (url) => {
     this.setState({
-      url: Browser.prepareUrl(url)
+      url: prepareUrl(url)
     });
   };
 
