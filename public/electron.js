@@ -12,6 +12,7 @@ function createWindow() {
     title: 'Pennywise',
     width: 700,
     height: 600,
+    autoHideMenuBar: true,
     backgroundColor: '#16171a',
     show: false,
   });
