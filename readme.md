@@ -65,6 +65,8 @@ yarn start
 | <kbd>CmdOrCtrl + Shift + Down</kbd> | Decrease Opacity           |
 | <kbd>CmdOrCtrl + Alt + I</kbd>      | Show Developer Tools       |
 
+> **Note** – Changing the opacity is only supported in Windows and MacOS
+
 ## Screenshots
 
 > Homescreen for the application

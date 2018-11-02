@@ -5,6 +5,7 @@ module.exports = {
 };
 
 const isWindows = process.platform === 'win32';
+const isMac = process.platform === 'darwin';
 const appVersion = app.getVersion();
 
 /**
@@ -23,6 +24,40 @@ function getUpdatedOpacity(currentOpacity, updateFactor) {
   } else {
     return newOpacity;
   }
+}
+
+/**
+ * Conditionally gets the menu items for changing window
+ * opacity if it is supported
+ * @param mainWindow
+ * @return {array}
+ */
+function getOpacityMenuItems(mainWindow) {
+  if (!isWindows && !isMac) {
+    return [];
+  }
+
+  return [
+    {
+      label: 'Decrease Opacity',
+      accelerator: 'CmdOrCtrl+Shift+Down',
+      click() {
+        mainWindow.setOpacity(
+          getUpdatedOpacity(mainWindow.getOpacity(), -0.1)
+        );
+      }
+    },
+    {
+      label: 'Increase Opacity',
+      accelerator: 'CmdOrCtrl+Shift+Up',
+      click() {
+        mainWindow.setOpacity(
+          getUpdatedOpacity(mainWindow.getOpacity(), 0.1)
+        );
+      }
+    },
+    { type: 'separator' },
+  ];
 }
 
 /**
@@ -46,25 +81,7 @@ function setMainMenu(mainWindow) {
     {
       label: 'Edit',
       submenu: [
-        {
-          label: 'Decrease Opacity',
-          accelerator: 'CmdOrCtrl+Shift+Down',
-          click() {
-            mainWindow.setOpacity(
-              getUpdatedOpacity(mainWindow.getOpacity(), -0.1)
-            );
-          }
-        },
-        {
-          label: 'Increase Opacity',
-          accelerator: 'CmdOrCtrl+Shift+Up',
-          click() {
-            mainWindow.setOpacity(
-              getUpdatedOpacity(mainWindow.getOpacity(), 0.1)
-            );
-          }
-        },
-        { type: 'separator' },
+        ...getOpacityMenuItems(mainWindow),
         { role: 'undo' },
         { role: 'redo' },
         { type: 'separator' },
