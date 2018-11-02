@@ -9,18 +9,25 @@ class Browser extends React.Component {
     url: ''
   };
 
+  /**
+   * Gets the URL to redirect the user to
+   * @param url
+   * @return {string}
+   */
   static prepareUrl(url) {
     url = url.trim();
-
     if (!url) {
       return '';
-    } else if (isUrl(url)) {
-      return url;
-    } else if (isUrl(`http://${url}`)) {
-      return `http://${url}`;
-    } else {
+    }
+
+    // Search on google if not a URL
+    if (!isUrl(url) && !isUrl(`http://${url}`)) {
       return `https://www.google.com/search?q=${url}`;
     }
+
+    // @todo magic URLs support
+
+    return /^http(s)?:\/\//.test(url) ? url : `http://${url}`;
   }
 
   onUrl = (url) => {

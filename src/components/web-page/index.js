@@ -7,6 +7,9 @@ import NavBar from '../nav-bar';
 
 const { ipcRenderer } = window.require('electron');
 
+// Used by WebView while loading any pages
+const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36';
+
 class WebPage extends React.Component {
   webView = React.createRef();
   state = {
@@ -88,6 +91,8 @@ class WebPage extends React.Component {
           />
         }
         <webview
+          plugins={ true }
+          userAgent={ USER_AGENT }
           ref={ this.webView }
           id="view"
           className="page"
