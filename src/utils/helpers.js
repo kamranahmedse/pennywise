@@ -9,7 +9,7 @@ import queryString from 'query-string';
  */
 const prepareYoutubeUrl = (url) => {
   const parsedUrl = parseUrl(url, true);
-  if (!parsedUrl.host.includes('youtube.com')) {
+  if (!parsedUrl.host.includes('youtube.com') && !parsedUrl.host.includes('youtu.be')) {
     return url;
   }
 
