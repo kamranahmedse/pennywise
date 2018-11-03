@@ -83,6 +83,8 @@ yarn start
 
 ![](https://i.imgur.com/Xa7inTY.png)
 
+![](https://i.imgur.com/BbqZmcK.png)
+
 ![](https://i.imgur.com/9D3gZwn.png)
 
 #### Why is it named Pennywise?
