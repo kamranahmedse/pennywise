@@ -60,12 +60,15 @@ yarn start
 | **Shortcut**                    |    **Description**         |
 |---------------------------------|----------------------------|
 | <kbd>CmdOrCtrl + L</kbd>        | Show Navbar and focus URL input  |
+| <kbd>CmdOrCtrl + Shift + M</kbd>    | Enable detached mode  |
 | <kbd>CmdOrCtrl + Shift + L</kbd>    | Toggle Navbar on WebPages  |
 | <kbd>CmdOrCtrl + Shift + Up</kbd>   | Increase Opacity           |
 | <kbd>CmdOrCtrl + Shift + Down</kbd> | Decrease Opacity           |
 | <kbd>CmdOrCtrl + Alt + I</kbd>      | Show Developer Tools       |
 
 > **Note** – Changing the opacity is only supported in Windows and MacOS
+
+**Detached Mode** Enabling the detached mode makes Pennywise non-interactive – it will let any interactions fall through to the window below it. To remove the detached mode, focus the window either by clicking the dock icon or by activating it using <kbd>alt + tab</kbd>
 
 ## Screenshots
 

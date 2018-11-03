@@ -81,7 +81,6 @@ function setMainMenu(mainWindow) {
     {
       label: 'Edit',
       submenu: [
-        ...getOpacityMenuItems(mainWindow),
         { role: 'undo' },
         { role: 'redo' },
         { type: 'separator' },
@@ -94,6 +93,7 @@ function setMainMenu(mainWindow) {
     {
       label: 'View',
       submenu: [
+        ...getOpacityMenuItems(mainWindow),
         {
           label: 'Toggle Navbar',
           accelerator: 'CmdOrCtrl+Shift+L',
@@ -107,6 +107,17 @@ function setMainMenu(mainWindow) {
           click() {
             mainWindow.webContents.send('nav.show');
             mainWindow.webContents.send('nav.focus');
+          }
+        },
+        {
+          type: 'separator'
+        },
+        {
+          label: 'Detached Mode',
+          accelerator: 'CmdOrCtrl+Shift+D',
+          click() {
+            app.dock && app.dock.setBadge('Detached');
+            mainWindow.setIgnoreMouseEvents(true);
           }
         },
         {

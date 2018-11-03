@@ -69,10 +69,20 @@ function bindIpc() {
   });
 }
 
+// Makes the app start receiving the mouse interactions again
+function disableDetachedMode() {
+  app.dock && app.dock.setBadge('');
+  mainWindow.setIgnoreMouseEvents(false);
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow);
+
+// Make the window start receiving mouse events on focus/activate
+app.on('browser-window-focus', disableDetachedMode);
+app.on('activate', disableDetachedMode);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
