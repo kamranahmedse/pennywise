@@ -8,8 +8,12 @@
   webview {
     display: inline-flex !important;
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     overflow: hidden;
     border: none;
+  }
+
+  &.with-nav webview {
+    height: calc(100vh - 55px) !important;
   }
 }

@@ -80,7 +80,7 @@ class WebPage extends React.Component {
 
   render() {
     return (
-      <div className='webpage'>
+      <div className={ 'webpage ' + (this.state.showNav && 'with-nav') }>
         {
           this.state.showNav && <NavBar
             url={ this.state.url }
@@ -91,8 +91,8 @@ class WebPage extends React.Component {
           />
         }
         <webview
-          plugins={ true }
-          userAgent={ USER_AGENT }
+          plugins
+          useragent={ USER_AGENT }
           ref={ this.webView }
           id="view"
           className="page"
