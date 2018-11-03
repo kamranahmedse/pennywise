@@ -3,7 +3,7 @@ import parseUrl from 'url-parse';
 import queryString from 'query-string';
 
 /**
- * Prepares the embedable URL for the given youtube URL
+ * Prepares the embed-able URL for the given youtube URL
  * @param url
  * @return {*}
  */
@@ -74,6 +74,27 @@ const prepareTwitchUrl = (url) => {
 };
 
 /**
+ * Prepares dailymotion URL for embed functionality
+ * @param url
+ * @return {*}
+ */
+const prepareDailyMotionUrl = (url) => {
+  url = url.replace(/^http(s)?:\/\/dai\.ly\//, 'http://www.dailymotion.com/video/');
+
+  const parsedUrl = parseUrl(url, true);
+  if (!parsedUrl.host.includes('dailymotion.com') || !parsedUrl.pathname.includes('/video')) {
+    return url;
+  }
+
+  const videoHash = parsedUrl.pathname.replace(/\/video\//g, '');
+  if (!videoHash) {
+    return;
+  }
+
+  return `http://www.dailymotion.com/embed/video/${videoHash}`;
+};
+
+/**
  * Prepares the given URL for loading in webview
  * @param url
  * @return string
@@ -89,15 +110,14 @@ export const prepareUrl = function (url) {
     return `https://www.google.com/search?q=${url}`;
   }
 
-  // @todo return this url if magic URLs are disabled
   url = /^http(s)?:\/\//.test(url) ? url : `http://${url}`;
+
+  // @todo return this url if magic URLs are disabled
 
   url = prepareYoutubeUrl(url);
   url = prepareVimeoUrl(url);
   url = prepareTwitchUrl(url);
-
-  url = url.replace('http://www.dailymotion.com/video/', 'http://www.dailymotion.com/embed/video/');
-  url = url.replace('http://dai.ly/', 'http://www.dailymotion.com/embed/video/');
+  url = prepareDailyMotionUrl(url);
 
   return url;
 };
