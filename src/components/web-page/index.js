@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import * as NProgress from 'nprogress';
+import parseUrl from 'url-parse';
 
 import './style.scss';
 import NavBar from '../nav-bar';
@@ -36,6 +37,19 @@ class WebPage extends React.Component {
 
     currentWebView.addEventListener('did-stop-loading', () => {
       NProgress.done();
+    });
+
+    currentWebView.addEventListener('new-window', (event) => {
+      const currentUrl = this.webView.current.getURL();
+      const newUrl = event.url;
+
+      const parsedCurrentUrl = parseUrl(currentUrl, true);
+      const parsedNewUrl = parseUrl(newUrl, true);
+
+      // Only allow opening windows from current domain to avoid ads-popups
+      if (parsedNewUrl.host === parsedCurrentUrl.host) {
+        this.props.onUrl(newUrl);
+      }
     });
   }
 
@@ -91,7 +105,7 @@ class WebPage extends React.Component {
           />
         }
         <webview
-          plugins
+          plugins="true"
           useragent={ USER_AGENT }
           ref={ this.webView }
           id="view"
