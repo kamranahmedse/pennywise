@@ -77,13 +77,13 @@ yarn start
 
 > Anything running in pennywise stays on top of everything
 
+![](https://i.imgur.com/BbqZmcK.png)
+
 ![](https://i.imgur.com/8VDKGYX.png)
 
 > You can change the opacity too
 
 ![](https://i.imgur.com/Xa7inTY.png)
-
-![](https://i.imgur.com/BbqZmcK.png)
 
 ![](https://i.imgur.com/9D3gZwn.png)
 
