@@ -17,7 +17,7 @@ function createWindow() {
     show: false,
   });
 
-  const isDev = !!process.env.APP_URL;
+  const isDev = process.env.APP_URL;
   if (process.env.APP_URL) {
     mainWindow.loadURL(process.env.APP_URL);
   } else {
