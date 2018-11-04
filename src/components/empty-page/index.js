@@ -13,7 +13,6 @@ class EmptyPage extends React.Component {
 
   onFileChange = (e) => {
     this.props.onFile(document.getElementById("#myFile").files[0].path)
-    //console.log(document.getElementById("#myFile").files[0].path)
   }
 
   render() {

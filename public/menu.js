@@ -1,4 +1,4 @@
-const { app, Menu, shell } = require('electron');
+const { app,dialog, Menu, shell } = require('electron');
 
 module.exports = {
   setMainMenu
@@ -69,6 +69,22 @@ function setMainMenu(mainWindow) {
     {
       label: isWindows ? 'File' : app.getName(),
       submenu: [
+        {
+          label: `Open`,
+          accelerator: isWindows ? null : 'CmdOrCtrl+O',
+          click() {
+            dialog.showOpenDialog(function (fileNames) { 
+      
+              // fileNames is an array that contains all the selected 
+              if(fileNames === undefined) { 
+                 console.log("No file selected"); 
+              
+              } else { 
+                 mainWindow.loadURL(fileNames[0])
+              } 
+           });
+          } 
+        },
         {
           label: isWindows ? 'Exit' : `Quit ${app.getName()}`,
           accelerator: isWindows ? null : 'CmdOrCtrl+Q',
