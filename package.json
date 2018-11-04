@@ -23,7 +23,7 @@
   },
   "scripts": {
     "_react": "cross-env BROWSER=none react-scripts start",
-    "_electron": "cross-env APP_URL=http://localhost:3000 electron .",
+    "_electron": "nodemon --exec \"cross-env APP_URL=http://localhost:3000 electron .\" --ext js --watch public/",
     "_build": "react-scripts build",
     "start": "concurrently \"yarn _react\" \"wait-on http://localhost:3000 && yarn _electron\" ",
     "build": "yarn _build && build --mac --win --linux --x64 --ia32 -p always",
@@ -99,6 +99,7 @@
     "jquery": "^3.3.1",
     "mocha": "^5.2.0",
     "node-sass": "^4.9.4",
+    "nodemon": "^1.18.5",
     "popper.js": "^1.14.4",
     "spectron": "^5.0.0",
     "wait-on": "^3.1.0"
