@@ -71,6 +71,8 @@ function setMainMenu(mainWindow) {
     {
       label: isWindows ? 'File' : app.getName(),
       submenu: [
+        { role: 'close' },
+        { type: 'separator' },
         {
           label: isWindows ? 'Exit' : `Quit ${app.getName()}`,
           accelerator: isWindows ? null : 'CmdOrCtrl+Q',
