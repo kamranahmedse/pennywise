@@ -4,10 +4,12 @@ import PropTypes from 'prop-types';
 import './style.scss';
 import Settings from '../settings';
 
+const os = window.require('os');
 const { ipcRenderer } = window.require('electron');
 
 class NavBar extends Component {
   urlInput = React.createRef();
+  platform = (os.platform() || '').toLowerCase();
   state = {
     url: this.props.url,
     settingsShown: false
@@ -37,12 +39,36 @@ class NavBar extends Component {
     e.target.select();
   };
 
+  /**
+   * Binds the focus event to focus the URL bar
+   */
   componentDidMount() {
     ipcRenderer.on('nav.focus', () => {
       if (this.urlInput && this.urlInput.current) {
         this.urlInput.current.focus();
       }
     });
+  }
+
+  /**
+   * Renders the settings button for changing opacity
+   * @return {*}
+   */
+  renderSettings() {
+    // Only windows and mac support window opacity
+    const supportsOpacity = this.platform === 'darwin' || /^win/.test(this.platform);
+    if (!supportsOpacity) {
+      return null;
+    }
+
+    return (
+      <div className="settings-btn">
+        <button className="btn-action btn btn-dark" onClick={ this.toggleSettings }>
+          { !this.state.settingsShown ? <i className="fa fa-cog"/> : <i className="fa fa-times-circle"/> }
+        </button>
+        { this.state.settingsShown && <Settings/> }
+      </div>
+    );
   }
 
   render() {
@@ -63,16 +89,7 @@ class NavBar extends Component {
             onFocus={ this.onFocus }
           />
           <button className="btn-action btn btn-danger btn-go" onClick={ () => this.props.onUrl('') }><i className='fa fa-times'/></button>
-          <div className="settings-btn">
-            <button className="btn-action btn btn-dark" onClick={ this.toggleSettings }>
-              {
-                !this.state.settingsShown
-                  ? <i className="fa fa-cog"/>
-                  : <i className="fa fa-times-circle"/>
-              }
-            </button>
-            { this.state.settingsShown && <Settings/> }
-          </div>
+          { this.renderSettings() }
         </div>
       </>
     );

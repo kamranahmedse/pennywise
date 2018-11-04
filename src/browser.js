@@ -1,31 +1,17 @@
 import React from 'react';
-import isUrl from 'is-url';
 
 import EmptyPage from './components/empty-page';
 import WebPage from './components/web-page';
+import { prepareUrl } from './utils/helpers';
 
 class Browser extends React.Component {
   state = {
     url: ''
   };
 
-  static prepareUrl(url) {
-    url = url.trim();
-
-    if (!url) {
-      return '';
-    } else if (isUrl(url)) {
-      return url;
-    } else if (isUrl(`http://${url}`)) {
-      return `http://${url}`;
-    } else {
-      return `https://www.google.com/search?q=${url}`;
-    }
-  }
-
   onUrl = (url) => {
     this.setState({
-      url: Browser.prepareUrl(url)
+      url: prepareUrl(url)
     });
   };
 

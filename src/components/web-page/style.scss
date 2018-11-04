@@ -10,5 +10,10 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    border: none;
+  }
+
+  &.with-nav webview {
+    height: calc(100vh - 55px) !important;
   }
 }
