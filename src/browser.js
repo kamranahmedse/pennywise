@@ -17,10 +17,6 @@ class Browser extends React.Component {
     });
   };
 
-  onFile = (file) => {
-    ipcRenderer.send('loadPDF', file);
-  }
-
   render() {
     return (
       <div className='browser-wrap'>

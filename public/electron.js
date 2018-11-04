@@ -71,10 +71,6 @@ function bindIpc() {
     // Divide by 100 – window range is 0.1 to 1.0
     mainWindow.setOpacity(opacity / 100);
   });
-
-  ipcMain.on('loadPDF', (event, file) =>{
-    mainWindow.loadURL(file)
-  })
 }
 
 // Makes the app start receiving the mouse interactions again
