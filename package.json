@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "bootstrap": "^4.1.3",
+    "electron-pdf-window": "^1.0.12",
     "font-awesome": "^4.7.0",
     "is-url": "^1.2.4",
     "lodash.debounce": "^4.0.8",
@@ -24,8 +25,10 @@
   "scripts": {
     "_react": "cross-env BROWSER=none react-scripts start",
     "_electron": "cross-env APP_URL=http://localhost:3000 electron .",
+    "_pdf": "cross-env WIN_URL=file:///Users/akash.joshi/Downloads/1-s2.0-s0885230812000162-main.pdf electron .",
     "_build": "react-scripts build",
-    "start": "concurrently \"yarn _react\" \"wait-on http://localhost:3000 && yarn _electron\" ",
+    "start": "concurrently \"npm run _react\" \"wait-on http://localhost:3000 && npm run _electron\" ",
+    "start_pdf": "concurrently \"npm run _react\" \"wait-on http://localhost:3000 && npm run _pdf\" ",
     "build": "yarn _build && build --mac --win --linux --x64 --ia32 -p always",
     "icons": "electron-icon-maker -i public/img/pennywise.png -o public",
     "test": "mocha"
