@@ -72,7 +72,7 @@ function bindIpc() {
 // Makes the app start receiving the mouse interactions again
 function disableDetachedMode() {
   app.dock && app.dock.setBadge('');
-  mainWindow.setIgnoreMouseEvents(false);
+  mainWindow && mainWindow.setIgnoreMouseEvents(false);
 }
 
 // This method will be called when Electron has finished
