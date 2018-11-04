@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
+const pdfWindow = require('electron-pdf-window')
 const path = require('path');
 
 const { setMainMenu } = require('./menu');
@@ -8,20 +9,35 @@ const { setMainMenu } = require('./menu');
 let mainWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({
-    title: 'Pennywise',
+  const isDev = process.env.APP_URL;
+  if (process.env.APP_URL) {
+    mainWindow = new BrowserWindow({
+      title: 'Pennywise',
+      width: 700,
+      height: 600,
+      autoHideMenuBar: true,
+      backgroundColor: '#16171a',
+      show: false,
+      webPreferences:{
+        plugins:true
+      },
+    });
+    mainWindow.loadURL(process.env.APP_URL);
+  } 
+  if(process.env.WIN_URL) {
+    mainWindow = new pdfWindow({title: 'Pennywise',
     width: 700,
     height: 600,
     autoHideMenuBar: true,
     backgroundColor: '#16171a',
     show: false,
-  });
-
-  const isDev = !!process.env.APP_URL;
-  if (process.env.APP_URL) {
-    mainWindow.loadURL(process.env.APP_URL);
-  } else {
-    mainWindow.loadFile(path.join(__dirname, '../build/index.html'));
+    webPreferences:{
+      plugins:true
+    },})
+    mainWindow.loadURL(process.env.WIN_URL);
+  }
+  else {
+    //mainWindow.loadFile(path.join(__dirname, '../build/index.html'));
   }
 
   // Show the window once the content has been loaded
@@ -72,7 +88,7 @@ function bindIpc() {
 // Makes the app start receiving the mouse interactions again
 function disableDetachedMode() {
   app.dock && app.dock.setBadge('');
-  mainWindow.setIgnoreMouseEvents(false);
+  //mainWindow.setIgnoreMouseEvents(false);
 }
 
 // This method will be called when Electron has finished
