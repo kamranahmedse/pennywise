@@ -9,20 +9,21 @@ const { setMainMenu } = require('./menu');
 let mainWindow;
 
 function createWindow() {
-  const isDev = process.env.APP_URL;
+  mainWindow = new BrowserWindow({
+    title: 'Pennywise',
+    width: 700,
+    height: 600,
+    autoHideMenuBar: true,
+    backgroundColor: '#16171a',
+    show: false,
+    webPreferences:{
+      plugins:true
+    },
+  });
+  pdfWindow.addSupport(mainWindow)
+  
+  const isDev = !!process.env.APP_URL;
   if (process.env.APP_URL) {
-    mainWindow = new BrowserWindow({
-      title: 'Pennywise',
-      width: 700,
-      height: 600,
-      autoHideMenuBar: true,
-      backgroundColor: '#16171a',
-      show: false,
-      webPreferences:{
-        plugins:true
-      },
-    });
-    pdfWindow.addSupport(mainWindow)
     mainWindow.loadURL(process.env.APP_URL);
   } else {
     mainWindow.loadFile(path.join(__dirname, '../build/index.html'));
