@@ -98,12 +98,9 @@ Because the application helps in floating and [Pennywise loved to do that](http:
 
 ## Planned Roadmap
 
-* [ ] Open local files – PDFs, Images, Video, MP3 etc
 * [ ] Global shortcut to load currently selected URL
 * [ ] Persist options and linking options to website
-* [ ] Option to let the clicks pass through
 * [ ] Bookmarking links for later use
-* [ ] Let the clicks pass through
 * [ ] Add more tests
 
 ## Contributions
