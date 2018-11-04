@@ -4,6 +4,8 @@ import EmptyPage from './components/empty-page';
 import WebPage from './components/web-page';
 import { prepareUrl } from './utils/helpers';
 
+const { ipcRenderer } = window.require('electron');
+
 class Browser extends React.Component {
   state = {
     url: ''
@@ -15,13 +17,17 @@ class Browser extends React.Component {
     });
   };
 
+  onFile = (file) => {
+    ipcRenderer.send('loadPDF', file);
+  }
+
   render() {
     return (
       <div className='browser-wrap'>
         {
           this.state.url
             ? <WebPage url={ this.state.url } onUrl={ this.onUrl }/>
-            : <EmptyPage onUrl={ this.onUrl }/>
+            : <EmptyPage onUrl={ this.onUrl } onFile={this.onFile}/>
         }
       </div>
     );

@@ -49,8 +49,8 @@ Download and install the relevant distribution from the [releases page](http://g
 Clone the repository, install the dependencies and start the app
 
 ```bash
-yarn install
-yarn start
+npm install
+npm start
 ```
 
 ## Shortcuts

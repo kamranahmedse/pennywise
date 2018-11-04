@@ -22,22 +22,10 @@ function createWindow() {
         plugins:true
       },
     });
+    pdfWindow.addSupport(mainWindow)
     mainWindow.loadURL(process.env.APP_URL);
-  } 
-  if(process.env.WIN_URL) {
-    mainWindow = new pdfWindow({title: 'Pennywise',
-    width: 700,
-    height: 600,
-    autoHideMenuBar: true,
-    backgroundColor: '#16171a',
-    show: false,
-    webPreferences:{
-      plugins:true
-    },})
-    mainWindow.loadURL(process.env.WIN_URL);
-  }
-  else {
-    //mainWindow.loadFile(path.join(__dirname, '../build/index.html'));
+  } else {
+    mainWindow.loadFile(path.join(__dirname, '../build/index.html'));
   }
 
   // Show the window once the content has been loaded
@@ -83,12 +71,16 @@ function bindIpc() {
     // Divide by 100 – window range is 0.1 to 1.0
     mainWindow.setOpacity(opacity / 100);
   });
+
+  ipcMain.on('loadPDF', (event, file) =>{
+    mainWindow.loadURL(file)
+  })
 }
 
 // Makes the app start receiving the mouse interactions again
 function disableDetachedMode() {
   app.dock && app.dock.setBadge('');
-  //mainWindow.setIgnoreMouseEvents(false);
+  mainWindow && mainWindow.setIgnoreMouseEvents(false);
 }
 
 // This method will be called when Electron has finished
