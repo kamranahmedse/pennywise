@@ -99,7 +99,6 @@ Because the application helps in floating and [Pennywise loved to do that](http:
 ## Planned Roadmap
 
 * [ ] Open local files – PDFs, Images, Video, MP3 etc
-* [ ] Shortcut to change opacity
 * [ ] Global shortcut to load currently selected URL
 * [ ] Persist options and linking options to website
 * [ ] Option to let the clicks pass through
