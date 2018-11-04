@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
+const pdfWindow = require('electron-pdf-window')
 const path = require('path');
 
 const { setMainMenu } = require('./menu');
@@ -8,17 +9,20 @@ const { setMainMenu } = require('./menu');
 let mainWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({
-    title: 'Pennywise',
-    width: 700,
-    height: 600,
-    autoHideMenuBar: true,
-    backgroundColor: '#16171a',
-    show: false,
-  });
-
-  const isDev = !!process.env.APP_URL;
+  const isDev = process.env.APP_URL;
   if (process.env.APP_URL) {
+    mainWindow = new BrowserWindow({
+      title: 'Pennywise',
+      width: 700,
+      height: 600,
+      autoHideMenuBar: true,
+      backgroundColor: '#16171a',
+      show: false,
+      webPreferences:{
+        plugins:true
+      },
+    });
+    pdfWindow.addSupport(mainWindow)
     mainWindow.loadURL(process.env.APP_URL);
   } else {
     mainWindow.loadFile(path.join(__dirname, '../build/index.html'));
@@ -67,6 +71,10 @@ function bindIpc() {
     // Divide by 100 – window range is 0.1 to 1.0
     mainWindow.setOpacity(opacity / 100);
   });
+
+  ipcMain.on('loadPDF', (event, file) =>{
+    mainWindow.loadURL(file)
+  })
 }
 
 // Makes the app start receiving the mouse interactions again
