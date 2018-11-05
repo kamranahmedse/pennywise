@@ -10,7 +10,7 @@
     	<img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue.svg" alt="platforms" />
     </a>
     <a href="https://spectrum.chat/pennywise">
-	    <img src="https://withspectrum.github.io/badge/badge.svg" alt="discussions on spectrum">
+	    <img src="https://img.shields.io/badge/chat-spectrum-blue.svg" alt="discussions on spectrum">
     </a>
   </p>
 </p>
