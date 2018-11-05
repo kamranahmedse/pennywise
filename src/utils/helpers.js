@@ -110,7 +110,7 @@ export const prepareUrl = function (url) {
     return `https://www.google.com/search?q=${url}`;
   }
 
-  url = /^http(s)?:\/\//.test(url) ? url : `http://${url}`;
+  url = /^http(s)?:\/\//.test(url) || /^file:\/\/\//.test(url) ? url : `http://${url}`;
 
   // @todo return this url if magic URLs are disabled
 
