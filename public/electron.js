@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
+const pdfWindow = require('electron-pdf-window')
 const path = require('path');
 
 const { setMainMenu } = require('./menu');
@@ -15,8 +16,12 @@ function createWindow() {
     autoHideMenuBar: true,
     backgroundColor: '#16171a',
     show: false,
+    webPreferences:{
+      plugins:true
+    },
   });
-
+  pdfWindow.addSupport(mainWindow)
+  
   const isDev = !!process.env.APP_URL;
   if (process.env.APP_URL) {
     mainWindow.loadURL(process.env.APP_URL);
