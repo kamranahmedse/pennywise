@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/bKsns66.png" height="148">
+  <img src="https://github.com/akash-joshi/pennywise/blob/master/public/img/pennywise.png?raw=true" height="148">
   <h2 align="center">Pennywise</h2>
   <p align="center">Cross-platform application to open anything in a floating window<p>
   <p align="center">
@@ -71,12 +71,6 @@ yarn start
 **Detached Mode** Enabling the detached mode makes Pennywise non-interactive – it will let any interactions fall through to the window below it. To remove the detached mode, focus the window either by clicking the dock icon or by activating it using <kbd>alt + tab</kbd>
 
 ## Screenshots
-
-> Homescreen for the application
-
-![](https://i.imgur.com/u7fAT99.png)
-
-![](https://i.imgur.com/CeLYoux.png?1)
 
 > Anything running in pennywise stays on top of everything
 
