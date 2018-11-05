@@ -3,7 +3,7 @@
   "description": "Pennywise – Cross-platform application that allows you to open URLs in a floating window that always stays on top.",
   "productName": "Pennywise",
   "author": "Kamran Ahmed <kamranahmed.se@gmail.com>",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "private": true,
   "main": "public/electron.js",
   "homepage": "./",
