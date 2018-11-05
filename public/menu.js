@@ -94,6 +94,15 @@ function setMainMenu(mainWindow) {
     {
       label: 'Edit',
       submenu: [
+        {
+          label: 'Magic URLs',
+          type: 'checkbox',
+          checked: true,
+          click(menuItem) {
+            mainWindow.webContents.send('magicUrls.set', menuItem.checked);
+          }
+        },
+        { type: 'separator' },
         { role: 'undo' },
         { role: 'redo' },
         { type: 'separator' },

@@ -4,16 +4,31 @@ import EmptyPage from './components/empty-page';
 import WebPage from './components/web-page';
 import { prepareUrl } from './utils/helpers';
 
+const { ipcRenderer } = window.require('electron');
+
 class Browser extends React.Component {
   state = {
-    url: ''
+    url: '',
+    magicUrlsEnabled: true
   };
 
   onUrl = (url) => {
     this.setState({
-      url: prepareUrl(url)
+      url: prepareUrl(url, this.state.magicUrlsEnabled),
     });
   };
+
+  onMagicUrlsSet = (event, magicUrlsEnabled) => {
+    this.setState({ magicUrlsEnabled });
+  };
+
+  componentDidMount() {
+    ipcRenderer.on('magicUrls.set', this.onMagicUrlsSet);
+  }
+
+  componentWillUnMount() {
+    ipcRenderer.removeEventListener('magicUrls.set', this.onMagicUrlsSet);
+  }
 
   render() {
     return (

@@ -97,9 +97,10 @@ const prepareDailyMotionUrl = (url) => {
 /**
  * Prepares the given URL for loading in webview
  * @param url
+ * @param useMagicUrls
  * @return string
  */
-export const prepareUrl = function (url) {
+export const prepareUrl = function (url, useMagicUrls = true) {
   url = url.trim();
   if (!url) {
     return '';
@@ -112,7 +113,11 @@ export const prepareUrl = function (url) {
 
   url = /^http(s)?:\/\//.test(url) ? url : `http://${url}`;
 
-  // @todo return this url if magic URLs are disabled
+  // Magic URLs turn a normal link to embed link for some video streaming services,
+  // return the normal URL if that is not required
+  if (!useMagicUrls) {
+    return url;
+  }
 
   url = prepareYoutubeUrl(url);
   url = prepareVimeoUrl(url);
