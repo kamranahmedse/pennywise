@@ -10,11 +10,23 @@ class Settings extends React.Component {
     opacity: ipcRenderer.sendSync('opacity.get')
   };
 
+  componentDidMount() {
+    ipcRenderer.on('opacity.sync', this.onOpacitySync);
+  }
+
+  componentWillUnmount() {
+    ipcRenderer.removeListener('opacity.sync', this.onOpacitySync);
+  }
+
   // Debounce the setter so to avoid bombarding
   // electron with the opacity change requests
   setOpacity = debounce((opacity) => {
     ipcRenderer.send('opacity.set', opacity);
   }, 400);
+
+  onOpacitySync = (event, opacity) => {
+    this.setState({ opacity });
+  }
 
   onOpacityChange = (e) => {
     this.setState({
