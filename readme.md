@@ -9,8 +9,8 @@
     <a href="https://github.com/kamranahmedse/pennywise">
     	<img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue.svg" alt="platforms" />
     </a>
-    <a href="https://spectrum.chat/pennywise">
-	    <img src="https://img.shields.io/badge/chat-spectrum-yellowgreen.svg" alt="discussions on spectrum">
+    <a href="https://github.com/kamranahmedse/pennywise">
+	    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="prs welcome">
     </a>
   </p>
 </p>
