@@ -9,25 +9,25 @@ const { ipcRenderer } = window.require('electron');
 class Browser extends React.Component {
   state = {
     url: '',
-    magicUrlsEnabled: true
+    embedVideosEnabled: true
   };
 
   onUrl = (url) => {
     this.setState({
-      url: prepareUrl(url, this.state.magicUrlsEnabled),
+      url: prepareUrl(url, this.state.embedVideosEnabled),
     });
   };
 
-  onMagicUrlsSet = (event, magicUrlsEnabled) => {
-    this.setState({ magicUrlsEnabled });
+  onembedVideosSet = (event, embedVideosEnabled) => {
+    this.setState({ embedVideosEnabled });
   };
 
   componentDidMount() {
-    ipcRenderer.on('magicUrls.set', this.onMagicUrlsSet);
+    ipcRenderer.on('embedVideos.set', this.onembedVideosSet);
   }
 
   componentWillUnMount() {
-    ipcRenderer.removeEventListener('magicUrls.set', this.onMagicUrlsSet);
+    ipcRenderer.removeEventListener('embedVideos.set', this.onembedVideosSet);
   }
 
   render() {

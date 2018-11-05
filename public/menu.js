@@ -95,11 +95,11 @@ function setMainMenu(mainWindow) {
       label: 'Edit',
       submenu: [
         {
-          label: 'Magic URLs',
+          label: 'Embed Videos',
           type: 'checkbox',
           checked: true,
           click(menuItem) {
-            mainWindow.webContents.send('magicUrls.set', menuItem.checked);
+            mainWindow.webContents.send('embedVideos.set', menuItem.checked);
           }
         },
         { type: 'separator' },
