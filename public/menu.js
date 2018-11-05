@@ -151,7 +151,13 @@ function setMainMenu(mainWindow) {
           click() {
             mainWindow.webContents.openDevTools();
           }
-        }
+        },
+        { type: 'separator' },
+        { role: 'resetzoom' },
+        { role: 'zoomin', accelerator: 'CmdOrCtrl+=' },
+        { role: 'zoomout' },
+        { type: 'separator' },
+        { role: 'togglefullscreen' }
       ]
     },
     {
