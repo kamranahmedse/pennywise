@@ -71,11 +71,9 @@ function setMainMenu(mainWindow) {
     {
       label: isWindows ? 'File' : app.getName(),
       submenu: [
-        { role: 'close' },
-        { type: 'separator' },
-        {
+       {
           label: `Open`,
-          accelerator: isWindows ? null : 'CmdOrCtrl+O',
+          accelerator: 'CmdOrCtrl+O',
           click() {
             dialog.showOpenDialog(function (fileNames) { 
       
@@ -84,18 +82,15 @@ function setMainMenu(mainWindow) {
                  console.log("No file selected"); 
               
               } else { 
-                 mainWindow.loadURL(fileNames[0])
+				url = /^file:\/\/\//.test(fileNames[0]) ? fileNames[0] : `file://${fileNames[0]}`
+				console.log(url)
+                 mainWindow.loadURL(url)
               } 
            });
           } 
         },
-        {
-          label: isWindows ? 'Exit' : `Quit ${app.getName()}`,
-          accelerator: isWindows ? null : 'CmdOrCtrl+Q',
-          click() {
-            app.quit();
-          }
-        }
+		{ type: 'separator' },
+        { role: 'close' },
       ]
     },
     {
