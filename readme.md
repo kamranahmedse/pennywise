@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://i.imgur.com/bKsns66.png" height="148">
   <h2 align="center">Pennywise</h2>
-  <p align="center">Cross-platform application to open anything in a floating window<p>
+  <p align="center">Cross-platform application to open website or media in a floating window<p>
   <p align="center">
     <a href="https://github.com/kamranahmedse/pennywise/blob/master/license">
       <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
@@ -15,7 +15,7 @@
   </p>
 </p>
 
-Pennywise allows you to open anything in a **small floating window that always stays on top of the other applications** all the time, allowing you to **multitask with ease**. No need to keep struggling with <kbd>alt + tab</kbd>, use pennywise and have your work in front of you all the time.
+Pennywise allows you to open any website or media in a **small floating window that always stays on top of the other applications** all the time, allowing you to **multitask with ease**. No need to keep struggling with <kbd>alt + tab</kbd>, use pennywise and have your work in front of you all the time.
 
 ## Features
 * Always **stays on top** of any open applications
@@ -89,6 +89,11 @@ yarn start
 ![](https://i.imgur.com/Xa7inTY.png)
 
 ![](https://i.imgur.com/9D3gZwn.png)
+
+## Auto-embed Videos
+For some video streaming websites such as Youtube, Vimeo, Twitch, Daily Motion etc, Pennywise shows you the video only web page by default (using the auto-generated embed links), showing you the video in a distract free manner. You can disable that by toggling the `Edit > Embed Videos`.
+
+> **Note** – In case of youtube, [it might not work sometime](https://github.com/kamranahmedse/pennywise/issues/62) when the user has put restrictions on the video – in that case, you will have to disable "Auto Embed" option from the Edit menu to make them work. 
 
 #### Why is it named Pennywise?
 

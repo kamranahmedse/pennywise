@@ -1,4 +1,4 @@
-const { app, Menu, shell } = require('electron');
+const { app, dialog, Menu, shell } = require('electron');
 
 module.exports = {
   setMainMenu
@@ -71,20 +71,38 @@ function setMainMenu(mainWindow) {
     {
       label: isWindows ? 'File' : app.getName(),
       submenu: [
-        { role: 'close' },
-        { type: 'separator' },
         {
-          label: isWindows ? 'Exit' : `Quit ${app.getName()}`,
-          accelerator: isWindows ? null : 'CmdOrCtrl+Q',
+          label: 'Open',
+          accelerator: 'CmdOrCtrl+O',
           click() {
-            app.quit();
+            dialog.showOpenDialog(function (fileNames) {
+              if (!fileNames || !fileNames[0]) {
+                return;
+              }
+
+              // For the file URLs, load them directly
+              // Append the `file://` prefix otherwise
+              const url = /^file:\/\/\//.test(fileNames[0]) ? fileNames[0] : `file://${fileNames[0]}`;
+              mainWindow.loadURL(url);
+            });
           }
-        }
+        },
+        { type: 'separator' },
+        { role: 'quit' },
       ]
     },
     {
       label: 'Edit',
       submenu: [
+        {
+          label: 'Embed Videos',
+          type: 'checkbox',
+          checked: true,
+          click(menuItem) {
+            mainWindow.webContents.send('embedVideos.set', menuItem.checked);
+          }
+        },
+        { type: 'separator' },
         { role: 'undo' },
         { role: 'redo' },
         { type: 'separator' },
@@ -133,7 +151,12 @@ function setMainMenu(mainWindow) {
           click() {
             mainWindow.webContents.openDevTools();
           }
-        }
+        },
+        { type: 'separator' },
+        { role: 'resetzoom' },
+        { role: 'zoomin', accelerator: 'CmdOrCtrl+=' },
+        { role: 'zoomout' },
+        { type: 'separator' },
       ]
     },
     {

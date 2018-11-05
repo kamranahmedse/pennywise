@@ -39,15 +39,18 @@ class NavBar extends Component {
     e.target.select();
   };
 
-  /**
-   * Binds the focus event to focus the URL bar
-   */
+  focusUrlInput = () => {
+    if (this.urlInput && this.urlInput.current) {
+      this.urlInput.current.focus();
+    }
+  };
+
   componentDidMount() {
-    ipcRenderer.on('nav.focus', () => {
-      if (this.urlInput && this.urlInput.current) {
-        this.urlInput.current.focus();
-      }
-    });
+    ipcRenderer.on('nav.focus', this.focusUrlInput);
+  }
+
+  componentWillUnMount() {
+    ipcRenderer.removeListener('nav.focus', this.focusUrlInput);
   }
 
   /**

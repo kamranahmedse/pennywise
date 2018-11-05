@@ -73,23 +73,32 @@ class WebPage extends React.Component {
     this.webView.current.goForward();
   };
 
-  bindNavBar() {
-    ipcRenderer.on('nav.toggle', () => {
-      this.setState(state => ({
-        showNav: !state.showNav
-      }));
-    });
+  toggleNavBar = () => {
+    this.setState(state => ({
+      showNav: !state.showNav
+    }));
+  };
 
-    ipcRenderer.on('nav.show', () => {
-      this.setState({
-        showNav: true
-      });
+  showNavBar = () => {
+    this.setState({
+      showNav: true
     });
+  };
+
+  bindNavBar() {
+    ipcRenderer.on('nav.toggle', this.toggleNavBar);
+    ipcRenderer.on('nav.show', this.showNavBar);
+  }
+
+  unbindNavBar() {
+    ipcRenderer.removeListener('opacity.toggle', this.toggleNavBar);
+    ipcRenderer.removeListener('nav.show', this.showNavBar);
   }
 
   componentDidMount() {
     this.configureLoader();
     this.bindNavBar();
+    this.unbindNavBar();
   }
 
   render() {

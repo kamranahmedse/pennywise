@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
+const pdfWindow = require('electron-pdf-window');
 const path = require('path');
 
 const { setMainMenu } = require('./menu');
@@ -15,7 +16,12 @@ function createWindow() {
     autoHideMenuBar: true,
     backgroundColor: '#16171a',
     show: false,
+    webPreferences: {
+      plugins: true
+    },
   });
+
+  pdfWindow.addSupport(mainWindow);
 
   const isDev = !!process.env.APP_URL;
   if (process.env.APP_URL) {
@@ -86,11 +92,7 @@ app.on('activate', disableDetachedMode);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
-  // On OS X it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+  app.quit();
 });
 
 app.on('activate', function () {
