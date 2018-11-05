@@ -53,6 +53,16 @@ class NavBar extends Component {
     ipcRenderer.removeListener('nav.focus', this.focusUrlInput);
   }
 
+  // Check if there's a url update, and set state accordingly so
+  // correct url is displayed in navbar
+  componentDidUpdate(prevProps) {
+    if (this.props.url !== prevProps.url) {
+      this.setState({
+        url: this.props.url
+      })
+    }
+  }
+
   /**
    * Renders the settings button for changing opacity
    * @return {*}
