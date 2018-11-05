@@ -30,8 +30,7 @@ class EmptyPage extends React.Component {
 }
 
 EmptyPage.propTypes = {
-  onUrl: PropTypes.func.isRequired,
-  onFile: PropTypes.func.isRequired
+  onUrl: PropTypes.func.isRequired
 };
 
 export default EmptyPage;
