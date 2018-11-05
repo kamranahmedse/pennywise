@@ -1,7 +1,7 @@
 <p align="center">
   <img src="https://i.imgur.com/bKsns66.png" height="148">
   <h2 align="center">Pennywise</h2>
-  <p align="center">Cross-platform application to open anything in a floating window<p>
+  <p align="center">Cross-platform application to open website or media in a floating window<p>
   <p align="center">
     <a href="https://github.com/kamranahmedse/pennywise/blob/master/license">
       <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
@@ -15,7 +15,7 @@
   </p>
 </p>
 
-Pennywise allows you to open anything in a **small floating window that always stays on top of the other applications** all the time, allowing you to **multitask with ease**. No need to keep struggling with <kbd>alt + tab</kbd>, use pennywise and have your work in front of you all the time.
+Pennywise allows you to open any website or media in a **small floating window that always stays on top of the other applications** all the time, allowing you to **multitask with ease**. No need to keep struggling with <kbd>alt + tab</kbd>, use pennywise and have your work in front of you all the time.
 
 ## Features
 * Always **stays on top** of any open applications
