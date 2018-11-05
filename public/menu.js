@@ -71,9 +71,7 @@ function setMainMenu(mainWindow) {
     {
       label: isWindows ? 'File' : app.getName(),
       submenu: [
-        { role: 'close' },
-        { type: 'separator' },
-        {
+		{
           label: `Open`,
           accelerator: isWindows ? null : 'CmdOrCtrl+O',
           click() {
@@ -89,13 +87,8 @@ function setMainMenu(mainWindow) {
            });
           } 
         },
-        {
-          label: isWindows ? 'Exit' : `Quit ${app.getName()}`,
-          accelerator: isWindows ? null : 'CmdOrCtrl+Q',
-          click() {
-            app.quit();
-          }
-        }
+        { role: 'close' },
+        { type: 'separator' },
       ]
     },
     {

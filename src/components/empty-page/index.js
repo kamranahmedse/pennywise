@@ -11,10 +11,6 @@ class EmptyPage extends React.Component {
     }
   };
 
-  onFileChange = (e) => {
-    this.props.onFile(document.getElementById("#myFile").files[0].path)
-  }
-
   render() {
     return (
       <div className='empty-page'>
@@ -22,7 +18,6 @@ class EmptyPage extends React.Component {
         <h1>Pennywise</h1>
         <p>Enter the URL below to get started – I will float it for you</p>
         <input type="text" placeholder="Enter a URL you would like to see float" onKeyPress={ this.onKeyPress } autoFocus/>
-        <input id="#myFile" type="file" onChange={this.onFileChange}/>
       </div>
     );
   }
