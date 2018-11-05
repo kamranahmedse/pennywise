@@ -73,7 +73,7 @@ function setMainMenu(mainWindow) {
       submenu: [
 		{
           label: `Open`,
-          accelerator: isWindows ? null : 'CmdOrCtrl+O',
+          accelerator: 'CmdOrCtrl+O',
           click() {
             dialog.showOpenDialog(function (fileNames) { 
       
@@ -82,13 +82,15 @@ function setMainMenu(mainWindow) {
                  console.log("No file selected"); 
               
               } else { 
-                 mainWindow.loadURL(fileNames[0])
+				url = /^file:\/\/\//.test(fileNames[0]) ? fileNames[0] : `file://${fileNames[0]}`
+				console.log(url)
+                 mainWindow.loadURL(url)
               } 
            });
           } 
         },
+		{ type: 'separator' },
         { role: 'close' },
-        { type: 'separator' },
       ]
     },
     {

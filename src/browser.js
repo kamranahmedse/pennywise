@@ -11,7 +11,7 @@ class Browser extends React.Component {
 
   onUrl = (url) => {
     this.setState({
-      url: prepareUrl(url)
+      url: url//prepareUrl(url)
     });
   };
 

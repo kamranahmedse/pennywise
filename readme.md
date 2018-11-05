@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://github.com/akash-joshi/pennywise/blob/master/public/img/pennywise.png?raw=true" height="148">
-  <h2 align="center">Pennywise</h2>
+  <h2 align="center">Pennywise-Plus</h2>
   <p align="center">Cross-platform application to open anything in a floating window<p>
   <p align="center">
     <a href="https://github.com/kamranahmedse/pennywise/blob/master/license">
