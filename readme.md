@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/akash-joshi/pennywise/merger/public/img/balloon.png" height="148">
+  <img src="https://i.imgur.com/bKsns66.png" height="148">
   <h2 align="center">Pennywise</h2>
   <p align="center">Cross-platform application to open anything in a floating window<p>
   <p align="center">
