@@ -157,7 +157,6 @@ function setMainMenu(mainWindow) {
         { role: 'zoomin', accelerator: 'CmdOrCtrl+=' },
         { role: 'zoomout' },
         { type: 'separator' },
-        { role: 'togglefullscreen' }
       ]
     },
     {
