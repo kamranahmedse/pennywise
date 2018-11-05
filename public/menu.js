@@ -42,18 +42,20 @@ function getOpacityMenuItems(mainWindow) {
       label: 'Decrease Opacity',
       accelerator: 'CmdOrCtrl+Shift+Down',
       click() {
-        mainWindow.setOpacity(
-          getUpdatedOpacity(mainWindow.getOpacity(), -0.1)
-        );
+        const nextOpacity = getUpdatedOpacity(mainWindow.getOpacity(), -0.1);
+
+        mainWindow.webContents.send('opacity.sync', nextOpacity * 100);
+        mainWindow.setOpacity(nextOpacity);
       }
     },
     {
       label: 'Increase Opacity',
       accelerator: 'CmdOrCtrl+Shift+Up',
       click() {
-        mainWindow.setOpacity(
-          getUpdatedOpacity(mainWindow.getOpacity(), 0.1)
-        );
+        const nextOpacity = getUpdatedOpacity(mainWindow.getOpacity(), 0.1);
+
+        mainWindow.webContents.send('opacity.sync', nextOpacity * 100);
+        mainWindow.setOpacity(nextOpacity);
       }
     },
     { type: 'separator' },
@@ -69,6 +71,8 @@ function setMainMenu(mainWindow) {
     {
       label: isWindows ? 'File' : app.getName(),
       submenu: [
+        { role: 'close' },
+        { type: 'separator' },
         {
           label: `Open`,
           accelerator: isWindows ? null : 'CmdOrCtrl+O',
