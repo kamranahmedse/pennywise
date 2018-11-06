@@ -58,6 +58,13 @@ class WebPage extends React.Component {
         url: event.url
       });
     });
+
+    // Also handle in-page navigation
+    currentWebView.addEventListener('did-navigate-in-page', (event) => {
+      this.setState({
+        url: event.url
+      });
+    });
   }
 
   onReload = () => {
