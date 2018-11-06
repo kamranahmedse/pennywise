@@ -87,6 +87,7 @@ function setMainMenu(mainWindow) {
             });
           }
         },
+        { role: 'close' },
         { type: 'separator' },
         { role: 'quit' },
       ]
