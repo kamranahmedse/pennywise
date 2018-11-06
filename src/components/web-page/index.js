@@ -51,6 +51,20 @@ class WebPage extends React.Component {
         this.props.onUrl(newUrl);
       }
     });
+
+    // Capture link clicks on page and update state with new url
+    currentWebView.addEventListener('did-navigate', (event) => {
+      this.setState({
+        url: event.url
+      });
+    });
+
+    // Also handle in-page navigation
+    currentWebView.addEventListener('did-navigate-in-page', (event) => {
+      this.setState({
+        url: event.url
+      });
+    });
   }
 
   onReload = () => {
