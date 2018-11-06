@@ -111,7 +111,7 @@ export const prepareUrl = function (url, useembedVideos = true) {
     return `https://www.google.com/search?q=${url}`;
   }
 
-  url = /^http(s)?:\/\//.test(url) ? url : `http://${url}`;
+  url = /^http(s)?:\/\//.test(url) || /^file:\/\/\//.test(url) ? url : `http://${url}`;
 
   // Magic URLs turn a normal link to embed link for some video streaming services,
   // return the normal URL if that is not required
