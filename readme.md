@@ -15,7 +15,7 @@
   </p>
 </p>
 
-Pennywise allows you to open any website or media in a **small floating window that always stays on top of the other applications** all the time, allowing you to **multitask with ease**. No need to keep struggling with <kbd>alt + tab</kbd>, use pennywise and have your work in front of you all the time.
+Pennywise opens any website or media in a **small floating window that remains on top of all other applications**. Pennywise windows stays up **all the time**. No need to keep struggling with <kbd>alt + tab</kbd>, use Pennywise for **easy multitasking**.
 
 ## Features
 * Always **stays on top** of any open applications
@@ -68,7 +68,8 @@ yarn start
 
 > **Note** – Changing the opacity is only supported in Windows and MacOS
 
-**Detached Mode** Enabling the detached mode makes Pennywise non-interactive – it will let any interactions fall through to the window below it. To remove the detached mode, focus the window either by clicking the dock icon or by activating it using <kbd>alt + tab</kbd>
+**Detached Mode** 
+* Enabling the detached mode makes Pennywise non-interactive – it will let any interactions fall through to the window below it. To remove the detached mode, focus the window either by clicking the dock icon or by activating it using <kbd>alt + tab</kbd>
 
 ## Screenshots
 
