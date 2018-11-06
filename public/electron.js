@@ -1,4 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
+const { autoUpdater } = require('electron-updater');
 const pdfWindow = require('electron-pdf-window');
 const path = require('path');
 
@@ -81,10 +82,17 @@ function disableDetachedMode() {
   mainWindow && mainWindow.setIgnoreMouseEvents(false);
 }
 
+function checkAndDownloadUpdate() {
+  autoUpdater.checkForUpdatesAndNotify();
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.on('ready', function () {
+  createWindow();
+  checkAndDownloadUpdate();
+});
 
 // Make the window start receiving mouse events on focus/activate
 app.on('browser-window-focus', disableDetachedMode);
