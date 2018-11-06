@@ -83,13 +83,6 @@ function disableDetachedMode() {
 }
 
 function checkAndDownloadUpdate() {
-  autoUpdater.setFeedURL({
-    provider: 'github',
-    owner: 'kamranahmedse',
-    protocol: 'https',
-    repo: 'pennywise',
-  });
-
   autoUpdater.checkForUpdatesAndNotify();
 }
 
