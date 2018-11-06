@@ -11,6 +11,7 @@
   "dependencies": {
     "bootstrap": "^4.1.3",
     "electron-pdf-window": "^1.0.12",
+    "electron-updater": "^3.1.6",
     "font-awesome": "^4.7.0",
     "is-url": "^1.2.4",
     "lodash.debounce": "^4.0.8",
@@ -53,7 +54,6 @@
     ],
     "mac": {
       "category": "public.app-category.navigation",
-      "target": "dmg",
       "icon": "public/img/icon.icns"
     },
     "linux": {
