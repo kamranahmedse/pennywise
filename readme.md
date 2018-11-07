@@ -104,10 +104,9 @@ Because the application helps in floating and [Pennywise loved to do that](http:
 
 ## Planned Roadmap
 
-* [ ] Global shortcut to load currently selected URL
 * [ ] Persist options and linking options to website
 * [ ] Bookmarking links for later use
-* [ ] Add more tests
+* [ ] Write tests
 
 ## Contributions
 Feel free to implement anything from the roadmap, submit pull requests, create issues, discuss ideas or spread the word.
