@@ -1,7 +1,6 @@
 .empty-page {
   padding-top: 1px;
   max-width: 560px;
-  min-height: 100vh;
   text-align: center;
   min-height: 100vh;
   margin: 0 auto;
@@ -12,21 +11,26 @@
 
   h1 {
     font-weight: 700;
-    font-size: 10vh;
+    font-size: 55px;
     margin-bottom: 1vh;
+    @media (max-height: 300px) {
+      display: none;
+    }
   }
 
   p {
-    font-size: 3.5vh;
+    font-size: 18px;
     font-weight: 500;
-    margin-bottom: 2vh;
+    @media (max-height: 425px) {
+      display: none;
+    }
   }
 
   input {
-    font-size: 3.5vh;
+    font-size: 18px;
     font-weight: 500;
-    margin-top: 1vh;
-    padding: 3vh 4vh;
+    margin-top: 1.5vh;
+    padding: 15px 20px;
     box-shadow: none;
     border-radius: 80px;
     border: none;
@@ -38,7 +42,11 @@
 
   svg {
     width: 50vh;
-    margin-bottom: 1.5vh;
+    height: 50vh;
+    margin-bottom: 2vh;
+    @media (max-height: 125px) {
+      display: none;
+    }
   }
 }
 
