@@ -57,14 +57,14 @@ yarn start
 
 > Here is the list of available shortcuts that you may use
 
-| **Shortcut**                    |    **Description**         |
-|---------------------------------|----------------------------|
-| <kbd>CmdOrCtrl + L</kbd>        | Show Navbar and focus URL input  |
-| <kbd>CmdOrCtrl + Shift + M</kbd>    | Enable detached mode  |
-| <kbd>CmdOrCtrl + Shift + L</kbd>    | Toggle Navbar on WebPages  |
-| <kbd>CmdOrCtrl + Shift + Up</kbd>   | Increase Opacity           |
-| <kbd>CmdOrCtrl + Shift + Down</kbd> | Decrease Opacity           |
-| <kbd>CmdOrCtrl + Alt + I</kbd>      | Show Developer Tools       |
+| **Shortcut**                       | **Description**                  |
+|------------------------------------|----------------------------------|
+| <kbd>Cmd/Ctrl + L</kbd>            | Show Navbar and focus URL input  |
+| <kbd>Cmd/Ctrl + Shift + M</kbd>    | Enable detached mode             |
+| <kbd>Cmd/Ctrl + Shift + L</kbd>    | Toggle Navbar on WebPages        |
+| <kbd>Cmd/Ctrl + Shift + Up</kbd>   | Increase Opacity                 |
+| <kbd>Cmd/Ctrl + Shift + Down</kbd> | Decrease Opacity                 |
+| <kbd>Cmd/Ctrl + Alt + I</kbd>      | Show Developer Tools             |
 
 > **Note** – Changing the opacity is only supported in Windows and MacOS
 
