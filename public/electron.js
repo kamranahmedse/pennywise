@@ -83,7 +83,11 @@ function disableDetachedMode() {
 }
 
 function checkAndDownloadUpdate() {
-  autoUpdater.checkForUpdatesAndNotify();
+  try {
+    autoUpdater.checkForUpdatesAndNotify();
+  } catch (e) {
+    console.log(e.message);
+  }
 }
 
 // This method will be called when Electron has finished
