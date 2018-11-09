@@ -29,11 +29,13 @@ Pennywise opens any website or media in a **small floating window that remains o
 
 ## Installation
 
-### General
-Download and install the relevant distribution from the [releases page](http://github.com/kamranahmedse/pennywise/releases)
+Download and install the relevant distribution from the [releases page](http://github.com/kamranahmedse/pennywise/releases).
 
-### macOS (Homebrew)
-`brew cask install pennywise`
+If you are on MacOS, you can use [Homebrew](https://brew.sh/) to install it
+
+```
+brew cask install pennywise
+```
 
 ## Usecases
 
