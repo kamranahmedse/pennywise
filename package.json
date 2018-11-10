@@ -1,0 +1,108 @@
+{
+  "name": "pennywise",
+  "description": "Pennywise – Cross-platform application that allows you to open URLs in a floating window that always stays on top.",
+  "productName": "Pennywise",
+  "author": "Kamran Ahmed <kamranahmed.se@gmail.com>",
+  "version": "0.6.2",
+  "private": true,
+  "main": "public/electron.js",
+  "homepage": "./",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "electron-pdf-window": "^1.0.12",
+    "electron-updater": "^3.1.6",
+    "font-awesome": "^4.7.0",
+    "is-url": "^1.2.4",
+    "lodash.debounce": "^4.0.8",
+    "nprogress": "^0.2.0",
+    "prop-types": "^15.6.2",
+    "query-string": "^6.2.0",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-scripts": "2.0.5",
+    "url-parse": "^1.4.3"
+  },
+  "scripts": {
+    "_react": "cross-env BROWSER=none react-scripts start",
+    "_electron": "nodemon --exec \"cross-env APP_URL=http://localhost:3000 electron .\" --ext js --watch public/",
+    "_build": "react-scripts build",
+    "start": "concurrently \"yarn _react\" \"wait-on http://localhost:3000 && yarn _electron\" ",
+    "build": "yarn _build && build --mac --win --linux --x64 --ia32 -p always",
+    "icons": "electron-icon-maker -i public/img/pennywise.png -o public",
+    "test": "mocha"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "build": {
+    "extends": null,
+    "appId": "info.kamranahmed.pennywise",
+    "asar": true,
+    "copyright": "Copyright © 2018 Kamran Ahmed",
+    "files": [
+      "public/**/*",
+      "build/**/*",
+      "!public/pennywise.png",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.navigation",
+      "icon": "public/img/icon.icns"
+    },
+    "linux": {
+      "category": "Network",
+      "target": [
+        {
+          "target": "deb",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        },
+        {
+          "target": "AppImage",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        }
+      ]
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "public/img/icon.ico"
+    },
+    "fileAssociations": [
+      {
+        "name": "Document",
+        "description": "Pennywise",
+        "role": "Viewer",
+        "ext": "html"
+      }
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1",
+    "cross-env": "^5.2.0",
+    "electron": "^3.0.6",
+    "electron-builder": "^20.28.4",
+    "electron-icon-maker": "^0.0.4",
+    "jquery": "^3.3.1",
+    "mocha": "^5.2.0",
+    "node-sass": "^4.9.4",
+    "nodemon": "^1.18.5",
+    "popper.js": "^1.14.4",
+    "spectron": "^5.0.0",
+    "wait-on": "^3.1.0"
+  }
+}
