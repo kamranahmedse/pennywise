@@ -26,7 +26,7 @@ class Browser extends React.Component {
     ipcRenderer.on('embedVideos.set', this.onembedVideosSet);
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     ipcRenderer.removeEventListener('embedVideos.set', this.onembedVideosSet);
   }
 
