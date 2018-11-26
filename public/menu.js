@@ -184,7 +184,7 @@ function setMainMenu(mainWindow) {
         {
           label: `About Version`,
           click() {
-            shell.openExternal(`https://github.com/kamranahmedse/pennywise/releases/tag/${appVersion}`);
+            shell.openExternal(`https://github.com/kamranahmedse/pennywise/releases/tag/v${appVersion}`);
           }
         },
       ]
