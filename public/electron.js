@@ -11,7 +11,7 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    title: 'Pennywise',
+    title: 'kenjamakulu',
     width: 700,
     height: 600,
     autoHideMenuBar: true,
@@ -109,4 +109,5 @@ app.on('activate', function () {
   if (mainWindow === null) {
     createWindow();
   }
-});
+});Activision gmright-217706-vision 
+author:GeorgeMAKULU-patch-1 
