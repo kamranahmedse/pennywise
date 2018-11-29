@@ -13,7 +13,7 @@
     font-weight: 700;
     font-size: 55px;
     margin-bottom: 1vh;
-    @media (max-height: 300px) {
+    @media (max-height: 140px) {
       display: none;
     }
   }
@@ -21,7 +21,7 @@
   p {
     font-size: 18px;
     font-weight: 500;
-    @media (max-height: 425px) {
+    @media (max-height: 190px) {
       display: none;
     }
   }
@@ -42,9 +42,14 @@
 
   svg {
     width: 50vh;
-    height: 50vh;
     margin-bottom: 2vh;
-    @media (max-height: 125px) {
+    @media (max-height: 400px) {
+      width: 40vh;
+    }
+    @media (max-height: 320px) {
+      width: 30vh;
+    }
+    @media (max-height: 250px) {
       display: none;
     }
   }
