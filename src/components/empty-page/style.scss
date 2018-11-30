@@ -12,18 +12,24 @@
   h1 {
     font-weight: 700;
     font-size: 55px;
-    margin-bottom: 10px;
+    margin-bottom: 1vh;
+    @media (max-height: 140px) {
+      display: none;
+    }
   }
 
   p {
     font-size: 18px;
     font-weight: 500;
+    @media (max-height: 190px) {
+      display: none;
+    }
   }
 
   input {
     font-size: 18px;
     font-weight: 500;
-    margin-top: 15px;
+    margin-top: 1.5vh;
     padding: 15px 20px;
     box-shadow: none;
     border-radius: 80px;
@@ -35,9 +41,17 @@
   }
 
   svg {
-    width: 250px;
-    height: 250px;
-    margin-bottom: 20px;
+    width: 50vh;
+    margin-bottom: 2vh;
+    @media (max-height: 400px) {
+      width: 40vh;
+    }
+    @media (max-height: 320px) {
+      width: 30vh;
+    }
+    @media (max-height: 250px) {
+      display: none;
+    }
   }
 }
 
