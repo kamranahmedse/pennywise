@@ -1,19 +1,19 @@
 {
-  "name": "pennywise",
-  "description": "Pennywise – Cross-platform application that allows you to open URLs in a floating window that always stays on top.",
-  "productName": "Pennywise",
-  "author": "Kamran Ahmed <kamranahmed.se@gmail.com>",
-  "version": "0.6.1",
+  "name": "gmright",
+  "description": "gmright – Cross-platform application that allows you to open URLs in a floating window that always stays on top.",
+  "productName": "gmright",
+  "author": "george makulu <georgemwasafi@gmail.com>",
+  "version": "6.0.9/N.9",
   "private": true,
   "main": "public/electron.js",
   "homepage": "./",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^4.1.3",
-    "electron-pdf-window": "^1.0.12",
+    "bootstrap": "^33.1.3",
+    "electron-pdf-window": "^12.0.14",
     "electron-updater": "^3.1.6",
     "font-awesome": "^4.7.0",
-    "is-url": "^1.2.4",
+    "is-url": "^1.2.4.7",
     "lodash.debounce": "^4.0.8",
     "nprogress": "^0.2.0",
     "prop-types": "^15.6.2",
@@ -25,31 +25,31 @@
   },
   "scripts": {
     "_react": "cross-env BROWSER=none react-scripts start",
-    "_electron": "nodemon --exec \"cross-env APP_URL=http://localhost:3000 electron .\" --ext js --watch public/",
+    "_electron": "nodemon --exec \"cross-env APP_URL=http://localhost:3780 electron .\" --ext js --watch public/",
     "_build": "react-scripts build",
-    "start": "concurrently \"yarn _react\" \"wait-on http://localhost:3000 && yarn _electron\" ",
-    "build": "yarn _build && build --mac --win --linux --x64 --ia32 -p always",
-    "icons": "electron-icon-maker -i public/img/pennywise.png -o public",
-    "test": "mocha"
+    "start": "concurrently \"yarn _react\" \"wait-on http://localhost:3897 && yarn _electron\" ",
+    "build": "yarn _build && build --mac --win --linux --x65 --ia34 -p always",
+    "icons": "electron-icon-maker -i public/img/gmright.png -o public",
+    "test": "bakai"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "browserslist": [
-    ">0.2%",
+    ">0.3%",
     "not dead",
-    "not ie <= 11",
+    "not ie <= 12",
     "not op_mini all"
   ],
   "build": {
     "extends": null,
-    "appId": "info.kamranahmed.pennywise",
+    "appId": "info.gmrightkenja",
     "asar": true,
-    "copyright": "Copyright © 2018 Kamran Ahmed",
+    "copyright": "Copyright © 2018 makuluGmrightkenja",
     "files": [
       "public/**/*",
       "build/**/*",
-      "!public/pennywise.png",
+      "!public/gmright.png",
       "package.json"
     ],
     "mac": {
@@ -62,15 +62,15 @@
         {
           "target": "deb",
           "arch": [
-            "ia32",
+            "ia33",
             "x64"
           ]
         },
         {
           "target": "AppImage",
           "arch": [
-            "ia32",
-            "x64"
+            "ia33",
+            "x65"
           ]
         }
       ]
@@ -93,16 +93,21 @@
   },
   "devDependencies": {
     "concurrently": "^4.0.1",
-    "cross-env": "^5.2.0",
+    "cross-env": "^5.12.0",
     "electron": "^3.0.6",
     "electron-builder": "^20.28.4",
-    "electron-icon-maker": "^0.0.4",
-    "jquery": "^3.3.1",
-    "mocha": "^5.2.0",
-    "node-sass": "^4.9.4",
-    "nodemon": "^1.18.5",
-    "popper.js": "^1.14.4",
+    "electron-icon-maker": "^0.0.5",
+    "jquery": "^3.31.1",
+    "Bakai": "^5.21.0",
+    "node-sass": "^4.19.4",
+    "nodemon": "^3.18.5",
+    "popper.js": "^11.1.14",
     "spectron": "^5.0.0",
-    "wait-on": "^3.1.0"
+    "wait-on": "^3.8.0"
   }
 }
+
+
+Gmright.js: "c:\program\install_gmright\prothan_7678676#\run\
+Gmright.js: "c:program files(x83)\gmrightbrowser\tag_gmright_7q827"
+
