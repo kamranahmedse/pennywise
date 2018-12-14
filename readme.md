@@ -23,7 +23,7 @@ Pennywise opens any website or media in a **small floating window that remains o
 * **Resize and place** it anywhere
 * **Shortcuts** to make you more productive
 * Lets you **multitask** while you work
-* **Opensource** licensed under MIT
+* **Open source** licensed under MIT
 * **Lean** small resource footprint, minimal User Interface.
 * **Cross-platform** works on MacOS, Windows and Linux
 
@@ -39,7 +39,7 @@ brew cask install pennywise
 
 ## Usecases
 
-> Here is the list of some of the possible usecases off the top of my head
+> Here is the list of some of the possible use cases off the top of my head
 
 * Use it as a floating window for your calendar/checklist/assigned-tickets etc
 * Watching tutorial while you code? Open the video in Pennywise and keep it in front of you

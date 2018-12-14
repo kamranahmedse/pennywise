@@ -49,7 +49,7 @@ class NavBar extends Component {
     ipcRenderer.on('nav.focus', this.focusUrlInput);
   }
 
-  componentWillUnMount() {
+  componentWillUnmount() {
     ipcRenderer.removeListener('nav.focus', this.focusUrlInput);
   }
 
