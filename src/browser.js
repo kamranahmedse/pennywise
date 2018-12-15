@@ -22,8 +22,13 @@ class Browser extends React.Component {
     this.setState({ embedVideosEnabled });
   };
 
+  onUrlRequested = (event, url) => {
+    this.onUrl(url)
+  };
+
   componentDidMount() {
     ipcRenderer.on('embedVideos.set', this.onembedVideosSet);
+    ipcRenderer.on('url.requested', this.onUrlRequested);
   }
 
   componentWillUnmount() {
