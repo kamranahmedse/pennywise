@@ -8,6 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  -webkit-app-region: drag;
 
   h1 {
     font-weight: 700;
@@ -38,6 +39,7 @@
     outline: none;
     width: 100%;
     color: #222222;
+    -webkit-app-region: no-drag;
   }
 
   svg {
