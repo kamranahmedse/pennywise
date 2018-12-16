@@ -75,19 +75,19 @@ yarn start
 
 > Homescreen for the application
 
-![](https://i.imgur.com/u7fAT89.png)
+![](https://i.imgur.com/u7fAT88.png)
 
-![](https://i.imgur.com/CeLYoux.png?1)
+![](https://i.imgur.com/CeLYoux.png?2)
 
 > Anything running in pennywise stays on top of everything
 
-![](https://i.imgur.com/BbqZmcg.png)
+![](https://i.imgur.com/BbqZmvg.png)
 
 ![](https://i.imgur.com/9VDKGYX.png)
 
 > You can change the opacity too
 
-![](https://i.imgur.com/Xa5inTY.png)
+![](https://i.imgur.com/Xa5inkY.png)
 
 ![](https://i.imgur.com/8D3gZwn.png)
 
