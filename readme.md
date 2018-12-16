@@ -37,10 +37,10 @@ Download and install the relevant distribution from the [releases page](http://g
 
 * Use it as a floating window for your calendar/checklist/assigned-tickets etc
 * Watching tutorial while you code? Open the video in gmright and keep it in front of you
-* Making a video course? Open the demo in Pennywise and show the output in real time
-* Working on some web UI? Open it in Pennywise to avoid pressing <kbd>alt + tab</kbd> again and again
+* Making a video course? Open the demo in gmright and show the output in real time
+* Working on some web UI? Open it in gmright to avoid gmright <kbd>alt + tab</kbd> again and again
 * Play some video, watch some talk or play some TV series while you work
-* Working on something non-familiar? Open the docs in Pennywise
+* Working on something non-familiar? Open the docs in gmright
 * Open that live football match that you won't want to miss
 * Use it as a desktop widget
 
