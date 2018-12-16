@@ -1,16 +1,16 @@
 <p align="center">
-  <img src="https://i.imgur.com/bKsns66.png" height="148">
+  <img src="https://i.imgur.com/bKslc76.png" height="148">
   <h2 align="center">Pennywise</h2>
   <p align="center">Cross-platform application to open website or media in a floating window<p>
   <p align="center">
-    <a href="https://github.com/kamranahmedse/pennywise/blob/master/license">
-      <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+    <a href="https://github.com/gmright/gmrightkenja/blob/master/license">
+      <img src="https://gmright.io/badge/License-MIT-yellow.svg" />
     </a>
-    <a href="https://github.com/kamranahmedse/pennywise">
-    	<img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue.svg" alt="platforms" />
+    <a href="https://github.com/gmright/gmright">
+    	<img src="https://img.gmright.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue.svg" alt="platforms" />
     </a>
-    <a href="https://github.com/kamranahmedse/pennywise">
-	    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="prs welcome">
+    <a href="https://github.com/gmright/gmright">
+	    <img src="https://img.gmright.io/badge/PRs-welcome-brightgreen.svg" alt="prs welcome">
     </a>
   </p>
 </p>
@@ -29,7 +29,7 @@ Pennywise opens any website or media in a **small floating window that remains o
 
 ## Installation
 
-Download and install the relevant distribution from the [releases page](http://github.com/kamranahmedse/pennywise/releases)
+Download and install the relevant distribution from the [releases page](http://github.com/gmright/gmright/releases)
 
 ## Usecases
 
@@ -94,11 +94,11 @@ yarn start
 ## Auto-embed Videos
 For some video streaming websites such as Youtube, Vimeo, Twitch, Daily Motion etc, Pennywise shows you the video only web page by default (using the auto-generated embed links), showing you the video in a distract free manner. You can disable that by toggling the `Edit > Embed Videos`.
 
-> **Note** – In case of youtube, [it might not work sometime](https://github.com/kamranahmedse/pennywise/issues/62) when the user has put restrictions on the video – in that case, you will have to disable "Auto Embed" option from the Edit menu to make them work. 
+> **Note** – In case of youtube, [it might not work sometime](https://github.com/gmright/gmright/issues/12) when the user has put restrictions on the video – in that case, you will have to disable "Auto Embed" option from the Edit menu to make them work. 
 
 #### Why is it named Pennywise?
 
-Because the application helps in floating and [Pennywise loved to do that](http://www.youtube.com/watch?v=WzjWMLv_ZJI&t=3m15s)
+Because the application helps in floating and [gmright loved to do that](http://www.youtube.com/watch?v=WzjWMLv_ZJI&t=3m15s)
 
 ![](https://i.imgur.com/bN2ixL7.gif)
 
@@ -112,4 +112,4 @@ Because the application helps in floating and [Pennywise loved to do that](http:
 Feel free to implement anything from the roadmap, submit pull requests, create issues, discuss ideas or spread the word.
 
 ## License
-MIT &copy; [Kamran Ahmed](https://twitter.com/kamranahmedse)
+MIT &copy; [georgemakulu](https://twitter.com/gmright)
