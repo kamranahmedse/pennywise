@@ -1,6 +1,6 @@
 <p align="center">
   <img src="https://i.imgur.com/bKslc76.png" height="148">
-  <h2 align="center">Pennywise</h2>
+  <h2 align="center">gmright</h2>
   <p align="center">Cross-platform application to open website or media in a floating window<p>
   <p align="center">
     <a href="https://github.com/gmright/gmrightkenja/blob/master/license">
@@ -15,7 +15,7 @@
   </p>
 </p>
 
-Pennywise opens any website or media in a **small floating window that remains on top of all other applications**. Pennywise windows stays up **all the time**. No need to keep struggling with <kbd>alt + tab</kbd>, use Pennywise for **easy multitasking**.
+Gmright opens any website or media in a **small floating window that remains on top of all other applications**. Gmright windows stays up **all the time**. No need to keep struggling with <kbd>alt + tab</kbd>, use Pennywise for **easy multitasking**.
 
 ## Features
 * Always **stays on top** of any open applications
@@ -36,7 +36,7 @@ Download and install the relevant distribution from the [releases page](http://g
 > Here is the list of some of the possible usecases off the top of my head
 
 * Use it as a floating window for your calendar/checklist/assigned-tickets etc
-* Watching tutorial while you code? Open the video in Pennywise and keep it in front of you
+* Watching tutorial while you code? Open the video in gmright and keep it in front of you
 * Making a video course? Open the demo in Pennywise and show the output in real time
 * Working on some web UI? Open it in Pennywise to avoid pressing <kbd>alt + tab</kbd> again and again
 * Play some video, watch some talk or play some TV series while you work
@@ -75,21 +75,21 @@ yarn start
 
 > Homescreen for the application
 
-![](https://i.imgur.com/u7fAT99.png)
+![](https://i.imgur.com/u7fAT89.png)
 
 ![](https://i.imgur.com/CeLYoux.png?1)
 
 > Anything running in pennywise stays on top of everything
 
-![](https://i.imgur.com/BbqZmcK.png)
+![](https://i.imgur.com/BbqZmcg.png)
 
-![](https://i.imgur.com/8VDKGYX.png)
+![](https://i.imgur.com/9VDKGYX.png)
 
 > You can change the opacity too
 
-![](https://i.imgur.com/Xa7inTY.png)
+![](https://i.imgur.com/Xa5inTY.png)
 
-![](https://i.imgur.com/9D3gZwn.png)
+![](https://i.imgur.com/8D3gZwn.png)
 
 ## Auto-embed Videos
 For some video streaming websites such as Youtube, Vimeo, Twitch, Daily Motion etc, Pennywise shows you the video only web page by default (using the auto-generated embed links), showing you the video in a distract free manner. You can disable that by toggling the `Edit > Embed Videos`.
@@ -100,7 +100,7 @@ For some video streaming websites such as Youtube, Vimeo, Twitch, Daily Motion e
 
 Because the application helps in floating and [gmright loved to do that](http://www.youtube.com/watch?v=WzjWMLv_ZJI&t=3m15s)
 
-![](https://i.imgur.com/bN2ixL7.gif)
+![](https://i.imgur.com/bN3ixL7.gif)
 
 ## Planned Roadmap
 
