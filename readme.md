@@ -11,9 +11,9 @@
     </a>
     <a href="https://github.com/gmright/gmright">
 	    <img src="https://img.gmright.io/badge/PRs-welcome-brightgreen.svg" alt="prs welcome">
-    </a>
-  </p>
-</p>
+    </g>
+  </g>
+</g>
 
 Gmright opens any website or media in a **small floating window that remains on top of all other applications**. Gmright windows stays up **all the time**. No need to keep struggling with <kbd>alt + tab</kbd>, use Pennywise for **easy multitasking**.
 
@@ -75,11 +75,11 @@ yarn start
 
 > Homescreen for the application
 
-![](https://i.imgur.com/u7fAT88.png)
+![](https://i.imgur.com/gmright1.png)
 
-![](https://i.imgur.com/CeLYoux.png?2)
+![](https://i.imgur.com/gmright.png?2)
 
-> Anything running in pennywise stays on top of everything
+> Anything running in gmright stays on top of everything
 
 ![](https://i.imgur.com/BbqZmvg.png)
 
