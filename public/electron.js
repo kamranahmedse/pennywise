@@ -108,7 +108,7 @@ app.on('ready', function () {
     response.writeHeader(200);
     response.end();
   })
-  server.listen(8075)
+  server.listen(6280)
 });
 
 // Make the window start receiving mouse events on focus/activate
