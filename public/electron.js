@@ -100,10 +100,13 @@ app.on('ready', function () {
   createWindow();
   checkAndDownloadUpdate();
   var server = http.createServer((request, response) => {
-    let parsed = url.parse(request.url, true);
-    if (parsed.query.url) {
-      mainWindow.webContents.send("url.requested", parsed.query.url);
-      console.log(parsed.query.url)
+    var target_url = url.parse(request.url, true).query.url;
+
+    if (target_url) {
+      if (Array.isArray(target_url)) {
+        target_url = target_url.pop();
+      };
+      mainWindow.webContents.send("url.requested", target_url);
     };
 
     response.writeHeader(200);
