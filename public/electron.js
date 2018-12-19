@@ -103,12 +103,13 @@ app.on('ready', function () {
     let parsed = url.parse(request.url, true);
     if (parsed.query.url) {
       mainWindow.webContents.send("url.requested", parsed.query.url);
+      console.log(parsed.query.url)
     };
 
     response.writeHeader(200);
     response.end();
   })
-  server.listen(6280)
+  server.listen(6280, "0.0.0.0")
 });
 
 // Make the window start receiving mouse events on focus/activate
