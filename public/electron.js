@@ -3,6 +3,9 @@ const { autoUpdater } = require('electron-updater');
 const pdfWindow = require('electron-pdf-window');
 const path = require('path');
 
+const http = require('http');
+const url = require('url');
+
 const { setMainMenu } = require('./menu');
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -96,6 +99,20 @@ function checkAndDownloadUpdate() {
 app.on('ready', function () {
   createWindow();
   checkAndDownloadUpdate();
+  var server = http.createServer((request, response) => {
+    var target_url = url.parse(request.url, true).query.url;
+
+    if (target_url) {
+      if (Array.isArray(target_url)) {
+        target_url = target_url.pop();
+      };
+      mainWindow.webContents.send("url.requested", target_url);
+    };
+
+    response.writeHeader(200);
+    response.end();
+  })
+  server.listen(6280, "0.0.0.0")
 });
 
 // Make the window start receiving mouse events on focus/activate
