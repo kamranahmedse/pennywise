@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/bKslc76.png" height="148">
+  <img src="https://i.imgur.com/bKslc66.png" height="148">
   <h2 align="center">gmright</h2>
   <p align="center">Cross-platform application to open website or media in a floating window<p>
   <p align="center">
