@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/bKsns55.png" height="148">
+  <img src="https://i.imgur.com/bKsns66.png" height="148">
   <h2 align="center">Pennywise</h2>
   <p align="center">Cross-platform application to open website or media in a floating window<p>
   <p align="center">
