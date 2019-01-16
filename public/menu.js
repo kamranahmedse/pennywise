@@ -58,6 +58,22 @@ function getOpacityMenuItems(mainWindow) {
         mainWindow.setOpacity(nextOpacity);
       }
     },
+    {
+      label: 'Set Opacity',
+      submenu: (() => {
+          const result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => {
+              return {
+                  label: `${num}0%`,
+                  accelerator: num === 10 ? `CmdOrCtrl+0` : `CmdOrCtrl+${num}`,
+                  click() {
+                      mainWindow.webContents.send('opacity.sync', num * 10);
+                      mainWindow.setOpacity(num / 10.0);
+                  }
+              }
+          })
+          return result
+      })()
+    },
     { type: 'separator' },
   ];
 }
