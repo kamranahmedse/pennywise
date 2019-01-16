@@ -60,88 +60,19 @@ function getOpacityMenuItems(mainWindow) {
     },
     {
       label: 'Set Opacity',
-      submenu:[
-        {
-          label: '10%',
-          accelerator: 'CmdOrCtrl+1',
-          click() {
-            mainWindow.webContents.send('opacity.sync', 10);
-            mainWindow.setOpacity(0.1);
-          }
-        },
-        {
-          label: '20%',
-          accelerator: 'CmdOrCtrl+2',
-          click() {
-            mainWindow.webContents.send('opacity.sync', 20);
-            mainWindow.setOpacity(0.2);
-          }
-        },
-        {
-          label: '30%',
-          accelerator: 'CmdOrCtrl+3',
-          click() {
-            mainWindow.webContents.send('opacity.sync', 30);
-            mainWindow.setOpacity(0.3);
-          }
-        },
-        {
-          label: '40%',
-          accelerator: 'CmdOrCtrl+4',
-          click() {
-            mainWindow.webContents.send('opacity.sync', 40);
-            mainWindow.setOpacity(0.4);
-          }
-        },
-        {
-          label: '50%',
-          accelerator: 'CmdOrCtrl+5',
-          click() {
-            mainWindow.webContents.send('opacity.sync', 50);
-            mainWindow.setOpacity(0.5);
-          }
-        },
-        {
-          label: '60%',
-          accelerator: 'CmdOrCtrl+6',
-          click() {
-            mainWindow.webContents.send('opacity.sync', 60);
-            mainWindow.setOpacity(0.6);
-          }
-        },
-        {
-          label: '70%',
-          accelerator: 'CmdOrCtrl+7',
-          click() {
-            mainWindow.webContents.send('opacity.sync', 70);
-            mainWindow.setOpacity(0.7);
-          }
-        },
-        {
-          label: '80%',
-          accelerator: 'CmdOrCtrl+8',
-          click() {
-            mainWindow.webContents.send('opacity.sync', 80);
-            mainWindow.setOpacity(0.8);
-          }
-        },
-        {
-          label: '90%',
-          accelerator: 'CmdOrCtrl+9',
-          click() {
-            mainWindow.webContents.send('opacity.sync', 90);
-            mainWindow.setOpacity(0.9);
-          }
-        },
-        {
-          label: '100%',
-          accelerator: 'CmdOrCtrl+0',
-          click() {
-            mainWindow.webContents.send('opacity.sync', 100);
-            mainWindow.setOpacity(1);
-          }
-        },
-      ]
+      submenu: (() => {
+          const result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => {
+              return {
+                  label: `${num}0%`,
+                  accelerator: num === 10 ? `CmdOrCtrl+0` : `CmdOrCtrl+${num}`,
+                  click() {
+                      mainWindow.webContents.send('opacity.sync', num * 10);
+                      mainWindow.setOpacity(num / 10.0);
+                  }
+              }
+          })
+          return result
+      })()
     },
     { type: 'separator' },
   ];
