@@ -79,12 +79,6 @@ yarn start
 
 ## Screenshots
 
-> Homescreen for the application
-
-![](https://i.imgur.com/u7fAT99.png)
-
-![](https://i.imgur.com/CeLYoux.png?1)
-
 > Anything running in pennywise stays on top of everything
 
 ![](https://i.imgur.com/BbqZmcK.png)
