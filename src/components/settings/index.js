@@ -26,7 +26,7 @@ class Settings extends React.Component {
 
   onOpacitySync = (event, opacity) => {
     this.setState({ opacity });
-  }
+  };
 
   onOpacityChange = (e) => {
     this.setState({

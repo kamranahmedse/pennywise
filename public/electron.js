@@ -1,6 +1,10 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-const pdfWindow = require('electron-pdf-window')
+const { autoUpdater } = require('electron-updater');
+const pdfWindow = require('electron-pdf-window');
 const path = require('path');
+
+const http = require('http');
+const url = require('url');
 
 const { setMainMenu } = require('./menu');
 
@@ -16,12 +20,13 @@ function createWindow() {
     autoHideMenuBar: true,
     backgroundColor: '#16171a',
     show: false,
-    webPreferences:{
-      plugins:true
+    webPreferences: {
+      plugins: true
     },
   });
-  pdfWindow.addSupport(mainWindow)
-  
+
+  pdfWindow.addSupport(mainWindow);
+
   const isDev = !!process.env.APP_URL;
   if (process.env.APP_URL) {
     mainWindow.loadURL(process.env.APP_URL);
@@ -84,10 +89,35 @@ function disableDetachedMode() {
   mainWindow && mainWindow.setIgnoreMouseEvents(false);
 }
 
+function checkAndDownloadUpdate() {
+  try {
+    autoUpdater.checkForUpdatesAndNotify();
+  } catch (e) {
+    console.log(e.message);
+  }
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.on('ready', function () {
+  createWindow();
+  checkAndDownloadUpdate();
+  var server = http.createServer((request, response) => {
+    var target_url = url.parse(request.url, true).query.url;
+
+    if (target_url) {
+      if (Array.isArray(target_url)) {
+        target_url = target_url.pop();
+      };
+      mainWindow.webContents.send("url.requested", target_url);
+    };
+
+    response.writeHeader(200);
+    response.end();
+  })
+  server.listen(6280, "0.0.0.0")
+});
 
 // Make the window start receiving mouse events on focus/activate
 app.on('browser-window-focus', disableDetachedMode);
@@ -95,11 +125,7 @@ app.on('activate', disableDetachedMode);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
-  // On OS X it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
+  app.quit();
 });
 
 app.on('activate', function () {

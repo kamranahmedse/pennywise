@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="https://github.com/akash-joshi/pennywise/blob/master/public/img/pennywise.png?raw=true" height="148">
-  <h2 align="center">Pennywise-Plus</h2>
-  <p align="center">Cross-platform application to open anything in a floating window<p>
+  <img src="https://i.imgur.com/bKsns66.png" height="148">
+  <h2 align="center">Pennywise</h2>
+  <p align="center">Cross-platform application to open website or media in a floating window<p>
   <p align="center">
     <a href="https://github.com/kamranahmedse/pennywise/blob/master/license">
       <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
@@ -15,7 +15,7 @@
   </p>
 </p>
 
-Pennywise allows you to open anything in a **small floating window that always stays on top of the other applications** all the time, allowing you to **multitask with ease**. No need to keep struggling with <kbd>alt + tab</kbd>, use pennywise and have your work in front of you all the time.
+Pennywise opens any website or media in a **small floating window that remains on top of all other applications**. Pennywise windows stays up **all the time**. No need to keep struggling with <kbd>alt + tab</kbd>, use Pennywise for **easy multitasking**.
 
 ## Features
 * Always **stays on top** of any open applications
@@ -23,17 +23,23 @@ Pennywise allows you to open anything in a **small floating window that always s
 * **Resize and place** it anywhere
 * **Shortcuts** to make you more productive
 * Lets you **multitask** while you work
-* **Opensource** licensed under MIT
+* **Open source** licensed under MIT
 * **Lean** small resource footprint, minimal User Interface.
 * **Cross-platform** works on MacOS, Windows and Linux
 
 ## Installation
 
-Download and install the relevant distribution from the [releases page](http://github.com/kamranahmedse/pennywise/releases)
+Download and install the relevant distribution from the [releases page](http://github.com/kamranahmedse/pennywise/releases).
+
+If you are on MacOS, you can use [Homebrew](https://brew.sh/) to install it
+
+```
+brew cask install pennywise
+```
 
 ## Usecases
 
-> Here is the list of some of the possible usecases off the top of my head
+> Here is the list of some of the possible use cases off the top of my head
 
 * Use it as a floating window for your calendar/checklist/assigned-tickets etc
 * Watching tutorial while you code? Open the video in Pennywise and keep it in front of you
@@ -57,18 +63,19 @@ yarn start
 
 > Here is the list of available shortcuts that you may use
 
-| **Shortcut**                    |    **Description**         |
-|---------------------------------|----------------------------|
-| <kbd>CmdOrCtrl + L</kbd>        | Show Navbar and focus URL input  |
-| <kbd>CmdOrCtrl + Shift + M</kbd>    | Enable detached mode  |
-| <kbd>CmdOrCtrl + Shift + L</kbd>    | Toggle Navbar on WebPages  |
-| <kbd>CmdOrCtrl + Shift + Up</kbd>   | Increase Opacity           |
-| <kbd>CmdOrCtrl + Shift + Down</kbd> | Decrease Opacity           |
-| <kbd>CmdOrCtrl + Alt + I</kbd>      | Show Developer Tools       |
+| **Shortcut**                       | **Description**                  |
+|------------------------------------|----------------------------------|
+| <kbd>Cmd/Ctrl + L</kbd>            | Show Navbar and focus URL input  |
+| <kbd>Cmd/Ctrl + Shift + M</kbd>    | Enable detached mode             |
+| <kbd>Cmd/Ctrl + Shift + L</kbd>    | Toggle Navbar on WebPages        |
+| <kbd>Cmd/Ctrl + Shift + Up</kbd>   | Increase Opacity                 |
+| <kbd>Cmd/Ctrl + Shift + Down</kbd> | Decrease Opacity                 |
+| <kbd>Cmd/Ctrl + Alt + I</kbd>      | Show Developer Tools             |
 
 > **Note** – Changing the opacity is only supported in Windows and MacOS
 
-**Detached Mode** Enabling the detached mode makes Pennywise non-interactive – it will let any interactions fall through to the window below it. To remove the detached mode, focus the window either by clicking the dock icon or by activating it using <kbd>alt + tab</kbd>
+**Detached Mode** 
+* Enabling the detached mode makes Pennywise non-interactive – it will let any interactions fall through to the window below it. To remove the detached mode, focus the window either by clicking the dock icon or by activating it using <kbd>alt + tab</kbd>
 
 ## Screenshots
 
@@ -84,6 +91,11 @@ yarn start
 
 ![](https://i.imgur.com/9D3gZwn.png)
 
+## Auto-embed Videos
+For some video streaming websites such as Youtube, Vimeo, Twitch, Daily Motion etc, Pennywise shows you the video only web page by default (using the auto-generated embed links), showing you the video in a distract free manner. You can disable that by toggling the `Edit > Embed Videos`.
+
+> **Note** – In case of youtube, [it might not work sometime](https://github.com/kamranahmedse/pennywise/issues/62) when the user has put restrictions on the video – in that case, you will have to disable "Auto Embed" option from the Edit menu to make them work. 
+
 #### Why is it named Pennywise?
 
 Because the application helps in floating and [Pennywise loved to do that](http://www.youtube.com/watch?v=WzjWMLv_ZJI&t=3m15s)
@@ -92,10 +104,9 @@ Because the application helps in floating and [Pennywise loved to do that](http:
 
 ## Planned Roadmap
 
-* [ ] Global shortcut to load currently selected URL
 * [ ] Persist options and linking options to website
 * [ ] Bookmarking links for later use
-* [ ] Add more tests
+* [ ] Write tests
 
 ## Contributions
 Feel free to implement anything from the roadmap, submit pull requests, create issues, discuss ideas or spread the word.

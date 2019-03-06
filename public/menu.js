@@ -1,4 +1,4 @@
-const { app,dialog, Menu, shell } = require('electron');
+const { app, dialog, Menu, shell } = require('electron');
 
 module.exports = {
   setMainMenu
@@ -58,6 +58,22 @@ function getOpacityMenuItems(mainWindow) {
         mainWindow.setOpacity(nextOpacity);
       }
     },
+    {
+      label: 'Set Opacity',
+      submenu: (() => {
+          const result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => {
+              return {
+                  label: `${num}0%`,
+                  accelerator: num === 10 ? `CmdOrCtrl+0` : `CmdOrCtrl+${num}`,
+                  click() {
+                      mainWindow.webContents.send('opacity.sync', num * 10);
+                      mainWindow.setOpacity(num / 10.0);
+                  }
+              }
+          })
+          return result
+      })()
+    },
     { type: 'separator' },
   ];
 }
@@ -71,31 +87,39 @@ function setMainMenu(mainWindow) {
     {
       label: isWindows ? 'File' : app.getName(),
       submenu: [
-		{
-          label: `Open`,
+        {
+          label: 'Open',
           accelerator: 'CmdOrCtrl+O',
           click() {
-            dialog.showOpenDialog(function (fileNames) { 
-      
-              // fileNames is an array that contains all the selected 
-              if(fileNames === undefined) { 
-                 console.log("No file selected"); 
-              
-              } else { 
-				url = /^file:\/\/\//.test(fileNames[0]) ? fileNames[0] : `file://${fileNames[0]}`
-				console.log(url)
-                 mainWindow.loadURL(url)
-              } 
-           });
-          } 
+            dialog.showOpenDialog(function (fileNames) {
+              if (!fileNames || !fileNames[0]) {
+                return;
+              }
+
+              // For the file URLs, load them directly
+              // Append the `file://` prefix otherwise
+              const url = /^file:\/\/\//.test(fileNames[0]) ? fileNames[0] : `file://${fileNames[0]}`;
+              mainWindow.loadURL(url);
+            });
+          }
         },
-		{ type: 'separator' },
         { role: 'close' },
+        { type: 'separator' },
+        { role: 'quit' },
       ]
     },
     {
       label: 'Edit',
       submenu: [
+        {
+          label: 'Embed Videos',
+          type: 'checkbox',
+          checked: true,
+          click(menuItem) {
+            mainWindow.webContents.send('embedVideos.set', menuItem.checked);
+          }
+        },
+        { type: 'separator' },
         { role: 'undo' },
         { role: 'redo' },
         { type: 'separator' },
@@ -144,7 +168,12 @@ function setMainMenu(mainWindow) {
           click() {
             mainWindow.webContents.openDevTools();
           }
-        }
+        },
+        { type: 'separator' },
+        { role: 'resetzoom' },
+        { role: 'zoomin', accelerator: 'CmdOrCtrl+=' },
+        { role: 'zoomout' },
+        { type: 'separator' },
       ]
     },
     {
@@ -171,7 +200,7 @@ function setMainMenu(mainWindow) {
         {
           label: `About Version`,
           click() {
-            shell.openExternal(`https://github.com/kamranahmedse/pennywise/releases/tag/${appVersion}`);
+            shell.openExternal(`https://github.com/kamranahmedse/pennywise/releases/tag/v${appVersion}`);
           }
         },
       ]
