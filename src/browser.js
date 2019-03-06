@@ -4,11 +4,12 @@ import EmptyPage from './components/empty-page';
 import WebPage from './components/web-page';
 import { prepareUrl } from './utils/helpers';
 
-const { ipcRenderer } = window.require('electron');
+const { ipcRenderer, remote } = window.require('electron');
+const yargs = window.require('yargs').parse(remote.process.argv.slice(1));
 
 class Browser extends React.Component {
   state = {
-    url: '',
+    url: yargs.url ? prepareUrl(yargs.url) : '',
     embedVideosEnabled: true
   };
 
