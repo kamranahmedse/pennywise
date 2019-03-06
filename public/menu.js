@@ -141,6 +141,22 @@ function setMainMenu(mainWindow) {
           }
         },
         {
+          label: 'Frameless Window',
+          accelerator: 'CmdOrCtrl+Shift+F',
+          click() {
+            let args = process.argv.slice(1);
+
+            if (args.includes('--frameless')) {
+              args.pop('--frameless')
+            } else {
+              args.push('--frameless')
+            };
+
+            app.relaunch({args: args});
+            app.exit();
+          }
+        },
+        {
           label: 'Focus URL',
           accelerator: 'CmdOrCtrl+L',
           click() {

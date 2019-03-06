@@ -2,6 +2,7 @@ const { app, BrowserWindow, ipcMain } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const pdfWindow = require('electron-pdf-window');
 const path = require('path');
+const argv = require('yargs').parse(process.argv.slice(1));
 
 const http = require('http');
 const url = require('url');
@@ -20,6 +21,7 @@ function createWindow() {
     autoHideMenuBar: true,
     backgroundColor: '#16171a',
     show: false,
+    frame: argv.frameless ? false: true,
     webPreferences: {
       plugins: true
     },
