@@ -79,6 +79,36 @@ function getOpacityMenuItems(mainWindow) {
 }
 
 /**
+ * Conditionally allows frameless window
+ * if it is supported
+ * @return {array}
+ */
+function getFramelessMenuItem() {
+  if (isMac) {
+    return [];
+  }
+
+  return [
+    {
+      label: 'Frameless Window',
+      accelerator: 'CmdOrCtrl+Shift+F',
+      click() {
+        let args = process.argv.slice(1);
+
+        if (args.includes('--frameless')) {
+          args.pop('--frameless')
+        } else {
+          args.push('--frameless')
+        };
+
+        app.relaunch({args: args});
+        app.exit();
+      }
+    },
+  ];
+}
+
+/**
  * Sets the main menu
  * @param mainWindow
  */
@@ -140,22 +170,7 @@ function setMainMenu(mainWindow) {
             mainWindow.webContents.send('nav.toggle');
           }
         },
-        {
-          label: 'Frameless Window',
-          accelerator: 'CmdOrCtrl+Shift+F',
-          click() {
-            let args = process.argv.slice(1);
-
-            if (args.includes('--frameless')) {
-              args.pop('--frameless')
-            } else {
-              args.push('--frameless')
-            };
-
-            app.relaunch({args: args});
-            app.exit();
-          }
-        },
+        ...getFramelessMenuItem(),
         {
           label: 'Focus URL',
           accelerator: 'CmdOrCtrl+L',
