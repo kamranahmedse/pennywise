@@ -6,12 +6,25 @@ const argv = require('yargs').parse(process.argv.slice(1));
 
 const http = require('http');
 const url = require('url');
+const fs = require('fs');
+const os = require('os');
 
 const { setMainMenu } = require('./menu');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
+
+// Add flash support. If $USER_HOME/.pennywise-flash exists as plugin directory or symlink uses that.
+const flashPath = path.join(os.homedir(), ".pennywise-flash");
+if (flashPath && fs.existsSync(flashPath)) {
+  try{
+    app.commandLine.appendSwitch('ppapi-flash-path', fs.realpathSync(flashPath));
+    console.log("Attempting to load flash at " + flashPath)
+  }catch (e){
+    console.log("Error finding flash at " + flashPath + ": " + e.message);
+  }
+}
 
 function createWindow() {
   mainWindow = new BrowserWindow({
