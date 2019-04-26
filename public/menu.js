@@ -126,7 +126,15 @@ function setMainMenu(mainWindow) {
         { role: 'cut' },
         { role: 'copy' },
         { role: 'paste' },
-        { role: 'selectall' }
+        { role: 'selectall' },
+        { type: 'separator' },
+        {
+          label: 'Refresh',
+          accelerator: 'CmdOrCtrl+R',
+          click(menuItem) {
+            mainWindow.webContents.send('webPage.reload');
+          }
+        }
       ]
     },
     {

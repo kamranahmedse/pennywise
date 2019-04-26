@@ -102,6 +102,7 @@ class WebPage extends React.Component {
   bindNavBar() {
     ipcRenderer.on('nav.toggle', this.toggleNavBar);
     ipcRenderer.on('nav.show', this.showNavBar);
+    ipcRenderer.on('webPage.reload', this.onReload)
   }
 
   unbindNavBar() {
