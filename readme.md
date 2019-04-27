@@ -66,11 +66,13 @@ yarn start
 | **Shortcut**                       | **Description**                  |
 |------------------------------------|----------------------------------|
 | <kbd>Cmd/Ctrl + L</kbd>            | Show Navbar and focus URL input  |
-| <kbd>Cmd/Ctrl + Shift + M</kbd>    | Enable detached mode             |
+| <kbd>Cmd/Ctrl + Shift + D</kbd>    | Enable detached mode             |
+| <kbd>Cmd/Ctrl + M</kbd>            | Refresh Page                     |
 | <kbd>Cmd/Ctrl + Shift + L</kbd>    | Toggle Navbar on WebPages        |
 | <kbd>Cmd/Ctrl + Shift + Up</kbd>   | Increase Opacity                 |
 | <kbd>Cmd/Ctrl + Shift + Down</kbd> | Decrease Opacity                 |
 | <kbd>Cmd/Ctrl + Alt + I</kbd>      | Show Developer Tools             |
+| <kbd>Cmd/Ctrl + [0-9]</kbd>        | Switch Window Opacity            |
 
 > **Note** – Changing the opacity is only supported in Windows and MacOS
 
