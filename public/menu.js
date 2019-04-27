@@ -61,17 +61,17 @@ function getOpacityMenuItems(mainWindow) {
     {
       label: 'Set Opacity',
       submenu: (() => {
-          const result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => {
-              return {
-                  label: `${num}0%`,
-                  accelerator: num === 10 ? `CmdOrCtrl+0` : `CmdOrCtrl+${num}`,
-                  click() {
-                      mainWindow.webContents.send('opacity.sync', num * 10);
-                      mainWindow.setOpacity(num / 10.0);
-                  }
-              }
-          })
-          return result
+        const result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => {
+          return {
+            label: `${ num }0%`,
+            accelerator: num === 10 ? `CmdOrCtrl+0` : `CmdOrCtrl+${ num }`,
+            click() {
+              mainWindow.webContents.send('opacity.sync', num * 10);
+              mainWindow.setOpacity(num / 10.0);
+            }
+          };
+        });
+        return result;
       })()
     },
     { type: 'separator' },
@@ -98,7 +98,7 @@ function setMainMenu(mainWindow) {
 
               // For the file URLs, load them directly
               // Append the `file://` prefix otherwise
-              const url = /^file:\/\/\//.test(fileNames[0]) ? fileNames[0] : `file://${fileNames[0]}`;
+              const url = /^file:\/\/\//.test(fileNames[0]) ? fileNames[0] : `file://${ fileNames[0] }`;
               mainWindow.loadURL(url);
             });
           }
@@ -155,12 +155,13 @@ function setMainMenu(mainWindow) {
             let args = process.argv.slice(1);
 
             if (args.includes('--frameless')) {
-              args.pop('--frameless')
+              args.pop('--frameless');
             } else {
-              args.push('--frameless')
-            };
+              args.push('--frameless');
+            }
+            ;
 
-            app.relaunch({args: args});
+            app.relaunch({ args: args });
             app.exit();
           }
         },
@@ -224,7 +225,7 @@ function setMainMenu(mainWindow) {
         {
           label: `About Version`,
           click() {
-            shell.openExternal(`https://github.com/kamranahmedse/pennywise/releases/tag/v${appVersion}`);
+            shell.openExternal(`https://github.com/kamranahmedse/pennywise/releases/tag/v${ appVersion }`);
           }
         },
       ]

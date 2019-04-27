@@ -21,7 +21,7 @@ function createWindow() {
     autoHideMenuBar: true,
     backgroundColor: '#16171a',
     show: false,
-    frame: argv.frameless ? false: true,
+    frame: argv.frameless ? false : true,
     webPreferences: {
       plugins: true
     },
@@ -95,26 +95,33 @@ function checkAndDownloadUpdate() {
   }
 }
 
+/**
+ * Starts the server on 127.0.0.1:6280 that accepts the URL and loads
+ * that URL in the application
+ */
+function listenUrlLoader() {
+  const server = http.createServer((request, response) => {
+    let target_url = url.parse(request.url, true).query.url;
+    target_url = Array.isArray(target_url) ? target_url.pop : '';
+
+    if (target_url) {
+      mainWindow.webContents.send('url.requested', target_url);
+    }
+
+    response.writeHeader(200);
+    response.end();
+  });
+
+  server.listen(6280, '0.0.0.0');
+}
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', function () {
   createWindow();
   checkAndDownloadUpdate();
-  var server = http.createServer((request, response) => {
-    var target_url = url.parse(request.url, true).query.url;
-
-    if (target_url) {
-      if (Array.isArray(target_url)) {
-        target_url = target_url.pop();
-      };
-      mainWindow.webContents.send("url.requested", target_url);
-    };
-
-    response.writeHeader(200);
-    response.end();
-  })
-  server.listen(6280, "0.0.0.0")
+  listenUrlLoader();
 });
 
 // Make the window start receiving mouse events on focus/activate
