@@ -20,9 +20,9 @@
     "query-string": "^6.2.0",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "react-scripts": "2.1.1",
+    "react-scripts": "3.0.0",
     "url-parse": "^1.4.3",
-    "yargs": "^12.0.5"
+    "yargs": "^13.2.2"
   },
   "scripts": {
     "_react": "cross-env BROWSER=none react-scripts start",
@@ -95,11 +95,11 @@
   "devDependencies": {
     "concurrently": "^4.0.1",
     "cross-env": "^5.2.0",
-    "electron": "^3.0.6",
+    "electron": "^5.0.0",
     "electron-builder": "^20.28.4",
     "electron-icon-maker": "^0.0.4",
     "jquery": "^3.3.1",
-    "mocha": "^5.2.0",
+    "mocha": "^6.1.4",
     "node-sass": "^4.9.4",
     "nodemon": "^1.18.5",
     "popper.js": "^1.14.4",
