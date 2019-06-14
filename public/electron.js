@@ -18,10 +18,10 @@ let mainWindow;
 // Add flash support. If $USER_HOME/.pennywise-flash exists as plugin directory or symlink uses that.
 const flashPath = path.join(os.homedir(), ".pennywise-flash");
 if (flashPath && fs.existsSync(flashPath)) {
-  try{
+  try {
     app.commandLine.appendSwitch('ppapi-flash-path', fs.realpathSync(flashPath));
     console.log("Attempting to load flash at " + flashPath)
-  }catch (e){
+  } catch (e) {
     console.log("Error finding flash at " + flashPath + ": " + e.message);
   }
 }
