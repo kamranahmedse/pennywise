@@ -36,7 +36,9 @@ function createWindow() {
     show: false,
     frame: argv.frameless ? false : true,
     webPreferences: {
-      plugins: true
+      plugins: true,
+      nodeIntegration: true,
+      webviewTag: true
     },
   });
 
