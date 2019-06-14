@@ -36,15 +36,14 @@ If you are on MacOS, you can use [Homebrew](https://brew.sh/) to install it
 ```
 brew cask install pennywise
 ```
-To enable flash support, copy Chrome's Pepperflash plugin into your $USER-DIR/.pennywise-flash. Or better yet create a symlink to the plugin installed with your browser. See chrome://flash in your browser for installation path.
 
-e.g. on MacOS
+### Enable Flash Support
 
-```
-ln -s "/Users/colint/Library/Application Support/Google/Chrome/PepperFlash/32.0.0.156/PepperFlashPlayer.plugin" .pennywise-flash
+To enable flash support, copy or link Chrome's Pepperflash plugin into your $HOME/.pennywise-flash. You can find the plugin at the installation path of the Chrome. For example, on MacOS, you can do the below to enable Flash support
 
 ```
-Using flash is at your own risk and should only be done with sites you trust!
+ln -s ~/Library/Application\ Support/Google/Chrome/PepperFlash/[version]/PepperFlashPlayer.plugin" ~/.pennywise-flash
+```
 
 ## Usecases
 
