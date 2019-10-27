@@ -68,6 +68,13 @@
           ]
         },
         {
+          "target": "rpm",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        },
+        {
           "target": "AppImage",
           "arch": [
             "ia32",
@@ -104,6 +111,7 @@
     "nodemon": "^1.19.1",
     "popper.js": "^1.15.0",
     "spectron": "^5.0.0",
-    "wait-on": "^3.2.0"
+    "wait-on": "^3.2.0",
+    "typescript": "^3.6.4"
   }
 }
