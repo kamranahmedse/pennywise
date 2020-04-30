@@ -105,7 +105,7 @@
     "electron": "^5.0.3",
     "electron-builder": "^20.43.0",
     "electron-icon-maker": "^0.0.4",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mocha": "^6.1.4",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
