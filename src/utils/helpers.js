@@ -30,6 +30,16 @@ const prepareYoutubeUrl = (url) => {
 
   queryParams.autoplay = 1;
 
+  // Rewrite the t parameter to start
+  // YouTube uses start and end when embedding videos
+  if (queryParams.t) {
+    const timestampMatch = /^(\d+)s$/.exec(queryParams.t)
+    if (timestampMatch) {
+      queryParams.start = timestampMatch[1]
+      delete queryParams.t
+    }
+  }
+
   return `https://www.youtube.com/embed/${videoHash}?${queryString.stringify(queryParams)}`;
 };
 
