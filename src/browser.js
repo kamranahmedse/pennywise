@@ -10,6 +10,7 @@ const yargs = window.require('yargs').parse(remote.process.argv.slice(1));
 class Browser extends React.Component {
   state = {
     url: yargs.url ? prepareUrl(yargs.url) : '',
+    showNav: !yargs.hidenav ? true : false,
     embedVideosEnabled: true
   };
 
@@ -41,7 +42,7 @@ class Browser extends React.Component {
       <div className='browser-wrap'>
         {
           this.state.url
-            ? <WebPage url={ this.state.url } onUrl={ this.onUrl }/>
+            ? <WebPage url={ this.state.url } onUrl={ this.onUrl } showNav={this.state.showNav}/>
             : <EmptyPage onUrl={ this.onUrl }/>
         }
       </div>

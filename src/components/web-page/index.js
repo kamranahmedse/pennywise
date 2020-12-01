@@ -15,7 +15,7 @@ class WebPage extends React.Component {
   webView = React.createRef();
   state = {
     url: this.props.url,
-    showNav: true
+    showNav: this.props.showNav
   };
 
   /**
