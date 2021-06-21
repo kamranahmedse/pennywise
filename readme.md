@@ -34,7 +34,7 @@ Download and install the relevant distribution from the [releases page](http://g
 If you are on MacOS, you can use [Homebrew](https://brew.sh/) to install it
 
 ```
-brew cask install pennywise
+brew install --cask pennywise
 ```
 
 ### Enable Flash Support
