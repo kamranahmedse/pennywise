@@ -1,10 +1,10 @@
-<p align="center">
-  <img src="https://i.imgur.com/bKsns66.png" height="148">
+<div align="center">
+  <img src="https://i.imgur.com/bKsns66.png" height="148" alt="Pennywise">
   <h2 align="center">Pennywise</h2>
   <p align="center">Cross-platform application to open website or media in a floating window<p>
   <p align="center">
     <a href="https://github.com/kamranahmedse/pennywise/blob/master/license">
-      <img src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+      <img src="https://img.shields.io/badge/License-MIT-yellow.svg"  alt=""/>
     </a>
     <a href="https://github.com/kamranahmedse/pennywise/releases">
     	<img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-blue.svg" alt="platforms" />
@@ -13,7 +13,7 @@
 	    <img src="https://img.shields.io/github/downloads/kamranahmedse/pennywise/total.svg" alt="prs welcome">
     </a>
   </p>
-</p>
+</div>
 
 Pennywise opens any website or media in a **small floating window that remains on top of all other applications**. Pennywise windows stays up **all the time**. No need to keep struggling with <kbd>alt + tab</kbd>, use Pennywise for **easy multitasking**.
 
@@ -25,13 +25,13 @@ Pennywise opens any website or media in a **small floating window that remains o
 * Lets you **multitask** while you work
 * **Open source** licensed under MIT
 * **Lean** small resource footprint, minimal User Interface.
-* **Cross-platform** works on MacOS, Windows and Linux
+* **Cross-platform** works on macOS, Windows and Linux
 
 ## Installation
 
 Download and install the relevant distribution from the [releases page](http://github.com/kamranahmedse/pennywise/releases).
 
-If you are on MacOS, you can use [Homebrew](https://brew.sh/) to install it
+If you are on macOS, you can use [Homebrew](https://brew.sh/) to install it
 
 ```
 brew install --cask pennywise
@@ -39,15 +39,15 @@ brew install --cask pennywise
 
 ### Enable Flash Support
 
-To enable flash support, copy or link Chrome's Pepperflash plugin into your $HOME/.pennywise-flash. You can find the plugin at the installation path of the Chrome. For example, on MacOS, you can do the below to enable Flash support
+To enable flash support, copy or link Chrome's Pepperflash plugin into your $HOME/.pennywise-flash. You can find the plugin at the installation path of the Chrome. For example, on macOS, you can do the below to enable Flash support
 
 ```
 ln -s ~/Library/Application\ Support/Google/Chrome/PepperFlash/[version]/PepperFlashPlayer.plugin" ~/.pennywise-flash
 ```
 
-## Usecases
+## Use cases
 
-> Here is the list of some of the possible use cases off the top of my head
+> Here is the list of some possible use cases off the top of my head
 
 * Use it as a floating window for your calendar/checklist/assigned-tickets etc
 * Watching tutorial while you code? Open the video in Pennywise and keep it in front of you
@@ -82,14 +82,14 @@ yarn start
 | <kbd>Cmd/Ctrl + Alt + I</kbd>      | Show Developer Tools             |
 | <kbd>Cmd/Ctrl + [0-9]</kbd>        | Switch Window Opacity            |
 
-> **Note** – Changing the opacity is only supported in Windows and MacOS
+> **Note** – Changing the opacity is only supported in Windows and macOS
 
-**Detached Mode** 
+**Detached Mode**
 * Enabling the detached mode makes Pennywise non-interactive – it will let any interactions fall through to the window below it. To remove the detached mode, focus the window either by clicking the dock icon or by activating it using <kbd>alt + tab</kbd>
 
 ## Screenshots
 
-> Homescreen for the application
+> Home-screen for the application
 
 ![](https://i.imgur.com/u7fAT99.png)
 
@@ -108,9 +108,9 @@ yarn start
 ![](https://i.imgur.com/9D3gZwn.png)
 
 ## Auto-embed Videos
-For some video streaming websites such as Youtube, Vimeo, Twitch, Daily Motion etc, Pennywise shows you the video only web page by default (using the auto-generated embed links), showing you the video in a distract free manner. You can disable that by toggling the `Edit > Embed Videos`.
+For some video streaming websites such as YouTube, Vimeo, Twitch, Daily Motion etc, Pennywise shows you the video only web page by default (using the auto-generated embed links), showing you the video in a distrait free manner. You can disable that by toggling the `Edit > Embed Videos`.
 
-> **Note** – In case of youtube, [it might not work sometime](https://github.com/kamranahmedse/pennywise/issues/62) when the user has put restrictions on the video – in that case, you will have to disable "Auto Embed" option from the Edit menu to make them work. 
+> **Note** – In case of YouTube, [it might not work sometime](https://github.com/kamranahmedse/pennywise/issues/62) when the user has put restrictions on the video – in that case, you will have to disable "Auto Embed" option from the Edit menu to make them work.
 
 #### Why is it named Pennywise?
 
