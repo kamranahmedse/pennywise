@@ -106,7 +106,7 @@
     "electron-builder": "^20.43.0",
     "electron-icon-maker": "^0.0.4",
     "jquery": "^3.4.1",
-    "mocha": "^6.1.4",
+    "mocha": "^10.2.0",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
     "popper.js": "^1.15.0",
