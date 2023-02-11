@@ -103,7 +103,7 @@
     "concurrently": "^4.1.0",
     "cross-env": "^5.2.0",
     "electron": "^5.0.3",
-    "electron-builder": "^20.43.0",
+    "electron-builder": "^23.6.0",
     "electron-icon-maker": "^0.0.4",
     "jquery": "^3.4.1",
     "mocha": "^6.1.4",
