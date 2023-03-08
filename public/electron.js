@@ -117,7 +117,7 @@ function checkAndDownloadUpdate() {
 function listenUrlLoader() {
   const server = http.createServer((request, response) => {
     let target_url = url.parse(request.url, true).query.url;
-    target_url = Array.isArray(target_url) ? target_url.pop : '';
+    target_url = Array.isArray(target_url) ? target_url.pop() : target_url;
 
     if (target_url) {
       mainWindow.webContents.send('url.requested', target_url);
