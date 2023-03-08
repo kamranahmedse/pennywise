@@ -15,8 +15,32 @@ const { setMainMenu } = require('./menu');
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
 
-// Add flash support. If $USER_HOME/.pennywise-flash exists as plugin directory or symlink uses that.
-const flashPath = path.join(os.homedir(), ".pennywise-flash");
+// Add flash support. If $USER_HOME/.pennywise-flash exists as plugin directory or symlink uses that, else guesses.
+const pepperFlashSearchPaths = {
+  win32: "c:\\Program Files\\Google\\Chrome\\Application",
+  darwin: "/Users/colint/Library/Application Support/Google/Chrome/PepperFlash/",
+  linux: "/usr/lib/chromium-browser/plugins"};
+
+function findFlashPath () {
+  let searchPath = pepperFlashSearchPaths[process.platform];
+  let flashPath = null;
+  let maxVersion = -1;
+  if (searchPath && fs.existsSync(searchPath)) {
+    fs.readdirSync(searchPath).forEach(file => {
+      let version = file.match(/(\d+)(\.\d+)+/);
+      if (version && version[1] > maxVersion) {
+        flashPath = file;
+        maxVersion = version[1];
+      }
+    });
+  }
+  return flashPath === null? null : path.join(searchPath, flashPath, "PepperFlashPlayer.plugin");
+};
+
+let flashPath = path.join(os.homedir(), ".pennywise-flash");
+if (!fs.existsSync(flashPath)){
+  flashPath = findFlashPath();
+}
 if (flashPath && fs.existsSync(flashPath)) {
   try {
     app.commandLine.appendSwitch('ppapi-flash-path', fs.realpathSync(flashPath));
@@ -24,6 +48,9 @@ if (flashPath && fs.existsSync(flashPath)) {
   } catch (e) {
     console.log("Error finding flash at " + flashPath + ": " + e.message);
   }
+}
+else{
+  console.log("No flash found at" + flashPath);
 }
 
 function createWindow() {
